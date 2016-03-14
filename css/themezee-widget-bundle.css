@@ -125,12 +125,12 @@
 
 .tzwb-tabbed-content .tzwb-tabnavi li a:hover, 
 .tzwb-tabbed-content .tzwb-tabnavi li a:active {
-	background: #33bbcc;
+	background: #ee4444;
 	text-decoration: none;
 }
 
 .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-	background: #33bbcc;
+	background: #ee4444;
 }
 
 .tzwb-tabbed-content .tzwb-tabcontent {
@@ -153,7 +153,7 @@
 
 .tzwb-social-icons .social-icons-menu li a {
 	padding: 0.75em;
-	background: #33bbcc;
+	background: #ee4444;
 }
 
 .tzwb-social-icons .social-icons-menu li a:before {

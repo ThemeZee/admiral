@@ -24,7 +24,6 @@
 
 			<div class="entry-content entry-excerpt clearfix">
 				<?php the_excerpt(); ?>
-				<?php admiral_more_link(); ?>
 			</div><!-- .entry-content -->
 		
 		</article>

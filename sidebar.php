@@ -5,24 +5,75 @@
  * @package Admiral
  */
 
+// Get Theme Options from Database
+$theme_options = admiral_theme_options();
 ?>
-	<section id="secondary" class="sidebar widget-area clearfix" role="complementary">
-
-		<?php // Check if Sidebar has widgets
-		if( is_active_sidebar('sidebar') ) : 
-		
-			dynamic_sidebar('sidebar');
-		
-		// Show hint where to add widgets
-		else : ?>
-
-			<aside class="widget clearfix">
-				<div class="widget-header"><h3 class="widget-title"><?php esc_html_e( 'Sidebar', 'admiral' ); ?></h3></div>
-				<div class="textwidget">
-					<p><?php esc_html_e( 'Please go to Appearance &#8594; Widgets and add some widgets to your sidebar.', 'admiral' ); ?></p>
-				</div>
-			</aside>
+	<section id="secondary" class="main-sidebar widget-area clearfix" role="complementary">
 	
-	<?php endif; ?>
+		<header class="sidebar-header clearfix">
+			
+			<?php // Display Homepage Title
+			if ( $theme_options['sidebar_main_title'] <> '' ) : ?>		
+			
+				<h1 class="sidebar-title"><?php echo wp_kses_post( $theme_options['sidebar_main_title'] ); ?></h1>
+				
+			<?php else : ?>
+				
+				<h1 class="sidebar-title"><?php esc_html_e( 'Navigation', 'admiral' ); ?></h1>
+			
+			<?php endif; ?>
+		
+		</header>
+
+		<div id="main-navigation-wrap" class="primary-navigation-wrap">
+			
+			<nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
+				<?php 
+					// Display Main Navigation
+					wp_nav_menu( array(
+						'theme_location' => 'primary', 
+						'container' => false, 
+						'menu_class' => 'main-navigation-menu', 
+						'echo' => true, 
+						'fallback_cb' => 'admiral_default_menu' )
+					);
+				?>
+			</nav><!-- #main-navigation -->
+			
+		</div>
+			
+		<?php // Check if Sidebar has widgets
+		if( is_active_sidebar( 'sidebar' ) ) : 
+		
+			dynamic_sidebar( 'sidebar' );
+		
+		endif; ?>
 
 	</section><!-- #secondary -->
+	
+	
+	<section id="tertiary" class="small-sidebar widget-area clearfix" role="complementary">
+		
+		<header class="sidebar-header clearfix">
+			
+			<?php // Display Homepage Title
+			if ( $theme_options['sidebar_small_title'] <> '' ) : ?>		
+			
+				<h1 class="sidebar-title"><?php echo wp_kses_post( $theme_options['sidebar_small_title'] ); ?></h1>
+				
+			<?php else : ?>
+				
+				<h1 class="sidebar-title"><?php esc_html_e( 'Sidebar', 'admiral' ); ?></h1>
+			
+			<?php endif; ?>
+		
+		</header>
+		
+		<?php // Check if Sidebar has widgets
+		if( is_active_sidebar( 'sidebar-small' ) ) : 
+		
+			dynamic_sidebar( 'sidebar-small' );
+
+		endif; ?>
+
+	</section><!-- #tertiary -->

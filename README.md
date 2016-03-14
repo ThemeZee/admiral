@@ -88,11 +88,11 @@ F) Licenses of bundled resources
 	License: Distributed under the terms of the GPLv2 (https://www.gnu.org/licenses/gpl-2.0.html)
 	Copyright: 2015 WooThemes, http://www.woothemes.com
 	
-	5. Titillium Web Font - https://www.google.com/fonts/specimen/Titillium+Web
+	5. Open Sans Font - https://www.google.com/fonts/specimen/Titillium+Web
 	License: Distributed under the terms of the SIL Open Font License (http://scripts.sil.org/OFL)
 	Copyright: 2013 Accademia di Belle Arti di Urbino
 	
-	6. Amaranth Font - https://www.google.com/fonts/specimen/Amaranth
+	6. Raleway Font - https://www.google.com/fonts/specimen/Raleway
 	License: Distributed under the terms of the SIL Open Font License (http://scripts.sil.org/OFL)
 	Copyright: Gesine Todt
 	

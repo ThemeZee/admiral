@@ -49,28 +49,11 @@
 				</div><!-- .header-widgets -->
 			
 			</div><!-- .header-main -->
-			
-			<div id="main-navigation-wrap" class="primary-navigation-wrap">
-				
-				<nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
-					<?php 
-						// Display Main Navigation
-						wp_nav_menu( array(
-							'theme_location' => 'primary', 
-							'container' => false, 
-							'menu_class' => 'main-navigation-menu', 
-							'echo' => true, 
-							'fallback_cb' => 'admiral_default_menu')
-						);
-					?>
-				</nav><!-- #main-navigation -->
-				
-			</div>
 		
 		</header><!-- #masthead -->
 
 		<?php admiral_header_image(); ?>
 			
 		<div id="content" class="site-content container clearfix">
-		
+
 			<?php admiral_breadcrumbs(); ?>

@@ -88,8 +88,18 @@ add_action( 'after_setup_theme', 'admiral_content_width', 0 );
 function admiral_widgets_init() {
 	
 	register_sidebar( array(
-		'name' => esc_html__( 'Sidebar', 'admiral' ),
+		'name' => esc_html__( 'Main Sidebar', 'admiral' ),
 		'id' => 'sidebar',
+		'description' => esc_html__( 'Appears on posts and pages.', 'admiral' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+		'after_widget' => '</aside>',
+		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+		'after_title' => '</h3></div>',
+	));
+	
+	register_sidebar( array(
+		'name' => esc_html__( 'Small Sidebar', 'admiral' ),
+		'id' => 'sidebar-small',
 		'description' => esc_html__( 'Appears on posts and pages except full width template.', 'admiral' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
@@ -161,7 +171,7 @@ add_action( 'wp_enqueue_scripts', 'admiral_scripts' );
 function admiral_google_fonts_url() {
     
 	// Set default Fonts
-	$font_families = array( 'Titillium Web:400,400italic,700,700italic', 'Amaranth:400,400italic,700,700italic' );
+	$font_families = array( 'Open Sans:400,400italic,700,700italic', 'Raleway:400,400italic,700,700italic' );
 
 	// Build Fonts URL
 	$query_args = array(

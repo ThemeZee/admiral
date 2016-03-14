@@ -23,17 +23,20 @@ endif;
 	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
 					
-			<?php // Display Homepage Title
-			if ( $theme_options['blog_title'] <> '' ) : ?>
+			<header class="blog-header clearfix">
+			
+				<?php // Display Homepage Title
+				if ( $theme_options['blog_title'] <> '' ) : ?>		
+				
+					<h1 class="blog-title"><?php echo wp_kses_post( $theme_options['blog_title'] ); ?></h1>
 					
-				<header class="page-header clearfix">
+				<?php else : ?>
 					
-					<h1 class="archive-title"><?php echo wp_kses_post( $theme_options['blog_title'] ); ?></h1>
-					<p class="homepage-description"><?php echo wp_kses_post( $theme_options['blog_description'] ); ?></p>
-					
-				</header>
-
-			<?php endif; ?>
+					<h1 class="blog-title"><?php echo wp_kses_post( bloginfo('description') ); ?></h1>
+				
+				<?php endif; ?>
+		
+			</header>
 			
 			<div id="homepage-posts" class="post-wrapper clearfix">
 					
@@ -52,11 +55,6 @@ endif;
 		</main><!-- #main -->
 	</section><!-- #primary -->
 	
-	<?php // Do not display Sidebar on Three Column Post Layout
-	if ( $theme_options['post_layout'] <> 'three-columns' ) :
-		
-		get_sidebar(); 
-		
-	endif; ?>
+	<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

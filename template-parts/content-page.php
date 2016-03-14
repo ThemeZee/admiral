@@ -6,15 +6,15 @@
  */
 ?>
 
+	<header class="page-header clearfix">
+			
+		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+		
+	</header>
+			
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
 		<?php the_post_thumbnail(); ?>
-		
-		<header class="entry-header">
-			
-			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-			
-		</header><!-- .entry-header -->
 
 		<div class="entry-content clearfix">
 			<?php the_content(); ?>
