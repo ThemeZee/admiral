@@ -11,22 +11,28 @@ get_header();
 
 // Get Theme Options from Database
 $theme_options = admiral_theme_options();
-
-// Display Slider
-if ( true == $theme_options['slider_magazine'] ) :
-
-	get_template_part( 'template-parts/post-slider' );
-	
-endif; 
 ?>
 		
 	<section id="primary" class="content-magazine content-single content-area">
 		<main id="main" class="site-main" role="main">
+		
+		<header class="page-header clearfix">
+				
+			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+			
+		</header>
+	
+		<?php // Display Slider
+		if ( true == $theme_options['slider_magazine'] ) :
+
+			get_template_part( 'template-parts/post-slider' );
+			
+		endif; ?>
 			
 		<?php // Display Magazine Homepage Widgets
 		if( is_active_sidebar( 'magazine-homepage' ) ) : ?>
 
-			<div id="magazine-homepage-widgets" class="widget-area clearfix">
+			<div id="magazine-homepage-widgets" class="magazine-homepage-widget-area widget-area clearfix">
 
 				<?php dynamic_sidebar( 'magazine-homepage' ); ?>
 

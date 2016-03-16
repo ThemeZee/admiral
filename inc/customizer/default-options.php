@@ -50,7 +50,7 @@ function admiral_default_options() {
 		'excerpt_length' 					=> 20,
 		'meta_date'							=> true,
 		'meta_author'						=> true,
-		'meta_category'						=> true,
+		'meta_comments'						=> true,
 		'meta_tags'							=> true,
 		'post_image_single'					=> true,
 		'post_navigation'					=> true,

@@ -372,7 +372,7 @@ html {
 }
 
 body {
-	background: #888; /* Fallback for when there is no custom background color defined. */
+	background: #e5e5e5; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote:before,
@@ -638,7 +638,7 @@ textarea {
 }
 
 .header-main {
-	padding: 3em 0;
+	padding: 2.5em 0;
 }
 
 .site-branding {
@@ -662,13 +662,25 @@ textarea {
 	padding: 0;
 	color: #303030;
 	font-family: 'Raleway', sans-serif;
-	font-size: 44px;
-	font-size: 2.75rem;
+	font-size: 40px;
+	font-size: 2.5rem;
+	font-weight: bold;
 	text-decoration: none;
 }
 
-.site-branding a:hover .site-title {
-	text-decoration: underline;
+.site-title a:link, 
+.site-title a:visited {
+	color: #303030;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.site-title a:hover,
+.site-title a:active {
+	color: #33aaee;
 }
 
 /* Header Widgets */
@@ -715,7 +727,7 @@ textarea {
 ## 10.1 - Main Navigation
 --------------------------------------------------------------*/
 .primary-navigation-wrap {
-	margin: -2em 0 2em;
+	margin: -1em 0 2em;
 }
 
 .main-navigation-menu {
@@ -732,8 +744,8 @@ textarea {
 .main-navigation-menu a {
 	display: block;
 	font-family: 'Raleway', Tahoma, Arial;
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: bold;
 	text-transform: uppercase;
 	padding: 1em;
@@ -806,7 +818,7 @@ textarea {
 	float: right;
 	display: block;
 	margin: 0;
-	padding: 0.85em 1em;
+	padding: 0.7em 1em;
 	background: none;
 }
 
@@ -967,7 +979,7 @@ textarea {
 
 .widget-title a:hover, 
 .widget-title a:active  {
-	text-decoration: underline;
+	color: #ee4444;
 }
 
 /*--------------------------------------------------------------
@@ -1028,6 +1040,10 @@ textarea {
 /*--------------------------------------------------------------
 ## 11.2 - Magazine Posts Widgets
 --------------------------------------------------------------*/
+.magazine-homepage-widget-area .widget {
+	margin: 0 0 2em;
+	padding: 0;
+}
 
 .widget-magazine-posts {
 	margin-bottom: -1em;
@@ -1050,13 +1066,17 @@ textarea {
 }
 
 .widget-magazine-posts .type-post .entry-content {
-	font-size: 17px;
-	font-size: 1.0625rem;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.widget-magazine-posts .type-post .entry-content p {
+	margin-bottom: 0.5em;
 }
 
 .widget-magazine-posts .large-post .entry-title {
-	font-size: 28px;
-	font-size: 1.75rem;
+	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 .widget-magazine-posts .medium-post {
@@ -1071,8 +1091,8 @@ textarea {
 
 .widget-magazine-posts .medium-post .entry-title,
 .widget-magazine-posts .small-post .entry-title {
-	font-size: 18px;
-	font-size: 1.125rem;
+	font-size: 15px;
+	font-size: 0.9375rem;
 }
 
 .widget-magazine-posts .small-post {
@@ -1210,11 +1230,16 @@ textarea {
 .entry-title a:visited {
 	color: #303030;
 	text-decoration: none;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .entry-title a:hover, 
 .entry-title a:active{
-	text-decoration: underline;
+	color: #33aaee;
 }
 
 .type-post .wp-post-image,
@@ -1416,7 +1441,7 @@ textarea {
 .blog-header,
 .sidebar-header,
 .archive-header {
-	margin: 0 0 2em;
+	margin: 0 0 1em;
 	padding: 0 1.25em;
 	min-height: 3.5em;
 	color: #303030;
@@ -1448,10 +1473,10 @@ textarea {
 .sidebar-title,
 .archive-title {
 	font-family: 'Raleway', Tahoma, Arial;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 15px;
+	font-size: 0.9375rem;
 	text-transform: uppercase;
-	padding: 0.8em 0 0;
+	padding: 0.95em 0 0;
 	margin: 0;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
@@ -1529,8 +1554,8 @@ textarea {
 
 /* One Column Layout */
 .post-layout-one-column .post-wrapper .type-post {
-	padding: 0 0 2em;
-	border-bottom: 1px solid #ddd;
+	padding: 0 0 1.5em;
+	border-bottom: 1px solid #eee;
 }
 
 .post-layout-one-column .post-wrapper .type-post .wp-post-image {
@@ -1609,13 +1634,12 @@ textarea {
 
 .comments-header .comments-title,
 .comment-reply-title span {
-	display: inline-block;
 	font-family: 'Raleway', Tahoma, Arial;
-	font-size: 20px;
-	font-size: 1.25rem;
-	padding: 0;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	text-transform: uppercase;
+	padding: 0.95em 0 0;
 	margin: 0;
-	color: #303030;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
@@ -1630,7 +1654,7 @@ textarea {
 .comment {
 	margin: 0 0 1.5em;
 	padding: 1.5em 0 0;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #eee;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
@@ -1725,12 +1749,17 @@ textarea {
 # 12.0 - Footer
 --------------------------------------------------------------*/
 .footer-wrap {
-	border-top: 1px solid #ddd;
+	background: #fff;
+}
+
+.site-footer {
+	background: #ee4444;
 }
 
 .site-footer .site-info {
 	float: left;
-	padding: 3em 0;
+	padding: 1em;
+	color: #fff;
 }
 
 /*--------------------------------------------------------------

@@ -7,13 +7,12 @@
  * @package Admiral
  */
 
-get_header(); 
-
-get_template_part( 'template-parts/post-slider' );
-?>
+get_header(); ?>
 
 	<section id="primary" class="content-single content-area">
 		<main id="main" class="site-main" role="main">
+			
+			<?php get_template_part( 'template-parts/post-slider' ); ?>
 			
 			<?php while (have_posts()) : the_post();
 

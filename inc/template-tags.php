@@ -11,13 +11,18 @@
 /**
  * Displays the site title in the header area
  */
-function admiral_site_title() { ?>
+function admiral_site_title() {
 
-	<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-		<h1 class="site-title"><?php bloginfo('name'); ?></h1>
-	</a>
-
-<?php
+	if ( is_home() or is_page_template( 'template-magazine.php' )  ) : ?>
+		
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	
+	<?php else : ?>
+		
+		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+	
+	<?php endif; 
+	
 }
 add_action( 'admiral_site_title', 'admiral_site_title' );
 
@@ -102,9 +107,9 @@ function admiral_entry_meta() {
 	}
 	
 	// Display categories unless user has deactivated it via settings
-	if ( true == $theme_options['meta_category'] ) {
+	if ( true == $theme_options['meta_comments'] ) {
 	
-		$postmeta .= admiral_meta_category();
+		$postmeta .= admiral_meta_comments();
 	
 	}
 		
@@ -137,18 +142,6 @@ function admiral_meta_date() {
 endif;
 
 
-if ( ! function_exists( 'admiral_meta_category' ) ):
-/**
- * Displays the category of posts
- */	
-function admiral_meta_category() { 
-
-	return '<span class="meta-category"> ' . get_the_category_list(' / ') . '</span>';
-	
-} // admiral_meta_category()
-endif;
-
-
 if ( ! function_exists( 'admiral_meta_author' ) ):
 /**
  * Displays the post author
@@ -164,6 +157,23 @@ function admiral_meta_author() {
 	return '<span class="meta-author"> ' . $author_string . '</span>';
 
 }  // admiral_meta_author()
+endif;
+
+
+if ( ! function_exists( 'admiral_meta_comments' ) ):
+/**
+ * Displays the post comments
+ */
+function admiral_meta_comments() {  
+	
+	ob_start();
+	comments_popup_link( esc_html__( 'No comments', 'admiral' ), esc_html__( 'One comment', 'admiral' ), esc_html__( '% comments', 'admiral' ) );
+	$comments_string = ob_get_contents();
+	ob_end_clean();
+	
+	return '<span class="meta-comments"> ' . $comments_string . '</span>';
+
+}  // admiral_meta_comments()
 endif;
 
 

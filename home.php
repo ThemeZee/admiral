@@ -11,13 +11,6 @@ get_header();
 
 // Get Theme Options from Database
 $theme_options = admiral_theme_options();
-
-// Display Slider
-if ( true == $theme_options['slider_blog'] ) :
-
-	get_template_part( 'template-parts/post-slider' );
-	
-endif; 
 ?>
 		
 	<section id="primary" class="content-archive content-area">
@@ -37,6 +30,13 @@ endif;
 				<?php endif; ?>
 		
 			</header>
+			
+			<?php // Display Slider
+			if ( true == $theme_options['slider_blog'] ) :
+
+				get_template_part( 'template-parts/post-slider' );
+				
+			endif; ?>
 			
 			<div id="homepage-posts" class="post-wrapper clearfix">
 					

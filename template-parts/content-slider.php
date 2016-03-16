@@ -11,7 +11,7 @@
 		<?php // Display Post Thumbnail or default thumbnail
 		if( '' != get_the_post_thumbnail() ) :
 
-			the_post_thumbnail( 'admiral-slider-image', array('class' => 'slide-image' ) );
+			the_post_thumbnail( 'post-thumbnail', array('class' => 'slide-image' ) );
 
 		else: ?>
 
@@ -21,14 +21,13 @@
 	
 		<div class="slide-content clearfix">
 
-			<?php admiral_slider_meta(); ?>
+			<?php admiral_entry_meta(); ?>
 			
-			<?php the_title( sprintf( '<h1 class="slide-title entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+			<?php the_title( sprintf( '<h2 class="slide-title entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 								
 			<div class="entry-content clearfix">
 				
 				<?php the_excerpt(); ?>
-				<?php admiral_more_link(); ?>
 			
 			</div><!-- .entry-content -->
 

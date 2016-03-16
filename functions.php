@@ -36,7 +36,7 @@ function admiral_setup() {
 	add_theme_support( 'post-thumbnails' );
 	
 	// Set detfault Post Thumbnail size
-	set_post_thumbnail_size( 850, 550, true );
+	set_post_thumbnail_size( 700, 400, true );
 
 	// Register Navigation Menu
 	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'admiral' ) );
@@ -47,7 +47,7 @@ function admiral_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'admiral_custom_background_args', array( 'default-color' => '303030' ) ) );
+	add_theme_support( 'custom-background', apply_filters( 'admiral_custom_background_args', array( 'default-color' => 'e5e5e5' ) ) );
 	
 	// Set up the WordPress core custom header feature.
 	add_theme_support( 'custom-header', apply_filters( 'admiral_custom_header_args', array(
@@ -75,7 +75,7 @@ add_action( 'after_setup_theme', 'admiral_setup' );
  * @global int $content_width
  */
 function admiral_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'admiral_content_width', 840 );
+	$GLOBALS['content_width'] = apply_filters( 'admiral_content_width', 700 );
 }
 add_action( 'after_setup_theme', 'admiral_content_width', 0 );
 
@@ -123,8 +123,8 @@ function admiral_widgets_init() {
 		'description' => esc_html__( 'Appears on Magazine Homepage template only. You can use the Magazine Posts widgets here.', 'admiral' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<div class="widget-header"><h1 class="widget-title">',
-		'after_title' => '</h1></div>',
+		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
+		'after_title' => '</h3></div>',
 	));
 	
 } // admiral_widgets_init
@@ -189,13 +189,10 @@ function admiral_google_fonts_url() {
  */
 function admiral_add_image_sizes() {
 	
-	// Add Slider Image Size
-	add_image_size( 'admiral-slider-image', 850, 500, true );
-	
 	// Add different thumbnail sizes for Magazine Posts widgets
 	add_image_size( 'admiral-thumbnail-small', 120, 80, true );
-	add_image_size( 'admiral-thumbnail-medium', 360, 230, true );
-	add_image_size( 'admiral-thumbnail-large', 600, 380, true );
+	add_image_size( 'admiral-thumbnail-medium', 280, 160, true );
+	add_image_size( 'admiral-thumbnail-large', 560, 320, true );
 	
 }
 add_action( 'after_setup_theme', 'admiral_add_image_sizes' );
