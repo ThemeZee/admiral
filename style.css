@@ -588,10 +588,10 @@ textarea {
 # 8.0 - Layout Structure
 --------------------------------------------------------------*/
 .container {
-	max-width: 1380px;
+	max-width: 1440px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 0;
+	padding: 0 2em;
 }
 
 .site-content {
@@ -623,6 +623,10 @@ textarea {
 	background: #f5f5f5;
 }
 
+.sidebar-toggle {
+	display: none;
+}
+
 /*--------------------------------------------------------------
 # 9.0 - Header
 --------------------------------------------------------------*/
@@ -632,7 +636,7 @@ textarea {
 }
 
 .header-main {
-	padding: 2.5em 0;
+	padding: 2.5em 2em;
 }
 
 .site-branding {
@@ -728,12 +732,14 @@ textarea {
 	text-decoration: none;
 	padding: 1em;
 	border-bottom: 1px solid #ddd;
+
 }
 
 
 .main-navigation-menu a:before {
+	display: inline-block;
 	margin: 0 0.3em 0 0;
-	font-size: 24px;
+	font-size: 22px;
 	line-height: 1;
 	font-family: 'Genericons';
 	-webkit-font-smoothing: antialiased;
@@ -741,7 +747,12 @@ textarea {
 	text-decoration: inherit;
 	vertical-align: top;
 	color: #ee4444;
-	content: '\f429';
+	content: '\f431';
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	transform: rotate(270deg);
 }
 
 .main-navigation-menu a:link, 
@@ -771,8 +782,7 @@ textarea {
 
 .main-navigation-menu ul a:before {
 	margin: 0.1em 0.3em 0 0;
-	font-size: 20px;
-	content: '\f421';
+	font-size: 18px;
 }
 
 .main-navigation-menu ul li ul a {
@@ -812,7 +822,7 @@ textarea {
 	-moz-osx-font-smoothing: grayscale;
 	text-decoration: inherit;
 	vertical-align: middle;
-	content: '\f510';
+	content: '\f431';
 	color: #ee4444;
 }
 
@@ -822,7 +832,7 @@ textarea {
 }
 
 .main-navigation-menu .submenu-dropdown-toggle.active:before {
-	content: '\f50e';
+	content: '\f432';
 }
 
 .main-navigation-menu ul li .submenu-dropdown-toggle {
@@ -1719,18 +1729,18 @@ textarea {
 	background: #fff;
 }
 
-.site-footer {
+.footer-content {
 	background: #ee4444;
 }
 
-.site-footer a:link,
-.site-footer a:visited {
+.footer-content a:link,
+.footer-content a:visited {
 	color: #fff;
 }
 
-.site-footer .site-info {
+.footer-content .site-info {
 	float: left;
-	padding: 1em;
+	padding: 1em 2em;
 	color: #fff;
 }
 
@@ -1831,42 +1841,74 @@ object {
 /*--------------------------------------------------------------
 ## 14.1 - Desktop X-Large ( < 1200px )
 --------------------------------------------------------------*/
-@media only screen and (max-width: 85em) {
-
-	.site {
-		padding: 0 3em;
-	}
+@media only screen and (max-width: 80em) {
 	
 	.site-content {
-		padding: 2em 0 1em;
-	}
-	
-	.content-area {
-		padding-right: 3em;
-	}
-	
-	.header-main,
-	.site-footer .site-info {
-		padding: 2em 0;
-	}
-	
-	.widget,
-	.page-header, 
-	.type-post, 
-	.type-page, 
-	.type-attachment,
-	.post-pagination,
-	.comments-area {
-		margin-bottom: 2em;
-	}
-	
-	/* Multiple Post Columns */
-	.post-layout-columns .post-wrapper {
-		margin-right: -2em;
+		position: relative;
 	}
 
-	.post-layout-columns .post-wrapper .post-column {
-		padding-right: 2em;
+	.content-area {
+		width: 70%;
+	}
+
+	.main-sidebar {
+		width: 30%;
+	}
+	
+	.blog-header,
+	.archive-header,
+	.page-header {
+		margin-right: 2rem;
+	}
+	
+	.small-sidebar .sidebar-header .sidebar-title {
+		margin-right: 3rem;
+	}
+	
+	.small-sidebar-toggle {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 2rem;
+		z-index: 300;
+		padding: 0.95rem 1.25rem;
+		min-height: 3.5rem;
+		background: #33aaee;
+	}
+	
+	.small-sidebar-toggle:hover,
+	.small-sidebar-toggle:active,
+	.small-sidebar-toggle:focus {
+		background: #33aaee;
+	}
+	
+	.small-sidebar-toggle:after {
+		float: left;
+		display: inline-block;
+		font-size: 24px;
+		line-height: 1;
+		font-family: 'Genericons';
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-decoration: inherit;
+		vertical-align: middle;
+		content: '\f510';
+		color: #fff;
+	}
+	
+	.small-sidebar-toggle.active:after {
+		content: '\f50e';
+	}
+	
+	.small-sidebar {
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 2em;
+		width: 80%;
+		height: 100%;
+		overflow: hidden;
+		z-index: 200;
 	}
 
 }
@@ -1878,32 +1920,6 @@ object {
 
 	.header-widget {
 		max-width: 70%;
-	}
-	
-	.site-title {
-		font-size: 40px;
-		font-size: 2.5rem;
-	}
-	
-	.page-title, 
-	.entry-title {
-		font-size: 32px;
-		font-size: 2rem;
-	}
-	
-	.post-wrapper .type-post .entry-title {
-		font-size: 24px;
-		font-size: 1.5rem;
-	}
-		
-	/* One Column Layout */
-	.post-layout-one-column .post-wrapper .type-post .wp-post-image {
-		max-width: 40%;
-	}
-	
-	.post-layout-one-column .post-wrapper .type-post .entry-content {
-		font-size: 16px;
-		font-size: 1rem;
 	}
 	
 	/* Magazine Post Widgets */
@@ -1945,17 +1961,64 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
 	
-	.content-area, 
-	.site-content .content-fullwidth {
-		float: none;
+	.content-area {
 		width: 100%;
-		padding: 0;
 	}
 	
-	.sidebar {
-		float: none;
-		padding: 0;
-		width: 100%;
+	.blog-header,
+	.archive-header,
+	.page-header {
+		margin-left: 2rem;
+	}
+	
+	.main-sidebar .sidebar-header .sidebar-title {
+		margin-left: 3rem;
+	}
+	
+	.main-sidebar-toggle {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 2rem;
+		z-index: 300;
+		padding: 0.95rem 1.25rem;
+		min-height: 3.5rem;
+		background: #ee4444;
+	}
+	
+	.main-sidebar-toggle:hover,
+	.main-sidebar-toggle:active,
+	.main-sidebar-toggle:focus {
+		background: #ee4444;
+	}
+	
+	.main-sidebar-toggle:after {
+		float: left;
+		display: inline-block;
+		font-size: 24px;
+		line-height: 1;
+		font-family: 'Genericons';
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-decoration: inherit;
+		vertical-align: middle;
+		content: '\f419';
+		color: #fff;
+	}
+	
+	.main-sidebar-toggle.active:after {
+		content: '\f406';
+	}
+	
+	.main-sidebar {
+		display: none;
+		position: absolute;
+		top: 0;
+		right: left;
+		width: 90%;
+		height: 100%;
+		overflow: hidden;
+		z-index: 200;
 	}
 	
 	.header-main {
@@ -1986,12 +2049,6 @@ object {
 		max-width: 300px;
 	}
 
-	.page-title, 
-	.entry-title {
-		font-size: 36px;
-		font-size: 2.25rem;
-	}
-	
 	.post-wrapper .type-post .entry-title {
 		font-size: 28px;
 		font-size: 1.75rem;
@@ -2010,204 +2067,6 @@ object {
 	/* Three Column Layout */
 	.post-layout-three-columns .post-wrapper .post-column {
 		width: 50%;
-	}
-	
-	/*** Mobile Main Navigation ***/
-	
-	/* Reset */
-	.primary-navigation {
-		margin: 0;
-	}
-	
-	.primary-navigation, 
-	.main-navigation-menu li {
-		float: none;
-		position: static;
-	}
-	
-	.main-navigation-menu ul {
-		position: static;
-		display: block;
-	}
-	
-	.main-navigation-menu ul a {
-		width: auto;
-		float: none;
-	}
-	
-	.main-navigation-menu li ul ul {
-		margin-left: 0;
-	}
-	
-	.main-navigation-menu li:hover ul ul, 
-	.main-navigation-menu li:hover ul ul ul, 
-	.main-navigation-menu li:hover ul ul ul ul,
-	.main-navigation-menu li:hover ul, 
-	.main-navigation-menu li li:hover ul, 
-	.main-navigation-menu li li li:hover ul,
-	.main-navigation-menu li li li li:hover ul {
-		display: inline;
-	}
-	
-	.main-navigation-menu > .menu-item-has-children > a:after,
-	.main-navigation-menu ul .menu-item-has-children > a:after {
-		display: none;
-	}
-	
-	/* Main Navigation Toggle */
-	.main-navigation-toggle {
-		float: left;
-		display: inline-block;
-		margin: -1px 0 0;
-		padding: 0.8em 1em 1em;
-		border-top: 0.3em solid #303030;
-		color: #303030;
-		background: #fff;
-	}
-	
-	.main-navigation-toggle:hover,
-	.main-navigation-toggle:focus,
-	.main-navigation-toggle:active {
-		background: none;
-	}
-	
-	.main-navigation-toggle:hover,
-	.main-navigation-toggle:active {
-		cursor: pointer;
-		color: #999;
-	}
-	
-	.main-navigation-toggle:before {
-		float: left;
-		display: inline-block;
-		margin: 0.15em 0.5em 0 0;
-		font-size: 24px;
-		line-height: 1;
-		font-family: 'Genericons';
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-decoration: inherit;
-		vertical-align: top;
-		content: '\f419';
-		color: #303030;
-	}
-	
-	.main-navigation-toggle:active:before,
-	.main-navigation-toggle:hover:before {
-		color: #999;
-	}
-	
-	/* Main Navigation Menu */
-	.primary-navigation {
-		padding: 0;
-	}
-	
-	.main-navigation-menu {
-		float: left;
-		width: 100%;
-		display: none;
-		margin: 0;
-		padding: 0;
-		background: #303030;
-	}
-	
-	.main-navigation-menu li {
-		margin: 0;
-	}
-	
-	.main-navigation-menu a {
-		display: block;
-		clear: left;
-		padding: 1em 1.5em;
-		border: none;
-		border-bottom: 1px solid rgba(255,255,255,0.1);
-	}
-	
-	.main-navigation-menu li:last-child a {
-		border-bottom: none;
-	}
-	
-	.main-navigation-menu a:link, 
-	.main-navigation-menu a:visited {
-		color: #fff;
-	}
-
-	.main-navigation-menu a:hover,
-	.main-navigation-menu a:active {
-		background: rgba(255,255,255,0.1);
-	}
-
-	.main-navigation-menu ul {
-		float: none;
-		width: 100%;
-		border-top: 1px solid rgba(255,255,255,0.1);
-	}
-	
-	.main-navigation-menu ul a {
-		display: block;
-		width: 100%;
-		padding-left: 3em;
-	}
-	
-	.main-navigation-menu ul li ul a {
-		padding-left: 4em;
-	}
-	
-	.main-navigation-menu ul li ul li ul a {
-		padding-left: 5em;
-	}
-	
-	.main-navigation-menu ul li ul li ul li ul a {
-		padding-left: 6em;
-	}
-	
-	.main-navigation-menu ul li:last-child a {
-		border-bottom: 1px solid rgba(255,255,255,0.1);
-	}
-	
-	.main-navigation-menu li.current-menu-item > a {
-		border-color: rgba(255,255,255,0.1);
-	}
-	
-	/* Mobile Submenu Dropdowns */
-	.main-navigation-menu .submenu-dropdown-toggle {
-		float: right;
-		display: block;
-		margin: 0;
-		padding: 0.85em 1.2em;
-	}
-	
-	.main-navigation-menu .submenu-dropdown-toggle:hover {
-		cursor: pointer;
-	}
-	
-	.main-navigation-menu .submenu-dropdown-toggle:before {
-		font-size: 32px;
-		line-height: 1;
-		font-family: 'Genericons';
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-decoration: inherit;
-		vertical-align: middle;
-		content: '\f431';
-		color: #fff;
-	}
-	
-	.main-navigation-menu .submenu-dropdown-toggle:hover,
-	.main-navigation-menu .submenu-dropdown-toggle:active {
-		background: rgba(255,255,255,0.1);
-	}
-	
-	.main-navigation-menu .submenu-dropdown-toggle.active:before {
-		content: '\f432';
-	}
-	
-	.main-navigation-menu ul .submenu-dropdown-toggle {
-		padding: 0.55em 1em;
-	}
-	
-	.main-navigation-menu ul .submenu-dropdown-toggle:before {
-		font-size: 24px;
 	}
 	
 	/* Magazine Post Widgets */
@@ -2243,14 +2102,20 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
 	
-	.site {
-		padding: 0 2em;
+	.site-content,
+	.site-footer {
+		padding-left: 0;
+		padding-right: 0;
 	}
 	
-	.page-title, 
-	.entry-title {
-		font-size: 32px;
-		font-size: 2rem;
+	.main-sidebar,
+	.main-sidebar-toggle {
+		left: 0;
+	}
+	
+	.small-sidebar,
+	.small-sidebar-toggle {
+		right: 0;
 	}
 	
 	.post-wrapper .type-post .entry-title {
@@ -2298,6 +2163,31 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
 	
+	.blog-header,
+	.archive-header,
+	.page-header {
+		margin-right: -2rem;
+	}
+	
+	.small-sidebar .sidebar-header .sidebar-title {
+		margin-right: 0;
+	}
+	
+	.small-sidebar-toggle {
+		display: none;
+	}
+	
+	.small-sidebar {
+		display: block !important;
+		position: static;
+		top: auto;
+		right: auto;
+		max-width: 100% !important;
+		width: 100%;
+		height: auto;
+		overflow: auto;
+	}
+	
 	.type-post .wp-post-image,
 	.type-page .wp-post-image {
 		margin: 0;
@@ -2325,13 +2215,6 @@ object {
 	.post-layout-two-columns .post-wrapper .post-column, 
 	.post-layout-three-columns .post-wrapper .post-column {
 		width: 100%;
-	}
-
-	.page-title, 
-	.entry-title,
-	.post-wrapper .type-post .entry-title {
-		font-size: 28px;
-		font-size: 1.75rem;
 	}
 	
 	.entry-content {
@@ -2396,13 +2279,6 @@ object {
 	.site-branding .site-title {
 		font-size: 36px;
 		font-size: 2.25rem;
-	}
-	
-	.page-title, 
-	.entry-title,
-	.post-wrapper .type-post .entry-title {
-		font-size: 24px;
-		font-size: 1.5rem;
 	}
 	
 	.alignright, .alignleft {
@@ -2473,11 +2349,22 @@ object {
 # 16.0 - Media Query Fixes
 --------------------------------------------------------------*/
 
-/* Ensure navigation is visible on desktop view */
-@media only screen and (min-width: 60em) {
+/* Ensure small sidebar is visible on desktop view */
+@media only screen and (min-width: 80.01em) {
 	
-	.main-navigation-menu {
+	.small-sidebar {
 		display: block !important;
+		max-width: 100% !important;
+	}
+	
+}
+
+/* Ensure main sidebar is visible on desktop view */
+@media only screen and (min-width: 60.01em) {
+	
+	.main-sidebar {
+		display: block !important;
+		max-width: 100% !important;
 	}
 	
 }

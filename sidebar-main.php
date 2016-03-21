@@ -24,7 +24,7 @@ $theme_options = admiral_theme_options();
 
 		<div id="main-navigation-wrap" class="primary-navigation-wrap">
 			
-			<nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
+			<nav id="main-navigation" class="primary-navigation navigation clearfix" role="navigation">
 				<?php 
 					// Display Main Navigation
 					wp_nav_menu( array(

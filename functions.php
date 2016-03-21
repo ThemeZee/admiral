@@ -36,7 +36,7 @@ function admiral_setup() {
 	add_theme_support( 'post-thumbnails' );
 	
 	// Set detfault Post Thumbnail size
-	set_post_thumbnail_size( 700, 400, true );
+	set_post_thumbnail_size( 820, 460, true );
 
 	// Register Navigation Menu
 	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'admiral' ) );
@@ -67,7 +67,7 @@ add_action( 'after_setup_theme', 'admiral_setup' );
  * @global int $content_width
  */
 function admiral_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'admiral_content_width', 700 );
+	$GLOBALS['content_width'] = apply_filters( 'admiral_content_width', 800 );
 }
 add_action( 'after_setup_theme', 'admiral_content_width', 0 );
 
@@ -144,6 +144,9 @@ function admiral_scripts() {
 	
 	// Passing Parameters to navigation.js
 	wp_localize_script( 'admiral-jquery-navigation', 'admiral_menu_title', esc_html__( 'Navigation', 'admiral' ) );
+	
+	// Register and enqueue sidebar.js
+	wp_enqueue_script( 'admiral-jquery-sidebar', get_template_directory_uri() .'/js/sidebar.js', array('jquery') );
 	
 	// Register and Enqueue Google Fonts
 	wp_enqueue_style( 'admiral-default-fonts', admiral_google_fonts_url(), array(), null );
