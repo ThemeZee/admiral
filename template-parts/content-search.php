@@ -6,7 +6,7 @@
  */
 ?>
 
-		<div class="post-column clearfix">
+	<div class="post-column clearfix">
 	
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
@@ -18,10 +18,7 @@
 
 			<div class="entry-content entry-excerpt clearfix">
 				<?php the_excerpt(); ?>
-				
 			</div><!-- .entry-content -->
-			
-			<div class="read-more"><?php admiral_more_link(); ?></div>
 		
 		</article>
 		

@@ -12,6 +12,8 @@
 		
 	</header>
 	
+	<?php admiral_breadcrumbs(); ?>
+	
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
 		<?php admiral_post_image_single(); ?>

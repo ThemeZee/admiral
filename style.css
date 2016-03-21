@@ -8,7 +8,7 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: admiral
-Tags: two-columns, light, blue, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, red, silver, white, green, gray
+Tags: three-columns, light, blue, custom-background, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, two-columns, black, red, silver, white, green, gray
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -54,10 +54,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	14.8 - Mobile Large ( < 560px )
 	14.9 - Mobile Medium ( < 480px )
 	14.10 - Mobile Small ( < 320px )
-15.0 - Theme Option Styles
-	15.1 - Sidebar Left Layout
-	15.2 - Sticky Header
-16.0 - Media Query Fixes
+15.0 - Media Query Fixes
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -433,7 +430,7 @@ table {
 
 a {
 	color: #ee4444;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:link,
@@ -445,6 +442,7 @@ a:hover,
 a:focus,
 a:active {
 	color: #303030;
+	text-decoration: none;
 }
 
 a:focus {
@@ -465,8 +463,11 @@ input[type="reset"],
 input[type="submit"] {
 	margin: 0;
 	padding: 0.6em 1em;
-	font-size: 17px;
-	font-size: 1.0625rem;
+	font-family: 'Raleway', Tahoma, Arial;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	font-weight: bold;
+	text-transform: uppercase;
 	color: #fff;
 	background: #ee4444;
 	border: none;
@@ -695,23 +696,6 @@ textarea {
 	margin: 0 0 0.5em;
 }
 
-.header-widget img {
-	margin-top: -1em;
-}
-
-/* Custom Header Image */
-.header-image {
-	margin: 2em 0 0;
-	text-align: center;
-}
-
-.header-image img {
-	max-width: 1230px;
-	vertical-align: top;
-	width: 100%;
-	height: auto;
-}
-
 /*--------------------------------------------------------------
 # 10.0 - Navigation
 --------------------------------------------------------------*/
@@ -741,6 +725,7 @@ textarea {
 	font-size: 0.875rem;
 	font-weight: bold;
 	text-transform: uppercase;
+	text-decoration: none;
 	padding: 1em;
 	border-bottom: 1px solid #ddd;
 }
@@ -963,6 +948,11 @@ textarea {
 /* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
+}
+
+.widget a:link, 
+.widget a:visited  {
+	text-decoration: none;
 }
 
 .widget-title a:link, 
@@ -1274,6 +1264,7 @@ textarea {
 .entry-meta a:link, 
 .entry-meta a:visited {
 	color: #999;
+	text-decoration: none;
 }
 
 .entry-meta a:hover, 
@@ -1485,14 +1476,16 @@ textarea {
 	word-wrap: break-word;
 }
 
-.homepage-description,
-.archive-description p {
-	margin-bottom: 0;
+.blog-title a,
+.page-title a,
+.sidebar-title a,
+.archive-title a {
+	text-decoration: none;
 }
 
 /* Breadcrumbs */
 .breadcrumbs {
-	margin: 0 0 1em;
+	margin: -0.5em 0 1.5em;
 	padding: 0;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
@@ -1655,6 +1648,7 @@ textarea {
 
 .comment-meta .comment-metadata a {
 	margin-right: 1em;
+	text-decoration: none;
 }
 
 .comment-content {
@@ -1727,6 +1721,11 @@ textarea {
 
 .site-footer {
 	background: #ee4444;
+}
+
+.site-footer a:link,
+.site-footer a:visited {
+	color: #fff;
 }
 
 .site-footer .site-info {

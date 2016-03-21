@@ -131,6 +131,7 @@ html[xmlns] .zeeflexslider .zeeslides {
 	text-align: left;
 	color #303030;
 	font-size: 0;
+	text-decoration: none;
 	cursor: pointer;
 	z-index: 10;
 }

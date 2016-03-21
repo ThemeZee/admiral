@@ -11,6 +11,8 @@
 		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 		
 	</header>
+	
+	<?php admiral_breadcrumbs(); ?>
 			
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		

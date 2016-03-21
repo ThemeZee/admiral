@@ -19,51 +19,54 @@ $theme_options = admiral_theme_options();
 			<header class="page-header">
 				
 				<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'admiral' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				<p><?php get_search_form(); ?></p>
 				
 			</header><!-- .page-header -->
 			
-		<?php if ( have_posts() ) :  ?>
-		
-			<div id="homepage-posts" class="post-wrapper clearfix">
-					
-				<?php while (have_posts()) : the_post();
+			<?php admiral_breadcrumbs(); ?>
 			
-					if ( 'post' == get_post_type() ) :
+			<p><?php get_search_form(); ?></p>
+			
+			<?php if ( have_posts() ) :  ?>
 		
-						get_template_part( 'template-parts/content' );
-				
-					else :
-					
-						get_template_part( 'template-parts/content', 'search' );
+				<div id="homepage-posts" class="post-wrapper clearfix">
 						
-					endif;
-			
-				endwhile; ?>
-			
-			</div>
-		
-			<?php admiral_pagination(); ?>
-
-		<?php else : ?>
-
-			<div class="no-matches type-page">
+					<?php while (have_posts()) : the_post();
 				
-				<header class="entry-header">
-		
-					<h1 class="page-title"><?php esc_html_e( 'No matches', 'admiral' ); ?></h1>
+						if ( 'post' == get_post_type() ) :
+			
+							get_template_part( 'template-parts/content' );
 					
-				</header><!-- .entry-header -->
+						else :
+						
+							get_template_part( 'template-parts/content', 'search' );
+							
+						endif;
 				
-				<div class="entry-content">
-					
-					<p><?php esc_html_e( 'Please try again, or use the navigation menus to find what you search for.', 'admiral' ); ?></p>
+					endwhile; ?>
 				
 				</div>
-				
-			</div>
+			
+				<?php admiral_pagination(); ?>
 
-		<?php endif; ?>
+			<?php else : ?>
+
+				<div class="no-matches type-page">
+					
+					<header class="entry-header">
+			
+						<h1 class="page-title"><?php esc_html_e( 'No matches', 'admiral' ); ?></h1>
+						
+					</header><!-- .entry-header -->
+					
+					<div class="entry-content">
+						
+						<p><?php esc_html_e( 'Please try again, or use the navigation menus to find what you search for.', 'admiral' ); ?></p>
+					
+					</div>
+					
+				</div>
+
+			<?php endif; ?>
 			
 		</main><!-- #main -->
 	</section><!-- #primary -->

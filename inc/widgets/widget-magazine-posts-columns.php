@@ -205,7 +205,6 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 							
 						<div class="entry-content">
 							<?php the_excerpt(); ?>
-							<?php admiral_more_link(); ?>
 						</div><!-- .entry-content -->
 
 					</article>

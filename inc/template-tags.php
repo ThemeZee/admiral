@@ -27,47 +27,6 @@ function admiral_site_title() {
 add_action( 'admiral_site_title', 'admiral_site_title' );
 
 
-if ( ! function_exists( 'admiral_header_image' ) ):
-/**
- * Displays the custom header image below the navigation menu
- */
-function admiral_header_image() {
-	
-	// Get theme options from database
-	$theme_options = admiral_theme_options();	
-	
-	// Display featured image as header image on static pages
-	if( get_header_image() ) : 
-
-		// Hide header image on front page
-		if ( true == $theme_options['custom_header_hide'] and is_front_page() ) {
-			return;
-		}
-		?>
-		
-		<div id="headimg" class="header-image">
-			
-			<?php // Check if custom header image is linked
-			if( $theme_options['custom_header_link'] <> '' ) : ?>
-			
-				<a href="<?php echo esc_url( $theme_options['custom_header_link'] ); ?>">
-					<img src="<?php echo get_header_image(); ?>" />
-				</a>
-				
-			<?php else : ?>
-			
-				<img src="<?php echo get_header_image(); ?>" />
-				
-			<?php endif; ?>
-			
-		</div>
-	
-	<?php 
-	endif;
-}
-endif;
-
-
 if ( ! function_exists( 'admiral_post_image_single' ) ):
 /**
  * Displays the featured image on single posts
@@ -226,19 +185,6 @@ function admiral_entry_tags() {
 	endif;
 
 } // admiral_entry_tags()
-endif;
-
-
-if ( ! function_exists( 'admiral_more_link' ) ):
-/**
- * Displays the more link on posts
- */
-function admiral_more_link() { ?>
-
-	<a href="<?php echo esc_url( get_permalink() ) ?>" class="more-link"><?php esc_html_e( 'Continue reading &raquo;', 'admiral' ); ?></a>
-
-<?php
-}
 endif;
 
 

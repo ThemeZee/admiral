@@ -9,14 +9,16 @@ get_header(); ?>
 
 	<section id="primary" class="content-single content-area">
 		<main id="main" class="site-main" role="main">
-
-			<div class="error-404 not-found type-page">
-			
-				<header class="entry-header">
 		
-					<h1 class="page-title"><?php esc_html_e( '404: Page not found', 'admiral' ); ?></h1>
-					
-				</header><!-- .entry-header -->
+			<header class="page-header">
+
+				<h1 class="page-title"><?php esc_html_e( '404: Page not found', 'admiral' ); ?></h1>
+				
+			</header><!-- .page-header -->
+			
+			<?php admiral_breadcrumbs(); ?>
+						
+			<div class="error-404 not-found type-page">
 				
 				<div class="entry-content clearfix">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search or one of the links below?', 'admiral' ); ?></p>

@@ -51,9 +51,5 @@
 			</div><!-- .header-main -->
 		
 		</header><!-- #masthead -->
-
-		<?php admiral_header_image(); ?>
 			
 		<div id="content" class="site-content container clearfix">
-
-			<?php admiral_breadcrumbs(); ?>

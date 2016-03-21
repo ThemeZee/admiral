@@ -27,6 +27,8 @@ $theme_options = admiral_theme_options();
 		
 			</header>
 			
+			<?php admiral_breadcrumbs(); ?>
+			
 			<?php // Display Slider
 			if ( true == $theme_options['slider_blog'] ) :
 

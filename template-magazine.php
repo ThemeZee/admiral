@@ -22,13 +22,15 @@ $theme_options = admiral_theme_options();
 			
 		</header>
 	
+		<?php admiral_breadcrumbs(); ?>
+		
 		<?php // Display Slider
 		if ( true == $theme_options['slider_magazine'] ) :
 
 			get_template_part( 'template-parts/post-slider' );
 			
 		endif; ?>
-			
+		
 		<?php // Display Magazine Homepage Widgets
 		if( is_active_sidebar( 'magazine-homepage' ) ) : ?>
 
