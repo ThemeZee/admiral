@@ -23,32 +23,11 @@ function admiral_customize_register_general_settings( $wp_customize ) {
 		)
 	);
 	
-	// Add Settings and Controls for Layout
-	$wp_customize->add_setting( 'admiral_theme_options[layout]', array(
-        'default'           => 'right-sidebar',
-		'type'           	=> 'option',
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'admiral_sanitize_select'
-		)
-	);
-    $wp_customize->add_control( 'admiral_theme_options[layout]', array(
-        'label'    => esc_html__( 'Theme Layout', 'admiral' ),
-        'section'  => 'admiral_section_general',
-        'settings' => 'admiral_theme_options[layout]',
-        'type'     => 'radio',
-		'priority' => 1,
-        'choices'  => array(
-            'left-sidebar' => esc_html__( 'Left Sidebar', 'admiral' ),
-            'right-sidebar' => esc_html__( 'Right Sidebar', 'admiral' )
-			)
-		)
-	);
-	
-	// Add Homepage Title
+	// Add Blog Title
 	$wp_customize->add_setting( 'admiral_theme_options[blog_title]', array(
-        'default'           => '',
+        'default'           => wp_kses_post( get_bloginfo('description') ),
 		'type'           	=> 'option',
-        'transport'         => 'refresh',
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'wp_kses_post'
 		)
 	);
@@ -57,24 +36,41 @@ function admiral_customize_register_general_settings( $wp_customize ) {
         'section'  => 'admiral_section_general',
         'settings' => 'admiral_theme_options[blog_title]',
         'type'     => 'text',
-		'priority' => 3
+		'priority' => 1
 		)
 	);
 	
-	// Add Homepage Title
-	$wp_customize->add_setting( 'admiral_theme_options[blog_description]', array(
-        'default'           => '',
+	// Add Main Sidebar Title
+	$wp_customize->add_setting( 'admiral_theme_options[sidebar_main_title]', array(
+        'default'           => esc_html__( 'Navigation', 'admiral' ),
 		'type'           	=> 'option',
-        'transport'         => 'refresh',
+        'transport'         => 'postMessage',
         'sanitize_callback' => 'wp_kses_post'
 		)
 	);
-    $wp_customize->add_control( 'admiral_theme_options[blog_description]', array(
-        'label'    => esc_html__( 'Blog Description', 'admiral' ),
+    $wp_customize->add_control( 'admiral_theme_options[sidebar_main_title]', array(
+        'label'    => esc_html__( 'Main Sidebar Title', 'admiral' ),
         'section'  => 'admiral_section_general',
-        'settings' => 'admiral_theme_options[blog_description]',
-        'type'     => 'textarea',
-		'priority' => 4
+        'settings' => 'admiral_theme_options[sidebar_main_title]',
+        'type'     => 'text',
+		'priority' => 2
+		)
+	);
+	
+	// Add Small Sidebar Title
+	$wp_customize->add_setting( 'admiral_theme_options[sidebar_small_title]', array(
+        'default'           => esc_html__( 'Sidebar', 'admiral' ),
+		'type'           	=> 'option',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'wp_kses_post'
+		)
+	);
+    $wp_customize->add_control( 'admiral_theme_options[sidebar_small_title]', array(
+        'label'    => esc_html__( 'Small Sidebar Title', 'admiral' ),
+        'section'  => 'admiral_section_general',
+        'settings' => 'admiral_theme_options[sidebar_small_title]',
+        'type'     => 'text',
+		'priority' => 3
 		)
 	);
 	

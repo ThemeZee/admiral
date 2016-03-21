@@ -39,8 +39,7 @@ function admiral_customize_register_post_settings( $wp_customize ) {
 		'priority' => 1,
         'choices'  => array(
             'one-column' => esc_html__( 'One Column', 'admiral' ),
-            'two-columns' => esc_html__( 'Two Columns', 'admiral' ),
-			'three-columns' => esc_html__( 'Three Columns without Sidebar', 'admiral' )
+            'two-columns' => esc_html__( 'Two Columns', 'admiral' )
 			)
 		)
 	);
@@ -96,17 +95,17 @@ function admiral_customize_register_post_settings( $wp_customize ) {
 		)
 	);
 	
-	$wp_customize->add_setting( 'admiral_theme_options[meta_category]', array(
+	$wp_customize->add_setting( 'admiral_theme_options[meta_comments]', array(
         'default'           => true,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
         'sanitize_callback' => 'admiral_sanitize_checkbox'
 		)
 	);
-    $wp_customize->add_control( 'admiral_theme_options[meta_category]', array(
-        'label'    => esc_html__( 'Display post categories', 'admiral' ),
+    $wp_customize->add_control( 'admiral_theme_options[meta_comments]', array(
+        'label'    => esc_html__( 'Display post comments', 'admiral' ),
         'section'  => 'admiral_section_post',
-        'settings' => 'admiral_theme_options[meta_category]',
+        'settings' => 'admiral_theme_options[meta_comments]',
         'type'     => 'checkbox',
 		'priority' => 5
 		)

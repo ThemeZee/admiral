@@ -22,11 +22,7 @@ $theme_options = admiral_theme_options();
 				if ( $theme_options['blog_title'] <> '' ) : ?>		
 				
 					<h1 class="blog-title"><?php echo wp_kses_post( $theme_options['blog_title'] ); ?></h1>
-					
-				<?php else : ?>
-					
-					<h1 class="blog-title"><?php echo wp_kses_post( bloginfo('description') ); ?></h1>
-				
+
 				<?php endif; ?>
 		
 			</header>

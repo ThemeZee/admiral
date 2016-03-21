@@ -622,13 +622,6 @@ textarea {
 	background: #f5f5f5;
 }
 
-/* Fullwidth Template */
-.site-content .content-fullwidth {
-	float: none;
-	width: 100%;
-	padding: 0;
-}
-
 /*--------------------------------------------------------------
 # 9.0 - Header
 --------------------------------------------------------------*/
@@ -1422,6 +1415,16 @@ textarea {
 	display: none;
 }
 
+.infinite-scroll .post-wrapper:before,
+.infinite-scroll .post-wrapper:after {
+	content: "";
+	display: table;
+}
+
+.infinite-scroll .post-wrapper:after {
+	clear: both;
+}
+
 .infinite-scroll #infinite-handle span {
 	display: inline-block;
 	margin: 0 0 3em;
@@ -1569,15 +1572,14 @@ textarea {
 	display: inline;
 }
 
-
-/* Multiple Post Columns */
-.post-layout-columns .post-wrapper {
+/* Two Column Layout */
+.post-layout-two-columns .post-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	margin-right: -2em;
 }
 
-.post-layout-columns .post-wrapper .post-column {
+.post-layout-two-columns .post-wrapper .post-column {
 	width: 50%;
 	padding-right: 2em;
 	-webkit-box-sizing: border-box;
@@ -1585,40 +1587,11 @@ textarea {
 	box-sizing: border-box;
 }
 
-.post-layout-columns .post-wrapper .post-column .type-post {
-	display: flex;
-	flex-direction: column;
-}
-
-.post-layout-columns .post-wrapper .post-column  .type-post .entry-content {
-	flex-grow: 1;
-}
-
-.post-layout-columns .post-wrapper .post-column .type-post .wp-post-image {
+.post-layout-two-columns .post-wrapper .post-column .type-post .wp-post-image {
 	margin: 0;
 }
 
-/* 2 Columns */
-.post-layout-two-columns .post-wrapper .post-column {
-	width: 50%;
-}
-
 .post-layout-two-columns .post-wrapper .post-column:nth-child(2n + 1) {
-	clear: left;
-}
-
-/* 3 Columns */
-.post-layout-three-columns .content-archive {
-	float: none;
-	width: 100%;
-	padding: 0;
-}
-
-.post-layout-three-columns .post-wrapper .post-column {
-	width: 33.3333333333333%;
-}
-
-.post-layout-three-columns .post-wrapper .post-column:nth-child(3n + 1) {
 	clear: left;
 }
 
@@ -2496,42 +2469,6 @@ object {
 	}
 
 }
-
-
-/*--------------------------------------------------------------
-# 15.0 - Theme Option Styles
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-## 15.1 - Sidebar Left Layout
---------------------------------------------------------------*/
-.sidebar-left .content-area {
-	float: right;
-	padding-right: 0;
-	padding-left: 4em;
-}
-	
-.sidebar-left .sidebar {
-	float: left;
-}
-
-@media only screen and (max-width: 85em) {
-
-	.sidebar-left .content-area {
-		padding-right: 0;
-		padding-left: 3em;
-	}
-	
-}
-
-@media only screen and (max-width: 60em) {
-	
-	.sidebar-left .content-area {
-		padding: 0;
-	}
-	
-}
-	
 
 /*--------------------------------------------------------------
 # 16.0 - Media Query Fixes

@@ -40,12 +40,9 @@ function admiral_theme_options() {
 function admiral_default_options() {
 
 	$default_options = array(
-		'custom_header_link'				=> '',
-		'custom_header_hide'				=> false,
-		'layout' 							=> 'right-sidebar',
-		'blog_title'						=> '',
-		'sidebar_main_title'				=> '',
-		'sidebar_small_title'				=> '',
+		'blog_title'						=> wp_kses_post( get_bloginfo('description') ),
+		'sidebar_main_title'				=> esc_html__( 'Navigation', 'admiral' ),
+		'sidebar_small_title'				=> esc_html__( 'Sidebar', 'admiral' ),
 		'post_layout'						=> 'one-column',
 		'excerpt_length' 					=> 20,
 		'meta_date'							=> true,

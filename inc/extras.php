@@ -30,16 +30,9 @@ function admiral_body_classes( $classes ) {
 	// Get Theme Options from Database
 	$theme_options = admiral_theme_options();
 		
-	// Switch Sidebar Layout to left
-	if ( 'left-sidebar' == $theme_options['layout'] ) {
-		$classes[] = 'sidebar-left';
-	}
-	
 	// Add Post Columns classes
 	if ( 'two-columns' == $theme_options['post_layout'] ) {
-		$classes[] = 'post-layout-two-columns post-layout-columns';
-	} elseif ( 'three-columns' == $theme_options['post_layout'] ) {
-		$classes[] = 'post-layout-three-columns post-layout-columns';
+		$classes[] = 'post-layout-two-columns';
 	} else {
 		$classes[] = 'post-layout-one-column';
 	}
