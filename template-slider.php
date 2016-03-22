@@ -12,15 +12,33 @@ get_header(); ?>
 	<section id="primary" class="content-single content-area">
 		<main id="main" class="site-main" role="main">
 			
-			<?php get_template_part( 'template-parts/post-slider' ); ?>
+			<?php while (have_posts()) : the_post(); ?>
+
+					<header class="page-header clearfix">
 			
-			<?php while (have_posts()) : the_post();
+						<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+						
+					</header>
+					
+					<?php admiral_breadcrumbs(); ?>
+					
+					<?php get_template_part( 'template-parts/post-slider' ); ?>
+							
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						
+						<?php the_post_thumbnail(); ?>
 
-				get_template_part( 'template-parts/content', 'page' );
+						<div class="entry-content clearfix">
+							<?php the_content(); ?>
+							<!-- <?php trackback_rdf(); ?> -->
+							<div class="page-links"><?php wp_link_pages(); ?></div>	
+						</div><!-- .entry-content -->
+
+					</article>
 				
-				comments_template();
+				<?php comments_template(); ?>
 
-			endwhile; ?>
+			<?php endwhile; ?>
 		
 		</main><!-- #main -->
 	</section><!-- #primary -->

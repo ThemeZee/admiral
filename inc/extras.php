@@ -70,7 +70,7 @@ add_filter('excerpt_length', 'admiral_excerpt_length');
  * @return int
  */
 function admiral_magazine_posts_excerpt_length($length) {
-    return 12;
+    return 20;
 }
 
 
@@ -81,9 +81,7 @@ function admiral_magazine_posts_excerpt_length($length) {
  * @return string
  */
 function admiral_excerpt_more( $more_text ) {
-	
 	return '';
-
 }
 add_filter('excerpt_more', 'admiral_excerpt_more');
 

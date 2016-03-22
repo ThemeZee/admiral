@@ -88,27 +88,35 @@ F) Licenses of bundled resources
 	License: Distributed under the terms of the GPLv2 (https://www.gnu.org/licenses/gpl-2.0.html)
 	Copyright: 2015 WooThemes, http://www.woothemes.com
 	
-	5. Open Sans Font - https://www.google.com/fonts/specimen/Titillium+Web
-	License: Distributed under the terms of the SIL Open Font License (http://scripts.sil.org/OFL)
-	Copyright: 2013 Accademia di Belle Arti di Urbino
+	5. Open Sans Font - https://www.google.com/fonts/specimen/Open+Sans
+	License: Distributed under the terms of the Apache License version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
+	Copyright: 2016 Steve Matteson
 	
 	6. Raleway Font - https://www.google.com/fonts/specimen/Raleway
 	License: Distributed under the terms of the SIL Open Font License (http://scripts.sil.org/OFL)
-	Copyright: Gesine Todt
+	Copyright: 2015 Matt McInerney, Pablo Impallari
 	
 	7. Images used in screenshot.jpg are all from Pixabay - http://pixabay.com
 	
-	Image 1: https://pixabay.com/en/architecture-modern-building-facade-1048092/
+	Image 1: https://pixabay.com/en/river-the-danube-fog-reflection-977476/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2015 Michael Gaida (https://pixabay.com/en/users/MichaelGaida-652234/)
+	Copyright: 2015 Lubos Houska (https://pixabay.com/en/users/LubosHouska-198496/)
 	
-	Image 2:https://pixabay.com/en/building-monument-view-cityscape-1031524/
+	Image 2: https://pixabay.com/en/hot-air-balloons-mountains-floating-1253229/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2016 Unsplash (https://pixabay.com/en/users/Unsplash-242387/)
+	Copyright: 2016 skeeze (https://pixabay.com/en/users/skeeze-272447/)
 	
-	Image 3: https://pixabay.com/en/riga-housewife-art-nouveau-1085269/
+	Image 3: https://pixabay.com/en/flowers-wedding-getting-married-1193840/
 	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
-	Copyright: 2014 Monika Neumann (https://pixabay.com/en/users/monikawl999-1744293/)
+	Copyright: 2015 Tonny Nijkrake (https://pixabay.com/en/users/TonnyNijkrake-2039791/)
+	
+	Image 4: https://pixabay.com/en/hohenschwangau-alps-alpsee-munich-532864/
+	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
+	Copyright: 2014 Adam Derewecki (https://pixabay.com/en/users/derwiki-562673/)
+	
+	Image 5: https://pixabay.com/en/crocus-garden-flowers-1261310/
+	License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
+	Copyright: 2016 bernswaelz (https://pixabay.com/en/users/bernswaelz-1728198/)
 
 ===================================
 Enjoy!

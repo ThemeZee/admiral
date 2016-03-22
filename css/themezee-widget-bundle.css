@@ -111,8 +111,11 @@
 	display: block;
 	margin: 0;
 	padding: 0.3em 0.8em;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-family: 'Raleway', Tahoma, Arial;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-weight: bold;
+	text-transform: uppercase;
 	color: #fff;
 	text-decoration: none;
 }
@@ -138,6 +141,16 @@
 	margin: 1em 0 0 0;
 }
 
+/* Small Sidebar */
+.small-sidebar .tzwb-tabbed-content .tzwb-tabnavi li a:hover, 
+.small-sidebar .tzwb-tabbed-content .tzwb-tabnavi li a:active {
+	background: #2299dd;
+	text-decoration: none;
+}
+
+.small-sidebar .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
+	background: #2299dd;
+}
 
 /*--------------------------------------------------------------
 # Social Icons Widget
@@ -162,6 +175,15 @@
 
 .tzwb-social-icons .social-icons-menu li a:hover {
 	text-decoration: none;
+	background: #303030;
+}
+
+/* Small Sidebar */
+.small-sidebar .tzwb-social-icons .social-icons-menu li a {
+	background: #2299dd;
+}
+
+.small-sidebar .tzwb-social-icons .social-icons-menu li a:hover {
 	background: #303030;
 }
 

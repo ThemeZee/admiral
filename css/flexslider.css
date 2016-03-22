@@ -92,8 +92,8 @@ html[xmlns] .zeeflexslider .zeeslides {
 .post-slider .zeeslide .slide-image {
 	width: 100%;
 	height: auto;
-	max-width: 800px;
-	max-height: 450px;
+	max-width: 820px;
+	max-height: 460px;
 	vertical-align: top;
 	margin: 0;
 }
@@ -102,11 +102,6 @@ html[xmlns] .zeeflexslider .zeeslides {
 	background: #fff;
 	padding: 1em 0 2em;
 	border-bottom: 2px solid #eee;
-}
-
-.post-slider .zeeslide .slide-content .slide-title {
-	font-size: 20px;
-	font-size: 1.25rem;
 }
 
 .post-slider-controls {
@@ -214,105 +209,10 @@ html[xmlns] .zeeflexslider .zeeslides {
 # Media Queries
 --------------------------------------------------------------*/
 
-@media only screen and (max-width: 80em) {
-	
-	.post-slider .zeeslide .slide-content .slide-title {
-		font-size: 24px;
-		font-size: 1.5rem;
-	}
-	
-	.post-slider .zeeslide .slide-content .entry-content {
-		font-size: 17px;
-		font-size: 1.0625rem;
-	}
-	
-	.post-slider .zeeslide .slide-content .entry-content .more-link {
-		display: none;
-	}
-	
-}
-
-@media only screen and (max-width: 70em) {
-	
-	.post-slider .zeeslide .slide-content .entry-content {
-		display: none;
-	}
-	
-}
-
-@media only screen and (max-width: 60em) {
-	
-	.post-slider .zeeslide .slide-image {
-		float: none;
-		width: 100%;
-		padding: 0;
-	}
-
-	.post-slider .zeeslide .slide-content {
-		float: none;
-		width: 100%;
-		padding: 1.5em 2em 2em;
-	}
-	
-	.post-slider .zeeslide .slide-content .slide-title {
-		font-size: 28px;
-		font-size: 1.75rem;
-	}
-	
-	.post-slider .zeeslide .slide-content .entry-content,
-	.post-slider .zeeslide .slide-content .entry-content .more-link {
-		display: inline-block;
-	}
-	
-	.post-slider-controls .zeeflex-direction-nav {
-		bottom: 2em;
-		right: 2em;
-	}
-	
-}
-
 @media only screen and (max-width: 30em) {
-	
-	.post-slider-wrap {
-		background: none;
-	}
-
-	.post-slider .zeeslide .slide-content .slide-title {
-		font-size: 24px;
-		font-size: 1.5rem;
-	}
-	
-	.post-slider .zeeslide .slide-content {
-		padding: 1em 0 0;
-	}
-	
-	.post-slider-controls .zeeflex-direction-nav {
-		bottom: 0;
-		right: 0;
-	}
-	
-}
-
-@media only screen and (max-width: 25em) {
 	
 	.post-slider-controls .zeeflex-control-nav {
 		display: none;
-	}
-	
-}
-
-@media only screen and (max-width: 20em) {
-	
-	.post-slider-wrap {
-		padding-bottom: 3.5em;
-	}
-	
-	.post-slider-controls .zeeflex-direction-nav {
-		left: 0;
-	}
-	
-	.post-slider-controls .zeeflex-direction-nav a {
-		margin-left: 0;
 	}
 	
 }
