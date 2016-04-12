@@ -8,7 +8,7 @@
 
 	<header class="page-header clearfix">
 			
-		<h1 class="page-title"><?php echo get_the_category_list(', '); ?></h1>
+		<h2 class="page-title"><?php echo get_the_category_list(', '); ?></h2>
 		
 	</header>
 	

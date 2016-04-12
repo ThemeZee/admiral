@@ -16,7 +16,7 @@ get_header(); ?>
 
 					<header class="page-header clearfix">
 			
-						<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+						<?php the_title( '<h2 class="page-title">', '</h2>' ); ?>
 						
 					</header>
 					
