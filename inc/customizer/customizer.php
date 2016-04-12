@@ -41,6 +41,23 @@ function admiral_customize_register_options( $wp_customize ) {
 	$wp_customize->get_control( 'background_color'  )->section   = 'background_image';
 	$wp_customize->get_section( 'background_image'  )->title     = esc_html__( 'Background', 'admiral' );
 	
+	// Add Display Site Title Setting
+	$wp_customize->add_setting( 'admiral_theme_options[site_title]', array(
+        'default'           => true,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'admiral_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'admiral_theme_options[site_title]', array(
+        'label'    => esc_html__( 'Display Site Title', 'admiral' ),
+        'section'  => 'title_tagline',
+        'settings' => 'admiral_theme_options[site_title]',
+        'type'     => 'checkbox',
+		'priority' => 10
+		)
+	);
+	
 } // admiral_customize_register_options()
 add_action( 'customize_register', 'admiral_customize_register_options' );
 

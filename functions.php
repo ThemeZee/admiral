@@ -49,6 +49,14 @@ function admiral_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'admiral_custom_background_args', array( 'default-color' => 'e5e5e5' ) ) );
 	
+	// Set up the WordPress core custom logo feature
+	add_theme_support( 'custom-logo', apply_filters( 'admiral_custom_logo_args', array(
+		'height' => 50,
+		'width' => 350,
+		'flex-height' => true,
+		'flex-width' => true,
+	) ) );
+	
 	// Add Theme Support for wooCommerce
 	add_theme_support( 'woocommerce' );
 	

@@ -7,12 +7,38 @@
  *
  * @package Admiral
  */
+
+ 
+if ( ! function_exists( 'admiral_site_logo' ) ): 
+/**
+ * Displays the site logo in the header area
+ */
+function admiral_site_logo() {
+
+	if ( function_exists( 'the_custom_logo' ) ) {
+		
+		the_custom_logo();
 	
+	} 
+	
+}
+endif;
+
+
+if ( ! function_exists( 'admiral_site_title' ) ): 
 /**
  * Displays the site title in the header area
  */
 function admiral_site_title() {
-
+	
+	// Get theme options from database
+	$theme_options = admiral_theme_options();	
+	
+	// Return early if site title is deactivated
+	if( false == $theme_options['site_title'] ) {
+		return;
+	}
+	
 	if ( is_home() or is_page_template( 'template-magazine.php' )  ) : ?>
 		
 		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -24,7 +50,7 @@ function admiral_site_title() {
 	<?php endif; 
 	
 }
-add_action( 'admiral_site_title', 'admiral_site_title' );
+endif;
 
 
 if ( ! function_exists( 'admiral_post_image_single' ) ):

@@ -33,7 +33,8 @@
 						
 				<div id="logo" class="site-branding clearfix">
 				
-					<?php do_action( 'admiral_site_title' ); ?>
+					<?php admiral_site_logo(); ?>
+					<?php admiral_site_title(); ?>
 				
 				</div><!-- .site-branding -->
 				
