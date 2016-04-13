@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Admiral\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-03-22 13:57+0100\n"
-"PO-Revision-Date: 2016-03-22 13:57+0100\n"
+"POT-Creation-Date: 2016-04-13 09:28+0100\n"
+"PO-Revision-Date: 2016-04-13 09:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -30,11 +30,11 @@ msgid ""
 "of the links below?"
 msgstr ""
 
-#: comments.php:30 inc/template-tags.php:129
+#: comments.php:30 inc/template-tags.php:155
 msgid "One comment"
 msgstr ""
 
-#: comments.php:30 inc/template-tags.php:129
+#: comments.php:30 inc/template-tags.php:155
 #, php-format
 msgid "% comments"
 msgstr ""
@@ -63,41 +63,41 @@ msgstr ""
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:83
+#: functions.php:91
 msgid "Main Sidebar"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:93
 msgid "Appears on posts and pages."
 msgstr ""
 
-#: functions.php:93
+#: functions.php:101
 msgid "Small Sidebar"
 msgstr ""
 
-#: functions.php:95
-msgid "Appears on posts and pages except full width template."
+#: functions.php:103
+msgid "Appears on posts and pages except the full width template."
 msgstr ""
 
-#: functions.php:103
+#: functions.php:111
 msgid "Header"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:113
 msgid "Appears on header area. You can use a search or ad widget here."
 msgstr ""
 
-#: functions.php:113
+#: functions.php:121
 msgid "Magazine Homepage"
 msgstr ""
 
-#: functions.php:115
+#: functions.php:123
 msgid ""
 "Appears on Magazine Homepage template only. You can use the Magazine Posts "
 "widgets here."
 msgstr ""
 
-#: functions.php:146 inc/customizer/default-options.php:44
+#: functions.php:154 inc/customizer/default-options.php:45
 #: inc/customizer/sections/customizer-general.php:45
 msgid "Navigation"
 msgstr ""
@@ -150,22 +150,22 @@ msgid ""
 "Please upgrade and try again."
 msgstr ""
 
-#: inc/template-tags.php:112
+#: inc/template-tags.php:138
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-tags.php:129
+#: inc/template-tags.php:155
 msgid "No comments"
 msgstr ""
 
-#: inc/template-tags.php:156
+#: inc/template-tags.php:182
 #, php-format
 msgctxt "post author"
 msgid "Posted by %s"
 msgstr ""
 
-#: inc/template-tags.php:287
+#: inc/template-tags.php:313
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr ""
@@ -179,15 +179,15 @@ msgstr ""
 msgid "Theme Info"
 msgstr ""
 
-#: inc/theme-info.php:49 inc/customizer/customizer.php:68
+#: inc/theme-info.php:49 inc/customizer/customizer.php:85
 msgid "Theme Links"
 msgstr ""
 
-#: inc/theme-info.php:50 inc/customizer/customizer.php:69
+#: inc/theme-info.php:50 inc/customizer/customizer.php:86
 msgid "https://themezee.com/themes/admiral/"
 msgstr ""
 
-#: inc/theme-info.php:50 inc/customizer/customizer.php:70
+#: inc/theme-info.php:50 inc/customizer/customizer.php:87
 msgid "Theme Page"
 msgstr ""
 
@@ -200,16 +200,16 @@ msgid "Theme Demo"
 msgstr ""
 
 #: inc/theme-info.php:53 inc/theme-info.php:74
-#: inc/customizer/customizer.php:71
+#: inc/customizer/customizer.php:88
 msgid "https://themezee.com/docs/admiral-documentation/"
 msgstr ""
 
 #: inc/theme-info.php:53 inc/theme-info.php:68
-#: inc/customizer/customizer.php:72
+#: inc/customizer/customizer.php:89
 msgid "Theme Documentation"
 msgstr ""
 
-#: inc/theme-info.php:54 inc/customizer/customizer.php:74
+#: inc/theme-info.php:54 inc/customizer/customizer.php:91
 msgid "Rate this theme"
 msgstr ""
 
@@ -307,7 +307,11 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/default-options.php:45
+#: inc/customizer/customizer.php:53
+msgid "Display Site Title"
+msgstr ""
+
+#: inc/customizer/default-options.php:46
 #: inc/customizer/sections/customizer-general.php:62
 msgid "Sidebar"
 msgstr ""

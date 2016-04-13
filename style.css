@@ -681,6 +681,14 @@ textarea {
 	color: #303030;
 }
 
+.site-branding .custom-logo {
+	margin: 0.25em 1em 0.25em 0;
+	padding: 0;
+	border: none;
+	vertical-align: top;
+	max-width: 100%;
+}
+
 /* Header Widgets */
 .header-widgets {
 	display: inline;
