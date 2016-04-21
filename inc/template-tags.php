@@ -75,7 +75,7 @@ endif;
 
 if ( ! function_exists( 'admiral_entry_meta' ) ):	
 /**
- * Displays the date, author and categories of a post
+ * Displays the date and comments of a post
  */
 function admiral_entry_meta() {
 
@@ -91,7 +91,7 @@ function admiral_entry_meta() {
 		
 	}
 	
-	// Display categories unless user has deactivated it via settings
+	// Display comments unless user has deactivated it via settings
 	if ( true == $theme_options['meta_comments'] ) {
 	
 		$postmeta .= admiral_meta_comments();
