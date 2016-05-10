@@ -21,7 +21,8 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 			sprintf( esc_html__( 'Magazine Posts: Boxed (%s)', 'admiral' ), wp_get_theme()->Name ), // Name
 			array( 
 				'classname' => 'admiral-magazine-posts-boxed', 
-				'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'admiral' ) 
+				'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'admiral' ),
+				'customize_selective_refresh' => true, 
 			) // Args
 		);
 

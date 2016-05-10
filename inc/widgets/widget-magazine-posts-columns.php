@@ -21,7 +21,8 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 			sprintf( esc_html__( 'Magazine Posts: 2 Columns (%s)', 'admiral' ), wp_get_theme()->Name ), // Name
 			array( 
 				'classname' => 'admiral-magazine-posts-columns', 
-				'description' => esc_html__( 'Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'admiral' ) 
+				'description' => esc_html__( 'Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'admiral' ),
+				'customize_selective_refresh' => true, 
 			) // Args
 		);
 
