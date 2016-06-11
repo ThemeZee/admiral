@@ -6,33 +6,33 @@
  *
  * @package Admiral
  */
- 
-get_header(); 
 
-// Get Theme Options from Database
+get_header();
+
+// Get Theme Options from Database.
 $theme_options = admiral_theme_options();
 ?>
-		
+
 	<section id="primary" class="content-magazine content-single content-area">
 		<main id="main" class="site-main" role="main">
-		
+
 		<header class="page-header clearfix">
-				
+
 			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-			
+
 		</header>
-	
+
 		<?php admiral_breadcrumbs(); ?>
-		
-		<?php // Display Slider
+
+		<?php // Display Slider.
 		if ( true == $theme_options['slider_magazine'] ) :
 
 			get_template_part( 'template-parts/post-slider' );
-			
+
 		endif; ?>
-		
-		<?php // Display Magazine Homepage Widgets
-		if( is_active_sidebar( 'magazine-homepage' ) ) : ?>
+
+		<?php // Display Magazine Homepage Widgets.
+		if ( is_active_sidebar( 'magazine-homepage' ) ) : ?>
 
 			<div id="magazine-homepage-widgets" class="magazine-homepage-widget-area widget-area clearfix">
 
@@ -40,23 +40,23 @@ $theme_options = admiral_theme_options();
 
 			</div><!-- #magazine-homepage-widgets -->
 
-		<?php // Display Description about Magazine Homepage Widgets when widget area is empty
-		else : 
-		
-			// Display only to users with permission
+		<?php // Display Description about Magazine Homepage Widgets when widget area is empty.
+		else :
+
+			// Display only to users with permission.
 			if ( current_user_can( 'edit_theme_options' ) ) : ?>
 
 				<p class="empty-widget-area">
 					<?php esc_html_e( 'Please go to Appearance &#8594; Widgets and add at least one widget to the "Magazine Homepage" widget area. You can use the Magazine Posts widgets to set up the theme like the demo website.', 'admiral' ); ?>
 				</p>
-				
+
 			<?php endif;
 
 		endif; ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
-	
+
 	<?php get_sidebar(); ?>
-	
+
 <?php get_footer(); ?>

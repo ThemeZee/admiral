@@ -18,51 +18,51 @@
 .zeeflex-slider a:hover,
 .zeeflex-container a:focus,
 .zeeflex-slider a:focus {
-  outline: none;
+	outline: none;
 }
 .zeeslides,
 .zeeslides > li,
 .zeeflex-control-nav,
 .zeeflex-direction-nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 .zeeflex-pauseplay span {
-  text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 /* ====================================================================================================================
  * BASE STYLES
  * ====================================================================================================================*/
 .zeeflexslider {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 .zeeflexslider .zeeslides > li {
-  display: none;
-  -webkit-backface-visibility: hidden;
+	display: none;
+	-webkit-backface-visibility: hidden;
 }
 .zeeflexslider .zeeslides img {
-  width: 100%;
-  display: block;
+	width: 100%;
+	display: block;
 }
 .zeeflexslider .zeeslides:after {
-  content: "\0020";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
+	content: "\0020";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
 }
 html[xmlns] .zeeflexslider .zeeslides {
-  display: block;
+	display: block;
 }
 * html .zeeflexslider .zeeslides {
-  height: 1%;
+	height: 1%;
 }
 .no-js .zeeflexslider .zeeslides > li:first-child {
-  display: block;
+	display: block;
 }
 
 /* ====================================================================================================================
@@ -86,7 +86,7 @@ html[xmlns] .zeeflexslider .zeeslides {
 }
 
 .zeeflex-viewport {
-  max-height: 2000px;
+	max-height: 2000px;
 }
 
 .post-slider .zeeslide .slide-image {
@@ -173,7 +173,7 @@ html[xmlns] .zeeflexslider .zeeslides {
 
 /* Control Nav */
 .post-slider-controls .zeeflex-control-nav {
-	position: absolute; 
+	position: absolute;
 	top: 1.5em;
 	left: 1.5em;
 	z-index: 99;
@@ -181,27 +181,27 @@ html[xmlns] .zeeflexslider .zeeslides {
 
 .post-slider-controls .zeeflex-control-nav li {
 	margin: 0 2px;
-	display: inline-block; 
-	zoom: 1; 
+	display: inline-block;
+	zoom: 1;
 	*display: inline;
 }
 
 .post-slider-controls .zeeflex-control-nav li a {
-	width: 25px; 
-	height: 10px; 
-	display: block; 
+	width: 25px;
+	height: 10px;
+	display: block;
 	background: rgba(255,255,255,0.5);
-	cursor: pointer; 
+	cursor: pointer;
 	text-indent: -9999px;
 }
 
-.post-slider-controls .zeeflex-control-nav li a:hover { 
+.post-slider-controls .zeeflex-control-nav li a:hover {
 	background: rgba(255,255,255,0.7);
 }
 
-.post-slider-controls .zeeflex-control-nav li a.zeeflex-active { 
+.post-slider-controls .zeeflex-control-nav li a.zeeflex-active {
 	background: rgba(255,255,255,0.9);
-	cursor: default; 
+	cursor: default;
 }
 
 
@@ -210,9 +210,9 @@ html[xmlns] .zeeflexslider .zeeslides {
 --------------------------------------------------------------*/
 
 @media only screen and (max-width: 30em) {
-	
+
 	.post-slider-controls .zeeflex-control-nav {
 		display: none;
 	}
-	
+
 }

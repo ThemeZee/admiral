@@ -7,7 +7,6 @@
  * @package Admiral
  */
 
-
 /**
  * Adds pro version description and CTA button
  *
@@ -19,23 +18,23 @@ function admiral_customize_register_upgrade_settings( $wp_customize ) {
 	$wp_customize->add_section( 'admiral_section_upgrade', array(
         'title'    => esc_html__( 'More Features', 'admiral' ),
         'priority' => 70,
-		'panel' => 'admiral_options_panel' 
+		'panel' => 'admiral_options_panel',
 		)
 	);
-	
+
 	// Add custom Upgrade Content control
 	$wp_customize->add_setting( 'admiral_theme_options[upgrade]', array(
         'default'           => '',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'esc_attr'
+        'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new Admiral_Customize_Upgrade_Control(
         $wp_customize, 'admiral_theme_options[upgrade]', array(
             'section' => 'admiral_section_upgrade',
             'settings' => 'admiral_theme_options[upgrade]',
-            'priority' => 1
+            'priority' => 1,
             )
         )
     );

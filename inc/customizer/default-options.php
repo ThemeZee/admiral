@@ -14,21 +14,13 @@
  * @return array
  */
 function admiral_theme_options() {
-    
-	// Merge Theme Options Array from Database with Default Options Array
-	$theme_options = wp_parse_args( 
-		
-		// Get saved theme options from WP database
-		get_option( 'admiral_theme_options', array() ), 
-		
-		// Merge with Default Options if setting was not saved yet
-		admiral_default_options() 
-		
-	);
 
-	// Return theme options
+	// Merge Theme Options Array from Database with Default Options Array.
+	$theme_options = wp_parse_args( get_option( 'admiral_theme_options', array() ), admiral_default_options() );
+
+	// Return theme options.
 	return $theme_options;
-	
+
 }
 
 
@@ -41,7 +33,7 @@ function admiral_default_options() {
 
 	$default_options = array(
 		'site_title'						=> true,
-		'blog_title'						=> wp_kses_post( get_bloginfo('description') ),
+		'blog_title'						=> wp_kses_post( get_bloginfo( 'description' ) ),
 		'sidebar_main_title'				=> esc_html__( 'Navigation', 'admiral' ),
 		'sidebar_small_title'				=> esc_html__( 'Sidebar', 'admiral' ),
 		'post_layout'						=> 'one-column',
@@ -59,6 +51,6 @@ function admiral_default_options() {
 		'slider_animation' 					=> 'slide',
 		'slider_speed' 						=> 7000,
 	);
-	
+
 	return $default_options;
 }

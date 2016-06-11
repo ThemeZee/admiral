@@ -7,7 +7,6 @@
  * @package Admiral
  */
 
-
 /**
  * Adds slider settings in the Customizer
  *
@@ -19,7 +18,7 @@ function admiral_customize_register_slider_settings( $wp_customize ) {
 	$wp_customize->add_section( 'admiral_section_slider', array(
         'title'    => esc_html__( 'Post Slider', 'admiral' ),
         'priority' => 60,
-		'panel' => 'admiral_options_panel' 
+		'panel' => 'admiral_options_panel',
 		)
 	);
 
@@ -28,7 +27,7 @@ function admiral_customize_register_slider_settings( $wp_customize ) {
         'default'           => '',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'esc_attr'
+        'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new Admiral_Customize_Header_Control(
@@ -36,7 +35,7 @@ function admiral_customize_register_slider_settings( $wp_customize ) {
             'label' => esc_html__( 'Activate Post Slider', 'admiral' ),
             'section' => 'admiral_section_slider',
             'settings' => 'admiral_theme_options[slider_activate]',
-            'priority' => 1
+            'priority' => 1,
             )
         )
     );
@@ -44,7 +43,7 @@ function admiral_customize_register_slider_settings( $wp_customize ) {
         'default'           => false,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'admiral_sanitize_checkbox'
+        'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[slider_magazine]', array(
@@ -52,14 +51,14 @@ function admiral_customize_register_slider_settings( $wp_customize ) {
         'section'  => 'admiral_section_slider',
         'settings' => 'admiral_theme_options[slider_magazine]',
         'type'     => 'checkbox',
-		'priority' => 2
+		'priority' => 2,
 		)
 	);
 	$wp_customize->add_setting( 'admiral_theme_options[slider_blog]', array(
         'default'           => false,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'admiral_sanitize_checkbox'
+        'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[slider_blog]', array(
@@ -67,16 +66,16 @@ function admiral_customize_register_slider_settings( $wp_customize ) {
         'section'  => 'admiral_section_slider',
         'settings' => 'admiral_theme_options[slider_blog]',
         'type'     => 'checkbox',
-		'priority' => 3
+		'priority' => 3,
 		)
 	);
-	
+
 	// Add Setting and Control for Slider Category
 	$wp_customize->add_setting( 'admiral_theme_options[slider_category]', array(
         'default'           => 0,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'absint'
+        'sanitize_callback' => 'absint',
         )
     );
     $wp_customize->add_control( new Admiral_Customize_Category_Dropdown_Control(
@@ -85,17 +84,17 @@ function admiral_customize_register_slider_settings( $wp_customize ) {
             'section' => 'admiral_section_slider',
             'settings' => 'admiral_theme_options[slider_category]',
 			'active_callback' => 'admiral_slider_activated_callback',
-            'priority' => 4
+            'priority' => 4,
             )
         )
     );
-	
+
 	// Add Setting and Control for Number of Posts
 	$wp_customize->add_setting( 'admiral_theme_options[slider_limit]', array(
         'default'           => 8,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'absint'
+        'sanitize_callback' => 'absint',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[slider_limit]', array(
@@ -104,16 +103,16 @@ function admiral_customize_register_slider_settings( $wp_customize ) {
         'settings' => 'admiral_theme_options[slider_limit]',
         'type'     => 'text',
 		'active_callback' => 'admiral_slider_activated_callback',
-		'priority' => 5
+		'priority' => 5,
 		)
 	);
-	
+
 	// Add Setting and Control for Slider Animation
 	$wp_customize->add_setting( 'admiral_theme_options[slider_animation]', array(
         'default'           => 'slide',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'admiral_sanitize_select'
+        'sanitize_callback' => 'admiral_sanitize_select',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[slider_animation]', array(
@@ -125,17 +124,17 @@ function admiral_customize_register_slider_settings( $wp_customize ) {
 		'active_callback' => 'admiral_slider_activated_callback',
         'choices'  => array(
             'slide' => esc_html__( 'Slide Effect', 'admiral' ),
-            'fade' => esc_html__( 'Fade Effect', 'admiral' )
-			)
+            'fade' => esc_html__( 'Fade Effect', 'admiral' ),
+			),
 		)
 	);
-	
+
 	// Add Setting and Control for Slider Speed
 	$wp_customize->add_setting( 'admiral_theme_options[slider_speed]', array(
         'default'           => 7000,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'absint'
+        'sanitize_callback' => 'absint',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[slider_speed]', array(
@@ -148,9 +147,9 @@ function admiral_customize_register_slider_settings( $wp_customize ) {
 		'input_attrs' => array(
 			'min'   => 1000,
 			'step'  => 100,
-		),
+			),
 		)
 	);
-	
+
 }
 add_action( 'customize_register', 'admiral_customize_register_slider_settings' );

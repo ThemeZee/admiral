@@ -5,17 +5,17 @@
  * @package Admiral
  */
 
- 
 if ( ! function_exists( 'admiral_default_menu' ) ) :
-/**
- * Display default page as navigation if no custom menu was set
- *
- */
-function admiral_default_menu() {
-	
-	echo '<ul id="menu-main-navigation" class="main-navigation-menu menu">'. wp_list_pages('title_li=&echo=0') .'</ul>';
-	
-}
+
+	/**
+	 * Display default page as navigation if no custom menu was set
+	 */
+	function admiral_default_menu() {
+
+		echo '<ul id="menu-main-navigation" class="main-navigation-menu menu">'. wp_list_pages( 'title_li=&echo=0' ) .'</ul>';
+
+	}
+
 endif;
 
 
@@ -26,11 +26,11 @@ endif;
  * @return array
  */
 function admiral_body_classes( $classes ) {
-	
-	// Get Theme Options from Database
+
+	// Get Theme Options from Database.
 	$theme_options = admiral_theme_options();
-		
-	// Add Post Columns classes
+
+	// Add Post Columns classes.
 	if ( 'two-columns' == $theme_options['post_layout'] ) {
 		$classes[] = 'post-layout-two-columns';
 	} else {
@@ -48,19 +48,19 @@ add_filter( 'body_class', 'admiral_body_classes' );
  * @param int $length Length of excerpt in number of words
  * @return int
  */
-function admiral_excerpt_length($length) {
-	
-	// Get Theme Options from Database
+function admiral_excerpt_length( $length ) {
+
+	// Get Theme Options from Database.
 	$theme_options = admiral_theme_options();
 
-	// Return Excerpt Text
-	if ( isset($theme_options['excerpt_length']) and $theme_options['excerpt_length'] >= 0 ) :
+	// Return Excerpt Text.
+	if ( isset( $theme_options['excerpt_length'] ) and $theme_options['excerpt_length'] >= 0 ) :
 		return absint( $theme_options['excerpt_length'] );
 	else :
-		return 30; // number of words
+		return 30; // Number of words.
 	endif;
 }
-add_filter('excerpt_length', 'admiral_excerpt_length');
+add_filter( 'excerpt_length', 'admiral_excerpt_length' );
 
 
 /**
@@ -69,8 +69,8 @@ add_filter('excerpt_length', 'admiral_excerpt_length');
  * @param int $length Length of excerpt in number of words
  * @return int
  */
-function admiral_magazine_posts_excerpt_length($length) {
-    return 20;
+function admiral_magazine_posts_excerpt_length( $length ) {
+	return 20;
 }
 
 
@@ -83,28 +83,26 @@ function admiral_magazine_posts_excerpt_length($length) {
 function admiral_excerpt_more( $more_text ) {
 	return '';
 }
-add_filter('excerpt_more', 'admiral_excerpt_more');
+add_filter( 'excerpt_more', 'admiral_excerpt_more' );
 
 
 /**
  * Set wrapper start for wooCommerce
- *
  */
 function admiral_wrapper_start() {
 	echo '<section id="primary" class="content-area">';
 	echo '<main id="main" class="site-main" role="main">';
 }
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-add_action('woocommerce_before_main_content', 'admiral_wrapper_start', 10);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+add_action( 'woocommerce_before_main_content', 'admiral_wrapper_start', 10 );
 
 
 /**
  * Set wrapper end for wooCommerce
- *
  */
 function admiral_wrapper_end() {
 	echo '</main><!-- #main -->';
 	echo '</section><!-- #primary -->';
 }
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-add_action('woocommerce_after_main_content', 'admiral_wrapper_end', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+add_action( 'woocommerce_after_main_content', 'admiral_wrapper_end', 10 );

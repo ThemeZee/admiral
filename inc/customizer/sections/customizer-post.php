@@ -7,7 +7,6 @@
  * @package Admiral
  */
 
-
 /**
  * Adds post settings in the Customizer
  *
@@ -19,16 +18,16 @@ function admiral_customize_register_post_settings( $wp_customize ) {
 	$wp_customize->add_section( 'admiral_section_post', array(
         'title'    => esc_html__( 'Post Settings', 'admiral' ),
         'priority' => 30,
-		'panel' => 'admiral_options_panel' 
+		'panel' => 'admiral_options_panel',
 		)
 	);
-	
+
 	// Add Post Layout Settings for archive posts
 	$wp_customize->add_setting( 'admiral_theme_options[post_layout]', array(
         'default'           => 'one-column',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'admiral_sanitize_select'
+        'sanitize_callback' => 'admiral_sanitize_select',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[post_layout]', array(
@@ -39,8 +38,8 @@ function admiral_customize_register_post_settings( $wp_customize ) {
 		'priority' => 1,
         'choices'  => array(
             'one-column' => esc_html__( 'One Column', 'admiral' ),
-            'two-columns' => esc_html__( 'Two Columns', 'admiral' )
-			)
+            'two-columns' => esc_html__( 'Two Columns', 'admiral' ),
+			),
 		)
 	);
 
@@ -49,7 +48,7 @@ function admiral_customize_register_post_settings( $wp_customize ) {
         'default'           => 20,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'absint'
+        'sanitize_callback' => 'absint',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[excerpt_length]', array(
@@ -57,16 +56,16 @@ function admiral_customize_register_post_settings( $wp_customize ) {
         'section'  => 'admiral_section_post',
         'settings' => 'admiral_theme_options[excerpt_length]',
         'type'     => 'text',
-		'priority' => 2
+		'priority' => 2,
 		)
 	);
-	
+
 	// Add Post Meta Settings
 	$wp_customize->add_setting( 'admiral_theme_options[postmeta_headline]', array(
         'default'           => '',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'esc_attr'
+        'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new Admiral_Customize_Header_Control(
@@ -74,16 +73,16 @@ function admiral_customize_register_post_settings( $wp_customize ) {
             'label' => esc_html__( 'Post Meta', 'admiral' ),
             'section' => 'admiral_section_post',
             'settings' => 'admiral_theme_options[postmeta_headline]',
-            'priority' => 3
+            'priority' => 3,
             )
         )
     );
-	
+
 	$wp_customize->add_setting( 'admiral_theme_options[meta_date]', array(
         'default'           => true,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'admiral_sanitize_checkbox'
+        'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[meta_date]', array(
@@ -91,15 +90,15 @@ function admiral_customize_register_post_settings( $wp_customize ) {
         'section'  => 'admiral_section_post',
         'settings' => 'admiral_theme_options[meta_date]',
         'type'     => 'checkbox',
-		'priority' => 4
+		'priority' => 4,
 		)
 	);
-	
+
 	$wp_customize->add_setting( 'admiral_theme_options[meta_comments]', array(
         'default'           => true,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'admiral_sanitize_checkbox'
+        'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[meta_comments]', array(
@@ -107,16 +106,16 @@ function admiral_customize_register_post_settings( $wp_customize ) {
         'section'  => 'admiral_section_post',
         'settings' => 'admiral_theme_options[meta_comments]',
         'type'     => 'checkbox',
-		'priority' => 5
+		'priority' => 5,
 		)
 	);
-	
+
 	// Add Single Post Settings
 	$wp_customize->add_setting( 'admiral_theme_options[single_post_headline]', array(
         'default'           => '',
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'esc_attr'
+        'sanitize_callback' => 'esc_attr',
         )
     );
     $wp_customize->add_control( new Admiral_Customize_Header_Control(
@@ -124,17 +123,17 @@ function admiral_customize_register_post_settings( $wp_customize ) {
             'label' => esc_html__( 'Single Posts', 'admiral' ),
             'section' => 'admiral_section_post',
             'settings' => 'admiral_theme_options[single_post_headline]',
-            'priority' => 6
+            'priority' => 6,
             )
         )
     );
-	
+
 	// Featured Image Setting
 	$wp_customize->add_setting( 'admiral_theme_options[post_image_single]', array(
         'default'           => true,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'admiral_sanitize_checkbox'
+        'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[post_image_single]', array(
@@ -142,15 +141,15 @@ function admiral_customize_register_post_settings( $wp_customize ) {
         'section'  => 'admiral_section_post',
         'settings' => 'admiral_theme_options[post_image_single]',
         'type'     => 'checkbox',
-		'priority' => 7
+		'priority' => 7,
 		)
 	);
-	
+
 	$wp_customize->add_setting( 'admiral_theme_options[meta_author]', array(
         'default'           => true,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'admiral_sanitize_checkbox'
+        'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[meta_author]', array(
@@ -158,15 +157,15 @@ function admiral_customize_register_post_settings( $wp_customize ) {
         'section'  => 'admiral_section_post',
         'settings' => 'admiral_theme_options[meta_author]',
         'type'     => 'checkbox',
-		'priority' => 8
+		'priority' => 8,
 		)
 	);
-	
+
 	$wp_customize->add_setting( 'admiral_theme_options[meta_tags]', array(
         'default'           => true,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'admiral_sanitize_checkbox'
+        'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[meta_tags]', array(
@@ -174,15 +173,15 @@ function admiral_customize_register_post_settings( $wp_customize ) {
         'section'  => 'admiral_section_post',
         'settings' => 'admiral_theme_options[meta_tags]',
         'type'     => 'checkbox',
-		'priority' => 9
+		'priority' => 9,
 		)
 	);
-	
+
 	$wp_customize->add_setting( 'admiral_theme_options[post_navigation]', array(
         'default'           => true,
 		'type'           	=> 'option',
         'transport'         => 'refresh',
-        'sanitize_callback' => 'admiral_sanitize_checkbox'
+        'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
     $wp_customize->add_control( 'admiral_theme_options[post_navigation]', array(
@@ -190,9 +189,9 @@ function admiral_customize_register_post_settings( $wp_customize ) {
         'section'  => 'admiral_section_post',
         'settings' => 'admiral_theme_options[post_navigation]',
         'type'     => 'checkbox',
-		'priority' => 10
+		'priority' => 10,
 		)
 	);
-	
+
 }
 add_action( 'customize_register', 'admiral_customize_register_post_settings' );

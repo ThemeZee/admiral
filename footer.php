@@ -6,29 +6,29 @@
  *
  * @package Admiral
  */
- 
+
 ?>
-	
+
 	</div><!-- #content -->
-	
+
 	<?php do_action( 'admiral_before_footer' ); ?>
 
 	<div id="footer" class="footer-wrap">
-	
+
 		<footer id="colophon" class="site-footer container" role="contentinfo">
 
 			<div class="footer-content clearfix">
-			
+
 				<div id="footer-text" class="site-info">
 					<?php do_action( 'admiral_footer_text' ); ?>
 				</div><!-- .site-info -->
-				
+
 				<?php do_action( 'admiral_footer_menu' ); ?>
-				
+
 			</div>
 
 		</footer><!-- #colophon -->
-		
+
 	</div>
 
 </div><!-- #page -->
