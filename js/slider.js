@@ -1,5 +1,5 @@
 /**
- * jQuery Slider JS
+ * Flexslider Setup
  *
  * Adds the Flexslider Plugin for the Featured Post Slideshow
  *

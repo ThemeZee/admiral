@@ -1,5 +1,5 @@
 /**
- * jQuery Sidebar JS
+ * Sidebar JS
  *
  * Adds a toggle icon with slide animation for the sidebar on mobile devices
  *

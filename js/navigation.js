@@ -1,8 +1,8 @@
 /**
- * jQuery Navigation Plugin
+ * Navigation Plugin
  * Includes responsiveMenu() function
  *
- * Copyright 2015 ThemeZee
+ * Copyright 2016 ThemeZee
  * Free to use under the GPLv2 and later license.
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -18,14 +18,16 @@
 	--------------------------------------------------------------*/
 	$.fn.responsiveMenu = function( options ) {
 
-		if (options === undefined) options = {};
+		if ( options === undefined ) {
+			options = {};
+		}
 
 		/* Set Defaults */
 		var defaults = {
-			menuClass: "menu",
-			toggleClass: "menu-toggle",
-			toggleText: "",
-			maxWidth: "60em"
+			menuClass: 'menu',
+			toggleClass: 'menu-toggle',
+			toggleText: '',
+			maxWidth: '60em'
 		};
 
 		/* Set Variables */
@@ -62,25 +64,25 @@
 	$( document ).ready( function() {
 
 		/* Setup Main Navigation */
-		$( "#main-navigation" ).responsiveMenu({
-			menuClass: "main-navigation-menu",
-			toggleClass: "main-navigation-toggle",
+		$( '#main-navigation' ).responsiveMenu({
+			menuClass: 'main-navigation-menu',
+			toggleClass: 'main-navigation-toggle',
 			toggleText: admiral_menu_title,
-			maxWidth: "60em"
+			maxWidth: '60em'
 		});
 
 		/* Setup Top Navigation */
-		$( "#top-navigation" ).responsiveMenu({
-			menuClass: "top-navigation-menu",
-			toggleClass: "top-navigation-toggle",
-			maxWidth: "60em"
+		$( '#top-navigation' ).responsiveMenu({
+			menuClass: 'top-navigation-menu',
+			toggleClass: 'top-navigation-toggle',
+			maxWidth: '60em'
 		});
 
 		/* Setup Footer Navigation */
-		$( "#footer-links" ).responsiveMenu({
-			menuClass: "footer-navigation-menu",
-			toggleClass: "footer-navigation-toggle",
-			maxWidth: "60em"
+		$( '#footer-links' ).responsiveMenu({
+			menuClass: 'footer-navigation-menu',
+			toggleClass: 'footer-navigation-toggle',
+			maxWidth: '60em'
 		});
 
 	} );

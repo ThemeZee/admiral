@@ -8,6 +8,9 @@
  * @package Admiral
  */
 
+/**
+ * Magazine Widget Class
+ */
 class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	/**
 	 * Widget Constructor
@@ -122,7 +125,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	 * @uses this->magazine_posts_horizontal() or this->magazine_posts_vertical()
 	 * @used-by this->widget()
 	 *
-	 * @param array $instance / Settings for this widget instance.
+	 * @param array $settings / Settings for this widget instance.
 	 */
 	function render( $settings ) {
 
@@ -153,7 +156,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	 *
 	 * @used-by this->render()
 	 *
-	 * @param array $instance / Settings for this widget instance.
+	 * @param array $settings / Settings for this widget instance.
 	 */
 	function magazine_posts_horizontal( $settings ) {
 
@@ -246,7 +249,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	 *
 	 * @used-by this->render()
 	 *
-	 * @param array $instance / Settings for this widget instance.
+	 * @param array $settings / Settings for this widget instance.
 	 */
 	function magazine_posts_vertical( $settings ) {
 
@@ -332,6 +335,8 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 	/**
 	 * Displays Entry Meta of Posts
+	 *
+	 * @param array $settings / Settings for this widget instance.
 	 */
 	function entry_meta( $settings ) {
 
@@ -360,6 +365,9 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 	/**
 	 * Displays Widget Title
+	 *
+	 * @param array $args / Parameters from widget area created with register_sidebar().
+	 * @param array $settings / Settings for this widget instance.
 	 */
 	function widget_title( $args, $settings ) {
 
@@ -482,11 +490,12 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	}
 }
 
-// Register Widget.
-add_action( 'widgets_init', 'admiral_register_magazine_posts_boxed_widget' );
-
+/**
+ * Register Widget
+ */
 function admiral_register_magazine_posts_boxed_widget() {
 
 	register_widget( 'Admiral_Magazine_Posts_Boxed_Widget' );
 
 }
+add_action( 'widgets_init', 'admiral_register_magazine_posts_boxed_widget' );

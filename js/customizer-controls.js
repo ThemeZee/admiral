@@ -8,22 +8,21 @@
 
 ( function( $ ) {
 
-	// Add Theme Links
+	// Add Theme Links.
 	if ('undefined' !== typeof admiral_theme_links) {
 
-		// Theme Links Wrapper
-		box = $( '<div class="admiral-theme-links"></div>' )
-			.css({
-				'margin-top': '14px',
-				'padding': '2px 14px 14px',
-				'line-height': '2',
-				'font-size': '14px',
-				'clear': 'both'
-			});
+		// Theme Links Wrapper.
+		box = $( '<div class="admiral-theme-links"></div>' ).css({
+			'margin-top': '14px',
+			'padding': '2px 14px 14px',
+			'line-height': '2',
+			'font-size': '14px',
+			'clear': 'both'
+		});
 
 		title = $( '<h3></h3>' ).text( admiral_theme_links.title ).css( { 'margin-bottom' : '4px' } );
 
-		// Theme Links
+		// Theme Links.
 		themePage = $( '<a class="admiral-theme-page"></a>' )
 		.attr( 'href', admiral_theme_links.themeURL )
 		.attr( 'target', '_blank' )
@@ -39,7 +38,7 @@
 		.attr( 'target', '_blank' )
 		.text( admiral_theme_links.rateLabel );
 
-		// Add Links to Box
+		// Add Links to Box.
 		content = box
 		.append( title )
 		.append( themePage ).append( "<br />" )
@@ -50,7 +49,7 @@
 			$( '#accordion-panel-admiral_options_panel .control-panel-content' ).append( content );
 		}, 2000);
 
-		// Remove accordion click event
+		// Remove accordion click event.
 		$( '.admiral-theme-links a' ).on('click', function(e) {
 			e.stopPropagation();
 		});

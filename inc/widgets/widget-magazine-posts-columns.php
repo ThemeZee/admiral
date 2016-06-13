@@ -8,6 +8,9 @@
  * @package Admiral
  */
 
+/**
+ * Magazine Widget Class
+ */
 class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 	/**
 	 * Widget Constructor
@@ -249,6 +252,8 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 	/**
 	 * Displays Entry Meta of Posts
+	 *
+	 * @param array $settings / Settings for this widget instance.
 	 */
 	function entry_meta( $settings ) {
 
@@ -277,6 +282,11 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 	/**
 	 * Displays Category Widget Title
+	 *
+	 * @param array  $args / Parameters from widget area created with register_sidebar().
+	 * @param array  $settings / Settings for this widget instance.
+	 * @param int    $category_id / ID of the selected category.
+	 * @param String $category_title / Category Title.
 	 */
 	function category_title( $args, $settings, $category_id, $category_title ) {
 
@@ -428,11 +438,12 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 	}
 }
 
-// Register Widget.
-add_action( 'widgets_init', 'admiral_register_magazine_posts_columns_widget' );
-
+/**
+ * Register Widget
+ */
 function admiral_register_magazine_posts_columns_widget() {
 
 	register_widget( 'Admiral_Magazine_Posts_Columns_Widget' );
 
 }
+add_action( 'widgets_init', 'admiral_register_magazine_posts_columns_widget' );

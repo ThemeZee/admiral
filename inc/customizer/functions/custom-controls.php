@@ -10,9 +10,12 @@
  */
 if ( class_exists( 'WP_Customize_Control' ) ) :
 
+	/**
+	 * Displays a bold label text. Used to create headlines for radio buttons and description sections.
+	 */
 	class Admiral_Customize_Header_Control extends WP_Customize_Control {
 		/**
-		 * Displays a bold label text. Used to create headlines for radio buttons and description sections.
+		 * Render Control
 		 */
 		public function render_content() {
 			?>
@@ -25,9 +28,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		}
 	}
 
+	/**
+	 * Displays a description text in gray italic font
+	 */
 	class Admiral_Customize_Description_Control extends WP_Customize_Control {
 		/**
-		 * Displays a description text in gray italic font
+		 * Render Control
 		 */
 		public function render_content() {
 			?>
@@ -38,9 +44,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		}
 	}
 
+	/**
+	 * Creates a category dropdown control for the Customizer
+	 */
 	class Admiral_Customize_Category_Dropdown_Control extends WP_Customize_Control {
 		/**
-		 * Creates a category dropdown control for the Customizer
+		 * Render Control
 		 */
 		public function render_content() {
 
@@ -75,9 +84,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		}
 	}
 
+	/**
+	 * Displays the upgrade teasers in the Pro Version / More Features section.
+	 */
 	class Admiral_Customize_Upgrade_Control extends WP_Customize_Control {
 		/**
-		 * Displays the upgrade teasers in thhe Pro Version / More Features section.
+		 * Render Control
 		 */
 		public function render_content() {
 			?>
