@@ -14,7 +14,7 @@
  */
 function admiral_theme_options() {
 
-	// Merge Theme Options Array from Database with Default Options Array.
+	// Merge theme options array from database with default options array.
 	$theme_options = wp_parse_args( get_option( 'admiral_theme_options', array() ), admiral_default_options() );
 
 	// Return theme options.

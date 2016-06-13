@@ -44,9 +44,9 @@ function admiral_site_title() {
 
 	<?php else : ?>
 
-	<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 
-<?php endif;
+	<?php endif;
 
 }
 endif;
@@ -54,11 +54,11 @@ endif;
 
 if ( ! function_exists( 'admiral_post_image_single' ) ) :
 /**
- * Displays the featured image on single posts
+ * Displays the featured image on single posts.
  */
 function admiral_post_image_single() {
 
-	// Get Theme Options from Database.
+	// Get theme options from database.
 	$theme_options = admiral_theme_options();
 
 	// Display Post Thumbnail if activated.
@@ -78,7 +78,7 @@ if ( ! function_exists( 'admiral_entry_meta' ) ) :
  */
 function admiral_entry_meta() {
 
-	// Get Theme Options from Database.
+	// Get theme options from database.
 	$theme_options = admiral_theme_options();
 
 	$postmeta = '';
@@ -167,7 +167,7 @@ if ( ! function_exists( 'admiral_posted_by' ) ) :
  */
 function admiral_posted_by() {
 
-	// Get Theme Options from Database.
+	// Get theme options from database.
 	$theme_options = admiral_theme_options();
 
 	// Return early if author is turned off.
@@ -192,13 +192,13 @@ if ( ! function_exists( 'admiral_entry_tags' ) ) :
  */
 function admiral_entry_tags() {
 
-	// Get Theme Options from Database.
+	// Get theme options from database.
 	$theme_options = admiral_theme_options();
 
-	// Get Tags.
+	// Get tags.
 	$tag_list = get_the_tag_list( '', '' );
 
-	// Display Tags.
+	// Display tags.
 	if ( $tag_list && $theme_options['meta_tags'] ) : ?>
 
 		<div class="entry-tags clearfix">
@@ -206,8 +206,9 @@ function admiral_entry_tags() {
 				<?php echo $tag_list; ?>
 			</span>
 		</div><!-- .entry-tags -->
-<?php
-endif;
+
+	<?php
+	endif;
 
 } // admiral_entry_tags()
 endif;
@@ -219,7 +220,7 @@ if ( ! function_exists( 'admiral_post_navigation' ) ) :
  */
 function admiral_post_navigation() {
 
-	// Get Theme Options from Database.
+	// Get theme options from database.
 	$theme_options = admiral_theme_options();
 
 	if ( true === $theme_options['post_navigation'] ) {
@@ -279,15 +280,15 @@ function admiral_pagination() {
 
 	$big = 999999999; // Need an unlikely integer.
 
-	 $paginate_links = paginate_links( array(
-		 'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		 'format' => '?paged=%#%',
-		 'current' => max( 1, get_query_var( 'paged' ) ),
-		 'total' => $wp_query->max_num_pages,
-		 'next_text' => '&raquo;',
-		 'prev_text' => '&laquo',
-		 'add_args' => false,
-	 ) );
+	$paginate_links = paginate_links( array(
+		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format' => '?paged=%#%',
+		'current' => max( 1, get_query_var( 'paged' ) ),
+		'total' => $wp_query->max_num_pages,
+		'next_text' => '&raquo;',
+		'prev_text' => '&laquo',
+		'add_args' => false,
+	) );
 
 	// Display the pagination if more than one page is found.
 	if ( $paginate_links ) : ?>

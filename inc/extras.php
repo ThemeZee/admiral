@@ -25,10 +25,10 @@ endif;
  */
 function admiral_body_classes( $classes ) {
 
-	// Get Theme Options from Database.
+	// Get theme options from database.
 	$theme_options = admiral_theme_options();
 
-	// Add Post Columns classes.
+	// Add post columns classes.
 	if ( 'two-columns' === $theme_options['post_layout'] ) {
 		$classes[] = 'post-layout-two-columns';
 	} else {
@@ -48,10 +48,10 @@ add_filter( 'body_class', 'admiral_body_classes' );
  */
 function admiral_excerpt_length( $length ) {
 
-	// Get Theme Options from Database.
+	// Get theme options from database.
 	$theme_options = admiral_theme_options();
 
-	// Return Excerpt Text.
+	// Return excerpt text.
 	if ( isset( $theme_options['excerpt_length'] ) and $theme_options['excerpt_length'] >= 0 ) :
 		return absint( $theme_options['excerpt_length'] );
 	else :
@@ -75,7 +75,7 @@ function admiral_magazine_posts_excerpt_length( $length ) {
 /**
  * Change excerpt more text for posts
  *
- * @param string $more_text Excerpt More Text.
+ * @param String $more_text Excerpt More Text.
  * @return string
  */
 function admiral_excerpt_more( $more_text ) {

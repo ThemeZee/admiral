@@ -15,10 +15,10 @@
  */
 function admiral_slider_scripts() {
 
-	// Get Theme Options from Database.
+	// Get theme options from database.
 	$theme_options = admiral_theme_options();
 
-	// Register and Enqueue FlexSlider JS and CSS if necessary.
+	// Register and enqueue FlexSlider JS and CSS if necessary.
 	if ( true === $theme_options['slider_blog'] or true === $theme_options['slider_magazine'] or is_page_template( 'template-slider.php' ) ) :
 
 		// FlexSlider CSS.
@@ -27,12 +27,12 @@ function admiral_slider_scripts() {
 		// FlexSlider JS.
 		wp_enqueue_script( 'admiral-flexslider', get_template_directory_uri() .'/js/jquery.flexslider-min.js', array( 'jquery' ), '2.6.0' );
 
-		// Register and enqueue slider.js.
+		// Register and enqueue slider setup.
 		wp_enqueue_script( 'admiral-post-slider', get_template_directory_uri() .'/js/slider.js', array( 'admiral-flexslider' ) );
 
 	endif;
 
-} // admiral_slider_scripts()
+}
 add_action( 'wp_enqueue_scripts', 'admiral_slider_scripts' );
 
 
@@ -58,7 +58,7 @@ function admiral_slider_meta() {
 
 	echo '<div class="entry-meta">' . $postmeta . '</div>';
 
-} // admiral_slider_meta()
+}
 endif;
 
 
@@ -69,20 +69,20 @@ endif;
  */
 function admiral_slider_options() {
 
-	// Get Theme Options from Database.
+	// Get theme options from database.
 	$theme_options = admiral_theme_options();
 
-	// Set Parameters array.
+	// Set parameters array.
 	$params = array();
 
-	// Define Slider Animation.
+	// Set slider animation.
 	$params['animation'] = $theme_options['slider_animation'];
 
-	// Define Slider Speed.
+	// Set slider speed.
 	$params['speed'] = $theme_options['slider_speed'];
 
-	// Passing Parameters to Javascript.
+	// Passing parameters to Flexslider.
 	wp_localize_script( 'admiral-post-slider', 'admiral_slider_params', $params );
 
-} // admiral_slider_options
+}
 add_action( 'wp_enqueue_scripts', 'admiral_slider_options' );

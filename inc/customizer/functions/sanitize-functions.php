@@ -28,7 +28,7 @@ function admiral_sanitize_checkbox( $checked ) {
  * @see sanitize_key()               https://developer.wordpress.org/reference/functions/sanitize_key/
  * @see $wp_customize->get_control() https://developer.wordpress.org/reference/classes/wp_customize_manager/get_control/
  *
- * @param string               $input   Slug to sanitize.
+ * @param String               $input   Slug to sanitize.
  * @param WP_Customize_Setting $setting Setting instance.
  * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
  */

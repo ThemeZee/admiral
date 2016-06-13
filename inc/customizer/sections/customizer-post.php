@@ -117,15 +117,13 @@ function admiral_customize_register_post_settings( $wp_customize ) {
 		'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new Admiral_Customize_Header_Control(
-		$wp_customize, 'admiral_theme_options[single_post_headline]', array(
-			'label' => esc_html__( 'Single Posts', 'admiral' ),
-			'section' => 'admiral_section_post',
-			'settings' => 'admiral_theme_options[single_post_headline]',
-			'priority' => 6,
-			)
+	$wp_customize->add_control( new Admiral_Customize_Header_Control( $wp_customize, 'admiral_theme_options[single_post_headline]', array(
+		'label' => esc_html__( 'Single Posts', 'admiral' ),
+		'section' => 'admiral_section_post',
+		'settings' => 'admiral_theme_options[single_post_headline]',
+		'priority' => 6,
 		)
-	);
+	) );
 
 	// Featured Image Setting.
 	$wp_customize->add_setting( 'admiral_theme_options[post_image_single]', array(

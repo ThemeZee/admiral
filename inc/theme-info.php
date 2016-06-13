@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * Theme Info
  *
  * Adds a simple Theme Info page to the Appearance section of the WordPress Dashboard.
@@ -13,7 +12,7 @@
  */
 function admiral_theme_info_menu_link() {
 
-	// Get Theme Details from style.css.
+	// Get theme details.
 	$theme = wp_get_theme();
 
 	add_theme_page(
@@ -27,13 +26,12 @@ function admiral_theme_info_menu_link() {
 }
 add_action( 'admin_menu', 'admiral_theme_info_menu_link' );
 
-
 /**
  * Display Theme Info page
  */
 function admiral_theme_info_page() {
 
-	// Get Theme Details from style.css.
+	// Get theme details.
 	$theme = wp_get_theme();
 	?>
 
@@ -165,9 +163,10 @@ function admiral_theme_info_page() {
 	<?php
 }
 
-
 /**
  * Enqueues CSS for Theme Info page
+ *
+ * @param int $hook Hook suffix for the current admin page.
  */
 function admiral_theme_info_page_css( $hook ) {
 
