@@ -11,13 +11,13 @@
 /**
  * Adds a callback function to retrieve wether post content is set to excerpt or not
  *
- * @param object $control / Instance of the Customizer Control
+ * @param object $control / Instance of the Customizer Control.
  * @return bool
  */
 function admiral_control_post_content_callback( $control ) {
 
 	// Check if excerpt mode is selected.
-	if ( $control->manager->get_setting( 'admiral_theme_options[post_content]' )->value() == 'excerpt' ) :
+	if ( 'excerpt' === $control->manager->get_setting( 'admiral_theme_options[post_content]' )->value() ) :
 		return true;
 	else :
 		return false;
@@ -29,15 +29,15 @@ function admiral_control_post_content_callback( $control ) {
 /**
  * Adds a callback function to retrieve wether slider is activated or not
  *
- * @param object $control / Instance of the Customizer Control
+ * @param object $control / Instance of the Customizer Control.
  * @return bool
  */
 function admiral_slider_activated_callback( $control ) {
 
 	// Check if Slider is turned on.
-	if ( $control->manager->get_setting( 'admiral_theme_options[slider_blog]' )->value() == 1 ) :
+	if ( 1 === $control->manager->get_setting( 'admiral_theme_options[slider_blog]' )->value() ) :
 		return true;
-	elseif ( $control->manager->get_setting( 'admiral_theme_options[slider_magazine]' )->value() == 1 ) :
+	elseif ( 1 === $control->manager->get_setting( 'admiral_theme_options[slider_magazine]' )->value() ) :
 		return true;
 	else :
 		return false;

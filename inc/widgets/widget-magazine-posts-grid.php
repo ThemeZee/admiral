@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * Magazine Posts Grid Widget
  *
  * Display the latest posts from a selected category in a grid layout.
@@ -10,7 +9,6 @@
  */
 
 class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
-
 	/**
 	 * Widget Constructor
 	 */
@@ -24,7 +22,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 				'classname' => 'admiral-magazine-posts-grid',
 				'description' => esc_html__( 'Displays your posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'admiral' ),
 				'customize_selective_refresh' => true,
-			) // Args
+			) // Args.
 		);
 
 		// Delete Widget Cache on certain actions.
@@ -60,8 +58,8 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 	 *
 	 * @uses this->render()
 	 *
-	 * @param array $args / Parameters from widget area created with register_sidebar()
-	 * @param array $instance / Settings for this widget instance
+	 * @param array $args / Parameters from widget area created with register_sidebar().
+	 * @param array $instance / Settings for this widget instance.
 	 */
 	function widget( $args, $instance ) {
 
@@ -93,7 +91,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 		<div class="widget-magazine-posts-grid widget-magazine-posts clearfix">
 
-			<?php // Display Title
+			<?php // Display Title.
 			$this->widget_title( $args, $settings ); ?>
 
 			<div class="widget-magazine-posts-content">
@@ -126,11 +124,11 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 	 * @uses this->magazine_posts_two_column_grid() or this->magazine_posts_three_column_grid()
 	 * @used-by this->widget()
 	 *
-	 * @param array $settings / Settings for this widget instance
+	 * @param array $settings / Settings for this widget instance.
 	 */
 	function render( $settings ) {
 
-		if ( $settings['layout'] == 'three-columns' ) :
+		if ( 'three-columns' === $settings['layout'] ) :
 
 			$this->magazine_posts_three_column_grid( $settings );
 
@@ -148,7 +146,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 	 *
 	 * @used-by this->render()
 	 *
-	 * @param array $settings / Settings for this widget instance
+	 * @param array $settings / Settings for this widget instance.
 	 */
 	function magazine_posts_two_column_grid( $settings ) {
 
@@ -173,7 +171,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 				$posts_query->the_post();
 
 				// Open new Row on the Grid.
-				if ( $i % 2 == 0 ) : $row_open = true; ?>
+				if ( 0 === $i % 2 ) : $row_open = true; ?>
 					<div class="magazine-posts-grid-row large-post-row clearfix">
 				<?php endif; ?>
 
@@ -189,7 +187,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 							</header><!-- .entry-header -->
 
-						<?php if ( true == $settings['excerpt'] ) : ?>
+						<?php if ( true === $settings['excerpt'] ) : ?>
 
 							<div class="entry-content clearfix">
 								<?php the_excerpt(); ?>
@@ -200,7 +198,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 						</article>
 
 				<?php // Close Row on the Grid.
-				if ( $i % 2 == 1 ) : $row_open = false; ?>
+				if ( 1 === $i % 2 ) : $row_open = false; ?>
 					</div>
 				<?php endif;
 
@@ -208,7 +206,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 			endwhile;
 
 			// Close Row if still open.
-			if ( true == $row_open ) : ?>
+			if ( true === $row_open ) : ?>
 				</div>
 			<?php endif;
 
@@ -217,7 +215,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 		endif;
 
-		// Reset Postdata
+		// Reset Postdata.
 		wp_reset_postdata();
 
 	} // magazine_posts_two_column_grid()
@@ -228,11 +226,11 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 	 *
 	 * @used-by this->render()
 	 *
-	 * @param array $settings / Settings for this widget instance
+	 * @param array $settings / Settings for this widget instance.
 	 */
 	function magazine_posts_three_column_grid( $settings ) {
 
-		// Get latest posts from database
+		// Get latest posts from database.
 		$query_arguments = array(
 			'posts_per_page' => (int) $settings['number'],
 			'ignore_sticky_posts' => true,
@@ -253,7 +251,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 				$posts_query->the_post();
 
 				 // Open new Row on the Grid.
-				if ( $i % 3 == 0 ) : $row_open = true; ?>
+				if ( 0 === $i % 3 ) : $row_open = true; ?>
 					<div class="magazine-posts-grid-row medium-post-row clearfix">
 				<?php endif; ?>
 
@@ -280,7 +278,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 						</article>
 
 				<?php // Close Row on the Grid.
-				if ( $i % 3 == 2 ) : $row_open = false; ?>
+				if ( 2 === $i % 3 ) : $row_open = false; ?>
 					</div>
 				<?php endif;
 
@@ -288,7 +286,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 			endwhile;
 
 			// Close Row if still open.
-			if ( true == $row_open ) : ?>
+			if ( true === $row_open ) : ?>
 				</div>
 			<?php endif;
 
@@ -310,13 +308,13 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 		$postmeta = '';
 
-		if ( true == $settings['meta_date'] ) {
+		if ( true === $settings['meta_date'] ) {
 
 			$postmeta .= admiral_meta_date();
 
 		}
 
-		if ( true == $settings['meta_author'] ) {
+		if ( true === $settings['meta_author'] ) {
 
 			$postmeta .= admiral_meta_author();
 
@@ -368,8 +366,8 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 	/**
 	 * Update Widget Settings
 	 *
-	 * @param array $new_instance / New Settings for this widget instance
-	 * @param array $old_instance / Old Settings for this widget instance
+	 * @param array $new_instance / New Settings for this widget instance.
+	 * @param array $old_instance / Old Settings for this widget instance.
 	 * @return array $instance
 	 */
 	function update( $new_instance, $old_instance ) {
@@ -392,11 +390,11 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 	/**
 	 * Displays Widget Settings Form in the Backend
 	 *
-	 * @param array $instance / Settings for this widget instance
+	 * @param array $instance / Settings for this widget instance.
 	 */
 	function form( $instance ) {
 
-		// Get Widget Settings
+		// Get Widget Settings.
 		$settings = wp_parse_args( $instance, $this->default_settings() );
 		?>
 

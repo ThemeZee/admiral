@@ -5,10 +5,9 @@
  * @package Admiral
  */
 
-
-// Register support for ThemeZee Addons.
-add_action( 'after_setup_theme', 'admiral_theme_addons_setup' );
-
+/**
+ * Register support for ThemeZee Addons.
+ */
 function admiral_theme_addons_setup() {
 
 	// Add Theme Support for Admiral Pro Plugin.
@@ -28,11 +27,12 @@ function admiral_theme_addons_setup() {
 	) );
 
 }
+add_action( 'after_setup_theme', 'admiral_theme_addons_setup' );
 
 
-// Load addon stylesheets and scripts.
-add_action( 'wp_enqueue_scripts', 'admiral_theme_addons_scripts' );
-
+/**
+ * Load addon stylesheets and scripts.
+ */
 function admiral_theme_addons_scripts() {
 
 	// Load widget bundle styles if widgets are active.
@@ -57,11 +57,12 @@ function admiral_theme_addons_scripts() {
 	}
 
 }
+add_action( 'wp_enqueue_scripts', 'admiral_theme_addons_scripts' );
 
 
-// Add custom Image Sizes for addons.
-add_action( 'after_setup_theme', 'admiral_theme_addons_image_sizes' );
-
+/**
+ * Add custom Image Sizes for addons.
+ */
 function admiral_theme_addons_image_sizes() {
 
 	// Add Widget Bundle Thumbnail.
@@ -71,6 +72,8 @@ function admiral_theme_addons_image_sizes() {
 	add_image_size( 'themezee-related-posts', 480, 320, true );
 
 }
+add_action( 'after_setup_theme', 'admiral_theme_addons_image_sizes' );
+
 
 /**
  * Custom render function for Infinite Scroll.

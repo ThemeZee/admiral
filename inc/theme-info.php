@@ -172,7 +172,7 @@ function admiral_theme_info_page() {
 function admiral_theme_info_page_css( $hook ) {
 
 	// Load styles and scripts only on theme info page.
-	if ( 'appearance_page_admiral' != $hook ) {
+	if ( 'appearance_page_admiral' !== $hook ) {
 		return;
 	}
 

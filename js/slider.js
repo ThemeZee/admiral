@@ -6,10 +6,10 @@
  * @package Admiral
  */
 
-jQuery(document).ready(function($) {
+jQuery( document ).ready(function($) {
 
-	/* Add flexslider to #post-slider div */ 
-	$("#post-slider").flexslider({
+	/* Add flexslider to #post-slider div */
+	$( "#post-slider" ).flexslider({
 		animation: admiral_slider_params.animation,
 		slideshowSpeed: admiral_slider_params.speed,
 		namespace: "zeeflex-",
@@ -18,5 +18,5 @@ jQuery(document).ready(function($) {
 		pauseOnHover: true,
 		controlsContainer: ".post-slider-controls"
 	});
-	
+
 });

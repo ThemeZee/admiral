@@ -9,7 +9,7 @@
 
 get_header();
 
-// Get Theme Options from Database
+// Get Theme Options from Database.
 $theme_options = admiral_theme_options();
 ?>
 

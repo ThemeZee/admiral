@@ -31,7 +31,7 @@ function admiral_body_classes( $classes ) {
 	$theme_options = admiral_theme_options();
 
 	// Add Post Columns classes.
-	if ( 'two-columns' == $theme_options['post_layout'] ) {
+	if ( 'two-columns' === $theme_options['post_layout'] ) {
 		$classes[] = 'post-layout-two-columns';
 	} else {
 		$classes[] = 'post-layout-one-column';
@@ -45,7 +45,7 @@ add_filter( 'body_class', 'admiral_body_classes' );
 /**
  * Change excerpt length for default posts
  *
- * @param int $length Length of excerpt in number of words
+ * @param int $length Length of excerpt in number of words.
  * @return int
  */
 function admiral_excerpt_length( $length ) {
@@ -66,7 +66,7 @@ add_filter( 'excerpt_length', 'admiral_excerpt_length' );
 /**
  * Function to change excerpt length for posts in category posts widgets
  *
- * @param int $length Length of excerpt in number of words
+ * @param int $length Length of excerpt in number of words.
  * @return int
  */
 function admiral_magazine_posts_excerpt_length( $length ) {
@@ -77,7 +77,7 @@ function admiral_magazine_posts_excerpt_length( $length ) {
 /**
  * Change excerpt more text for posts
  *
- * @param string $more_text Excerpt More Text
+ * @param string $more_text Excerpt More Text.
  * @return string
  */
 function admiral_excerpt_more( $more_text ) {

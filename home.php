@@ -19,7 +19,7 @@ $theme_options = admiral_theme_options();
 			<header class="blog-header clearfix">
 
 				<?php // Display Homepage Title.
-				if ( $theme_options['blog_title'] <> '' ) : ?>
+				if ( '' !== $theme_options['blog_title'] ) : ?>
 
 					<h1 class="blog-title"><?php echo wp_kses_post( $theme_options['blog_title'] ); ?></h1>
 
@@ -30,7 +30,7 @@ $theme_options = admiral_theme_options();
 			<?php admiral_breadcrumbs(); ?>
 
 			<?php // Display Slider.
-			if ( true == $theme_options['slider_blog'] ) :
+			if ( true === $theme_options['slider_blog'] ) :
 
 				get_template_part( 'template-parts/post-slider' );
 

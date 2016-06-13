@@ -14,7 +14,7 @@ $theme_options = admiral_theme_options();
 		<header class="sidebar-header clearfix">
 
 			<?php // Display Homepage Title.
-			if ( $theme_options['sidebar_main_title'] <> '' ) : ?>
+			if ( '' !== $theme_options['sidebar_main_title'] ) : ?>
 
 				<h2 class="sidebar-title"><?php echo wp_kses_post( $theme_options['sidebar_main_title'] ); ?></h2>
 

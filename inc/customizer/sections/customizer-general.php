@@ -10,11 +10,11 @@
 /**
  * Adds all general settings to the Customizer
  *
- * @param object $wp_customize / Customizer Object
+ * @param object $wp_customize / Customizer Object.
  */
 function admiral_customize_register_general_settings( $wp_customize ) {
 
-	// Add Section for Theme Options
+	// Add Section for Theme Options.
 	$wp_customize->add_section( 'admiral_section_general', array(
 		'title'    => esc_html__( 'General Settings', 'admiral' ),
 		'priority' => 10,
@@ -22,7 +22,7 @@ function admiral_customize_register_general_settings( $wp_customize ) {
 		)
 	);
 
-	// Add Blog Title
+	// Add Blog Title.
 	$wp_customize->add_setting( 'admiral_theme_options[blog_title]', array(
 		'default'           => wp_kses_post( get_bloginfo( 'description' ) ),
 		'type'           	=> 'option',
@@ -39,7 +39,7 @@ function admiral_customize_register_general_settings( $wp_customize ) {
 		)
 	);
 
-	// Add Main Sidebar Title
+	// Add Main Sidebar Title.
 	$wp_customize->add_setting( 'admiral_theme_options[sidebar_main_title]', array(
 		'default'           => esc_html__( 'Navigation', 'admiral' ),
 		'type'           	=> 'option',
@@ -56,7 +56,7 @@ function admiral_customize_register_general_settings( $wp_customize ) {
 		)
 	);
 
-	// Add Small Sidebar Title
+	// Add Small Sidebar Title.
 	$wp_customize->add_setting( 'admiral_theme_options[sidebar_small_title]', array(
 		'default'           => esc_html__( 'Sidebar', 'admiral' ),
 		'type'           	=> 'option',

@@ -5,12 +5,12 @@
  * @package Admiral
  */
 
-// Load Customizer Helper Functions
+// Load Customizer Helper Functions.
 require( get_template_directory() . '/inc/customizer/functions/custom-controls.php' );
 require( get_template_directory() . '/inc/customizer/functions/sanitize-functions.php' );
 require( get_template_directory() . '/inc/customizer/functions/callback-functions.php' );
 
-// Load Customizer Section Files
+// Load Customizer Section Files.
 require( get_template_directory() . '/inc/customizer/sections/customizer-general.php' );
 require( get_template_directory() . '/inc/customizer/sections/customizer-post.php' );
 require( get_template_directory() . '/inc/customizer/sections/customizer-slider.php' );
@@ -18,6 +18,8 @@ require( get_template_directory() . '/inc/customizer/sections/customizer-upgrade
 
 /**
  * Registers Theme Options panel and sets up some WordPress core settings
+ *
+ * @param object $wp_customize / Customizer Object.
  */
 function admiral_customize_register_options( $wp_customize ) {
 
@@ -75,7 +77,7 @@ function admiral_customize_controls_js() {
 
 	wp_enqueue_script( 'admiral-customizer-controls', get_template_directory_uri() . '/js/customizer-controls.js', array(), '20151202', true );
 
-	// Localize the script
+	// Localize the script.
 	wp_localize_script( 'admiral-customizer-controls', 'admiral_theme_links', array(
 		'title'      => esc_html__( 'Theme Links', 'admiral' ),
 		'themeURL'   => esc_url( __( 'https://themezee.com/themes/admiral/', 'admiral' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=admiral&utm_content=theme-page' ),

@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * Magazine Posts Boxed Widget
  *
  * Display the latest posts from a selected category in a boxed layout.
@@ -10,7 +9,6 @@
  */
 
 class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
-
 	/**
 	 * Widget Constructor
 	 */
@@ -24,7 +22,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 				'classname' => 'admiral-magazine-posts-boxed',
 				'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'admiral' ),
 				'customize_selective_refresh' => true,
-			) // Args
+			) // Args.
 		);
 
 		// Delete Widget Cache on certain actions.
@@ -58,8 +56,8 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	 *
 	 * @uses this->render()
 	 *
-	 * @param array $args / Parameters from widget area created with register_sidebar()
-	 * @param array $instance / Settings for this widget instance
+	 * @param array $args / Parameters from widget area created with register_sidebar().
+	 * @param array $instance / Settings for this widget instance.
 	 */
 	function widget( $args, $instance ) {
 
@@ -124,11 +122,11 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	 * @uses this->magazine_posts_horizontal() or this->magazine_posts_vertical()
 	 * @used-by this->widget()
 	 *
-	 * @param array $instance / Settings for this widget instance
+	 * @param array $instance / Settings for this widget instance.
 	 */
 	function render( $settings ) {
 
-		if ( 'horizontal' == $settings['layout'] ) : ?>
+		if ( 'horizontal' === $settings['layout'] ) : ?>
 
 			<div class="magazine-posts-boxed-horizontal clearfix">
 
@@ -155,7 +153,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	 *
 	 * @used-by this->render()
 	 *
-	 * @param array $instance / Settings for this widget instance
+	 * @param array $instance / Settings for this widget instance.
 	 */
 	function magazine_posts_horizontal( $settings ) {
 
@@ -179,7 +177,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 				$posts_query->the_post();
 
-				if ( isset( $i ) and $i == 0 ) : ?>
+				if ( isset( $i ) and 0 === $i ) : ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
 
@@ -237,7 +235,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 		endif;
 
-		// Reset Postdata
+		// Reset Postdata.
 		wp_reset_postdata();
 
 	} // magazine_posts_horizontal()
@@ -248,7 +246,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	 *
 	 * @used-by this->render()
 	 *
-	 * @param array $instance / Settings for this widget instance
+	 * @param array $instance / Settings for this widget instance.
 	 */
 	function magazine_posts_vertical( $settings ) {
 
@@ -272,7 +270,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 				$posts_query->the_post();
 
-				if ( isset( $i ) and $i == 0 ) : ?>
+				if ( isset( $i ) and 0 === $i ) : ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
 
@@ -339,13 +337,13 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 		$postmeta = '';
 
-		if ( true == $settings['meta_date'] ) {
+		if ( true === $settings['meta_date'] ) {
 
 			$postmeta .= admiral_meta_date();
 
 		}
 
-		if ( true == $settings['meta_author'] ) {
+		if ( true === $settings['meta_author'] ) {
 
 			$postmeta .= admiral_meta_author();
 
@@ -397,8 +395,8 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	/**
 	 * Update Widget Settings
 	 *
-	 * @param array $new_instance / New Settings for this widget instance
-	 * @param array $old_instance / Old Settings for this widget instance
+	 * @param array $new_instance / New Settings for this widget instance.
+	 * @param array $old_instance / Old Settings for this widget instance.
 	 * @return array $instance
 	 */
 	function update( $new_instance, $old_instance ) {
@@ -419,7 +417,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 	/**
 	 * Displays Widget Settings Form in the Backend
 	 *
-	 * @param array $instance / Settings for this widget instance
+	 * @param array $instance / Settings for this widget instance.
 	 */
 	function form( $instance ) {
 

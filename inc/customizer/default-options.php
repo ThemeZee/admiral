@@ -7,7 +7,6 @@
  * @package Admiral
  */
 
-
 /**
  * Get saved user settings from database or theme defaults
  *

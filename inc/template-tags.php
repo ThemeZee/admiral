@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * Template Tags
  *
  * This file contains several template functions which are used to print out specific HTML markup
@@ -34,11 +33,11 @@ if ( ! function_exists( 'admiral_site_title' ) ) :
 	 */
 	function admiral_site_title() {
 
-		// Get theme options from database
+		// Get theme options from database.
 		$theme_options = admiral_theme_options();
 
-		// Return early if site title is deactivated
-		if ( false == $theme_options['site_title'] ) {
+		// Return early if site title is deactivated.
+		if ( false === $theme_options['site_title'] ) {
 			return;
 		}
 
@@ -64,11 +63,11 @@ if ( ! function_exists( 'admiral_post_image_single' ) ) :
 	 */
 	function admiral_post_image_single() {
 
-		// Get Theme Options from Database
+		// Get Theme Options from Database.
 		$theme_options = admiral_theme_options();
 
-		// Display Post Thumbnail if activated
-		if ( true == $theme_options['post_image_single'] ) :
+		// Display Post Thumbnail if activated.
+		if ( true === $theme_options['post_image_single'] ) :
 
 			the_post_thumbnail();
 
@@ -86,20 +85,20 @@ if ( ! function_exists( 'admiral_entry_meta' ) ) :
 	 */
 	function admiral_entry_meta() {
 
-		// Get Theme Options from Database
+		// Get Theme Options from Database.
 		$theme_options = admiral_theme_options();
 
 		$postmeta = '';
 
-		// Display date unless user has deactivated it via settings
-		if ( true == $theme_options['meta_date'] ) {
+		// Display date unless user has deactivated it via settings.
+		if ( true === $theme_options['meta_date'] ) {
 
 			$postmeta .= admiral_meta_date();
 
 		}
 
-		// Display comments unless user has deactivated it via settings
-		if ( true == $theme_options['meta_comments'] ) {
+		// Display comments unless user has deactivated it via settings.
+		if ( true === $theme_options['meta_comments'] ) {
 
 			$postmeta .= admiral_meta_comments();
 
@@ -183,15 +182,15 @@ if ( ! function_exists( 'admiral_posted_by' ) ) :
 	 */
 	function admiral_posted_by() {
 
-		// Get Theme Options from Database
+		// Get Theme Options from Database.
 		$theme_options = admiral_theme_options();
 
-		// Return early if author is turned off
-		if ( false == $theme_options['meta_author'] ) {
+		// Return early if author is turned off.
+		if ( false === $theme_options['meta_author'] ) {
 			return false;
 		}
 
-		// Get Author Avatar
+		// Get Author Avatar.
 		$avatar = get_avatar( get_the_author_meta( 'ID' ), 32 );
 
 		$byline = sprintf( esc_html_x( 'Posted by %s', 'post author', 'admiral' ), admiral_meta_author() );
@@ -210,13 +209,13 @@ if ( ! function_exists( 'admiral_entry_tags' ) ) :
 	 */
 	function admiral_entry_tags() {
 
-		// Get Theme Options from Database
+		// Get Theme Options from Database.
 		$theme_options = admiral_theme_options();
 
-		// Get Tags
+		// Get Tags.
 		$tag_list = get_the_tag_list( '', '' );
 
-		// Display Tags
+		// Display Tags.
 		if ( $tag_list && $theme_options['meta_tags'] ) : ?>
 
 			<div class="entry-tags clearfix">
@@ -239,10 +238,10 @@ if ( ! function_exists( 'admiral_post_navigation' ) ) :
 	 */
 	function admiral_post_navigation() {
 
-		// Get Theme Options from Database
+		// Get Theme Options from Database.
 		$theme_options = admiral_theme_options();
 
-		if ( true == $theme_options['post_navigation'] ) {
+		if ( true === $theme_options['post_navigation'] ) {
 
 			the_post_navigation( array( 'prev_text' => '&laquo; %title', 'next_text' => '%title &raquo;' ) );
 
@@ -303,7 +302,7 @@ if ( ! function_exists( 'admiral_pagination' ) ) :
 
 		global $wp_query;
 
-		$big = 999999999; // need an unlikely integer
+		$big = 999999999; // Need an unlikely integer.
 
 		 $paginate_links = paginate_links( array(
 			 'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -315,15 +314,15 @@ if ( ! function_exists( 'admiral_pagination' ) ) :
 			 'add_args' => false,
 		 ) );
 
-			// Display the pagination if more than one page is found
-		 if ( $paginate_links ) : ?>
+		// Display the pagination if more than one page is found.
+		if ( $paginate_links ) : ?>
 
-				<div class="post-pagination clearfix">
-					<?php echo $paginate_links; ?>
-				</div>
+			<div class="post-pagination clearfix">
+				<?php echo $paginate_links; ?>
+			</div>
 
-			<?php
-			endif;
+		<?php
+		endif;
 
 	} // admiral_pagination()
 

@@ -17,7 +17,7 @@
 function admiral_sanitize_checkbox( $checked ) {
 
 	// Boolean check.
-	return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	return ( ( isset( $checked ) && true === $checked ) ? true : false );
 
 }
 

@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * Magazine Posts Columns Widget
  *
  * Display the latest posts from two categories in a 2-column layout.
@@ -10,7 +9,6 @@
  */
 
 class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
-
 	/**
 	 * Widget Constructor
 	 */
@@ -24,7 +22,7 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 				'classname' => 'admiral-magazine-posts-columns',
 				'description' => esc_html__( 'Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'admiral' ),
 				'customize_selective_refresh' => true,
-			) // Args
+			) // Args.
 		);
 
 		// Delete Widget Cache on certain actions.
@@ -61,8 +59,8 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 	 *
 	 * @uses this->render()
 	 *
-	 * @param array $args / Parameters from widget area created with register_sidebar()
-	 * @param array $instance / Settings for this widget instance
+	 * @param array $args / Parameters from widget area created with register_sidebar().
+	 * @param array $instance / Settings for this widget instance.
 	 */
 	function widget( $args, $instance ) {
 
@@ -124,8 +122,8 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 	 * @uses this->magazine_posts()
 	 * @used-by this->widget()
 	 *
-	 * @param array $args / Parameters from widget area created with register_sidebar()
-	 * @param array $settings / Settings for this widget instance
+	 * @param array $args / Parameters from widget area created with register_sidebar().
+	 * @param array $settings / Settings for this widget instance.
 	 */
 	function render( $args, $settings ) {
 	?>
@@ -134,7 +132,7 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 			<div class="magazine-posts-columns-content clearfix">
 
-				<?php // Display Category Title
+				<?php // Display Category Title.
 					$this->category_title( $args, $settings, $settings['category_one'], $settings['category_one_title'] ); ?>
 
 				<div class="magazine-posts-columns-post-list clearfix">
@@ -149,7 +147,7 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 			<div class="magazine-posts-columns-content clearfix">
 
-				<?php // Display Category Title
+				<?php // Display Category Title.
 					$this->category_title( $args, $settings, $settings['category_two'], $settings['category_two_title'] ); ?>
 
 				<div class="magazine-posts-columns-post-list clearfix">
@@ -169,8 +167,8 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 	 *
 	 * @used-by this->render()
 	 *
-	 * @param array $settings / Settings for this widget instance
-	 * @param int   $category_id / ID of the selected category
+	 * @param array $settings / Settings for this widget instance.
+	 * @param int   $category_id / ID of the selected category.
 	 */
 	function magazine_posts( $settings, $category_id ) {
 
@@ -194,7 +192,7 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 				$posts_query->the_post();
 
-				if ( true == $settings['highlight_post'] and ( isset( $i ) and $i == 0 ) ) : ?>
+				if ( true === $settings['highlight_post'] and ( isset( $i ) and 0 === $i ) ) : ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
 
@@ -256,13 +254,13 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 		$postmeta = '';
 
-		if ( true == $settings['meta_date'] ) {
+		if ( true === $settings['meta_date'] ) {
 
 			$postmeta .= admiral_meta_date();
 
 		}
 
-		if ( true == $settings['meta_author'] ) {
+		if ( true === $settings['meta_author'] ) {
 
 			$postmeta .= admiral_meta_author();
 
@@ -314,8 +312,8 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 	/**
 	 * Update Widget Settings
 	 *
-	 * @param array $new_instance / New Settings for this widget instance
-	 * @param array $old_instance / Old Settings for this widget instance
+	 * @param array $new_instance / New Settings for this widget instance.
+	 * @param array $old_instance / Old Settings for this widget instance.
 	 * @return array $instance
 	 */
 	function update( $new_instance, $old_instance ) {
@@ -339,7 +337,7 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 	/**
 	 * Displays Widget Settings Form in the Backend
 	 *
-	 * @param array $instance / Settings for this widget instance
+	 * @param array $instance / Settings for this widget instance.
 	 */
 	function form( $instance ) {
 
@@ -355,7 +353,7 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'category_one' ); ?>"><?php esc_html_e( 'Left Category:', 'admiral' ); ?></label><br/>
-			<?php // Display Category One Select
+			<?php // Display Category One Select.
 				$args = array(
 					'show_option_all'    => esc_html__( 'All Categories', 'admiral' ),
 					'show_count' 		 => true,
@@ -376,7 +374,7 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'category_two' ); ?>"><?php esc_html_e( 'Right Category:', 'admiral' ); ?></label><br/>
-			<?php // Display Category One Select
+			<?php // Display Category One Select.
 				$args = array(
 					'show_option_all'    => esc_html__( 'All Categories', 'admiral' ),
 					'show_count' 		 => true,

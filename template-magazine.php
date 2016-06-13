@@ -25,7 +25,7 @@ $theme_options = admiral_theme_options();
 		<?php admiral_breadcrumbs(); ?>
 
 		<?php // Display Slider.
-		if ( true == $theme_options['slider_magazine'] ) :
+		if ( true === $theme_options['slider_magazine'] ) :
 
 			get_template_part( 'template-parts/post-slider' );
 
