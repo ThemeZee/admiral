@@ -48,19 +48,17 @@ function admiral_slider_excerpt_length( $length ) {
 
 
 if ( ! function_exists( 'admiral_slider_meta' ) ) :
+/**
+ * Displays the date and author on slider posts
+ */
+function admiral_slider_meta() {
 
-	/**
-	 * Displays the date and author on slider posts
-	 */
-	function admiral_slider_meta() {
+	$postmeta = admiral_meta_date();
+	$postmeta .= admiral_meta_author();
 
-		$postmeta = admiral_meta_date();
-		$postmeta .= admiral_meta_author();
+	echo '<div class="entry-meta">' . $postmeta . '</div>';
 
-		echo '<div class="entry-meta">' . $postmeta . '</div>';
-
-	} // admiral_slider_meta()
-
+} // admiral_slider_meta()
 endif;
 
 

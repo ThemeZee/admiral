@@ -6,16 +6,14 @@
  */
 
 if ( ! function_exists( 'admiral_default_menu' ) ) :
+/**
+ * Display default page as navigation if no custom menu was set
+ */
+function admiral_default_menu() {
 
-	/**
-	 * Display default page as navigation if no custom menu was set
-	 */
-	function admiral_default_menu() {
+	echo '<ul id="menu-main-navigation" class="main-navigation-menu menu">'. wp_list_pages( 'title_li=&echo=0' ) .'</ul>';
 
-		echo '<ul id="menu-main-navigation" class="main-navigation-menu menu">'. wp_list_pages( 'title_li=&echo=0' ) .'</ul>';
-
-	}
-
+}
 endif;
 
 
