@@ -2,6 +2,15 @@
 Admiral Changelog
 ===================================
 
+Version 1.0.2
+-----------------------------------
+
+[added] support for selective refresh
+[added] version numbers to wp_enqueue_style and wp_enqueue_script functions
+[updated] flexlider, html5shiv and Genericons
+[improved] styling of lists, tables and blockquotes
+[improved] code formatting
+
 Version 1.0.1
 -----------------------------------
 [added] support for new custom logo feature from WordPress 4.5
