@@ -1503,14 +1503,16 @@ textarea {
 	display: none;
 }
 
-.infinite-scroll .post-wrapper:before,
-.infinite-scroll .post-wrapper:after {
-	content: "";
-	display: table;
+.infinite-scroll #infinite-handle,
+.infinite-scroll .infinite-loader {
+	width: 100%;
+	text-align: center;
 }
 
-.infinite-scroll .post-wrapper:after {
-	clear: both;
+.infinite-scroll .infinite-loader .spinner {
+	left: auto;
+	margin: 0 auto;
+	bottom: -1em;
 }
 
 .infinite-scroll #infinite-handle span {

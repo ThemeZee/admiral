@@ -26,7 +26,7 @@ $theme_options = admiral_theme_options();
 
 			<?php admiral_breadcrumbs(); ?>
 
-			<div id="homepage-posts" class="post-wrapper clearfix">
+			<div id="post-wrapper" class="post-wrapper clearfix">
 
 				<?php while ( have_posts() ) : the_post();
 

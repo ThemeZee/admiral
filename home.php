@@ -36,7 +36,7 @@ $theme_options = admiral_theme_options();
 
 			endif; ?>
 
-			<div id="homepage-posts" class="post-wrapper clearfix">
+			<div id="post-wrapper" class="post-wrapper clearfix">
 
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
