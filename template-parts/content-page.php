@@ -7,22 +7,27 @@
 
 ?>
 
-	<header class="page-header clearfix">
+<header class="page-header clearfix">
 
-		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+	<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 
-	</header>
+</header>
 
-	<?php admiral_breadcrumbs(); ?>
+<?php admiral_breadcrumbs(); ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<?php the_post_thumbnail(); ?>
+	<?php the_post_thumbnail(); ?>
 
-		<div class="entry-content clearfix">
-			<?php the_content(); ?>
-			<!-- <?php trackback_rdf(); ?> -->
-			<div class="page-links"><?php wp_link_pages(); ?></div>
-		</div><!-- .entry-content -->
+	<div class="entry-content clearfix">
 
-	</article>
+		<?php the_content(); ?>
+
+		<?php wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'admiral' ),
+			'after'  => '</div>',
+		) ); ?>
+
+	</div><!-- .entry-content -->
+
+</article>

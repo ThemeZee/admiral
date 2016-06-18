@@ -7,39 +7,44 @@
 
 ?>
 
-	<header class="page-header clearfix">
+<header class="page-header clearfix">
 
-		<h2 class="page-title"><?php echo get_the_category_list( ', ' ); ?></h2>
+	<h2 class="page-title"><?php echo get_the_category_list( ', ' ); ?></h2>
 
-	</header>
+</header>
 
-	<?php admiral_breadcrumbs(); ?>
+<?php admiral_breadcrumbs(); ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<?php admiral_post_image_single(); ?>
+	<?php admiral_post_image_single(); ?>
 
-		<header class="entry-header">
+	<header class="entry-header">
 
-			<?php admiral_entry_meta(); ?>
+		<?php admiral_entry_meta(); ?>
 
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-			<?php admiral_posted_by(); ?>
+		<?php admiral_posted_by(); ?>
 
-		</header><!-- .entry-header -->
+	</header><!-- .entry-header -->
 
-		<div class="entry-content clearfix">
-			<?php the_content(); ?>
-			<!-- <?php trackback_rdf(); ?> -->
-			<div class="page-links"><?php wp_link_pages(); ?></div>
-		</div><!-- .entry-content -->
+	<div class="entry-content clearfix">
 
-		<footer class="entry-footer">
+		<?php the_content(); ?>
 
-			<?php admiral_entry_tags(); ?>
-			<?php admiral_post_navigation(); ?>
+		<?php wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'admiral' ),
+			'after'  => '</div>',
+		) ); ?>
 
-		</footer><!-- .entry-footer -->
+	</div><!-- .entry-content -->
 
-	</article>
+	<footer class="entry-footer">
+
+		<?php admiral_entry_tags(); ?>
+		<?php admiral_post_navigation(); ?>
+
+	</footer><!-- .entry-footer -->
+
+</article>
