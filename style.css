@@ -646,30 +646,36 @@ textarea {
 }
 
 .site-content {
-	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
 	margin-top: -3.5em;
 }
 
 .content-area {
+	-webkit-box-ordinal-group: 3;
+	-ms-flex-order: 2;
 	order: 2;
 	width: 55%;
 	background: #fff;
 	padding: 0 2em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 .main-sidebar {
 	width: 25%;
+	-webkit-box-ordinal-group: 2;
+	-ms-flex-order: 1;
 	order: 1;
 	background: #f5f5f5;
 }
 
 .small-sidebar {
 	width: 20%;
+	-webkit-box-ordinal-group: 4;
+	-ms-flex-order: 3;
 	order: 3;
 	background: #f5f5f5;
 }
@@ -721,9 +727,6 @@ textarea {
 .site-title a:visited {
 	color: #ee4444;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -807,9 +810,6 @@ textarea {
 	color: #ee4444;
 	content: '\f431';
 	-webkit-transform: rotate(270deg);
-	-moz-transform: rotate(270deg);
-	-o-transform: rotate(270deg);
-	-ms-transform: rotate(270deg);
 	transform: rotate(270deg);
 }
 
@@ -1086,8 +1086,6 @@ textarea {
 	min-width: 300px;
 	width: 100%;
 	padding: 0.5em 1.5em 0.5em 0.7em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-appearance: none;
 }
@@ -1164,8 +1162,6 @@ textarea {
 	display: block;
 	width: 33.33333333%;
 	padding-right: 2em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1179,8 +1175,6 @@ textarea {
 	float: left;
 	display: block;
 	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1202,8 +1196,6 @@ textarea {
 	width: 50%;
 	margin: 0;
 	padding-right: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1211,8 +1203,6 @@ textarea {
 	float: right;
 	width: 50%;
 	padding-left: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1226,8 +1216,6 @@ textarea {
 	width: 50%;
 	margin-bottom: 1em;
 	padding-right: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1235,8 +1223,6 @@ textarea {
 	width: 50%;
 	margin-left: 50%;
 	padding-left: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1249,8 +1235,6 @@ textarea {
 	float: left;
 	width: 50%;
 	padding-right: 2em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1264,8 +1248,6 @@ textarea {
 	float: left;
 	width: 50%;
 	padding-right: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1273,8 +1255,6 @@ textarea {
 	margin-left: 50%;
 	width: 50%;
 	padding-left: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1311,9 +1291,6 @@ textarea {
 	color: #ee4444;
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1679,7 +1656,10 @@ textarea {
 
 /* Two Column Layout */
 .post-layout-two-columns .post-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	margin-right: -2em;
 }
@@ -1687,8 +1667,6 @@ textarea {
 .post-layout-two-columns .post-wrapper .post-column {
 	width: 50%;
 	padding-right: 2em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1696,8 +1674,13 @@ textarea {
 	margin: 0;
 }
 
-.post-layout-two-columns .post-wrapper .post-column:nth-child(2n + 1) {
-	clear: left;
+/* Fix Render Bug for Safari */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+	@media {
+		.post-layout-two-columns .post-wrapper .post-column {
+			margin-right: -1px;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
