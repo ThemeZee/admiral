@@ -16,7 +16,8 @@ $theme_options = admiral_theme_options();
 	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+		<?php
+		if ( have_posts() ) : ?>
 
 			<header class="page-header">
 
@@ -38,7 +39,12 @@ $theme_options = admiral_theme_options();
 
 			<?php admiral_pagination(); ?>
 
-		<?php endif; ?>
+		<?php
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif; ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->

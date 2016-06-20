@@ -16,6 +16,9 @@ $theme_options = admiral_theme_options();
 	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
 
+		<?php
+		if ( have_posts() ) : ?>
+
 			<header class="blog-header clearfix">
 
 				<?php // Display Homepage Title.
@@ -38,17 +41,22 @@ $theme_options = admiral_theme_options();
 
 			<div id="post-wrapper" class="post-wrapper clearfix">
 
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+				<?php while ( have_posts() ) : the_post();
 
-						get_template_part( 'template-parts/content' );
+					get_template_part( 'template-parts/content' );
 
-					endwhile;
-
-				endif; ?>
+				endwhile; ?>
 
 			</div>
 
 			<?php admiral_pagination(); ?>
+
+		<?php
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif; ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->

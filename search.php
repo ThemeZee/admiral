@@ -16,17 +16,18 @@ $theme_options = admiral_theme_options();
 	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">
 
-			<header class="page-header">
+			<?php
+			if ( have_posts() ) :  ?>
 
-				<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'admiral' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+				<header class="page-header">
 
-			</header><!-- .page-header -->
+					<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'admiral' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
 
-			<?php admiral_breadcrumbs(); ?>
+				</header><!-- .page-header -->
 
-			<p><?php get_search_form(); ?></p>
+				<?php admiral_breadcrumbs(); ?>
 
-			<?php if ( have_posts() ) :  ?>
+				<p><?php get_search_form(); ?></p>
 
 				<div id="post-wrapper" class="post-wrapper clearfix">
 
@@ -48,25 +49,12 @@ $theme_options = admiral_theme_options();
 
 				<?php admiral_pagination(); ?>
 
-			<?php else : ?>
+			<?php
+			else :
 
-				<div class="no-matches type-page">
+				get_template_part( 'template-parts/content', 'none' );
 
-					<header class="entry-header">
-
-						<h2 class="page-title"><?php esc_html_e( 'No matches', 'admiral' ); ?></h2>
-
-					</header><!-- .entry-header -->
-
-					<div class="entry-content">
-
-						<p><?php esc_html_e( 'Please try again, or use the navigation menus to find what you search for.', 'admiral' ); ?></p>
-
-					</div>
-
-				</div>
-
-			<?php endif; ?>
+			endif; ?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
