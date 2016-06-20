@@ -7,31 +7,31 @@
 
 ?>
 
-	<li id="slide-<?php the_ID(); ?>" class="zeeslide clearfix">
+<li id="slide-<?php the_ID(); ?>" class="zeeslide clearfix">
 
-		<?php // Display Post Thumbnail or default thumbnail.
-		if ( '' !== get_the_post_thumbnail() ) :
+	<?php // Display Post Thumbnail or default thumbnail.
+	if ( has_post_thumbnail() ) :
 
-			the_post_thumbnail( 'post-thumbnail', array( 'class' => 'slide-image' ) );
+		the_post_thumbnail( 'post-thumbnail', array( 'class' => 'slide-image' ) );
 
-		else : ?>
+	else : ?>
 
-			<img src="<?php echo get_template_directory_uri(); ?>/images/default-slider-image.png" class="slide-image default-slide-image wp-post-image" alt="default-image" />
+		<img src="<?php echo get_template_directory_uri(); ?>/images/default-slider-image.png" class="slide-image default-slide-image wp-post-image" alt="default-image" />
 
-		<?php endif;?>
+	<?php endif;?>
 
-		<div class="slide-content clearfix">
+	<div class="slide-content clearfix">
 
-			<?php admiral_entry_meta(); ?>
+		<?php admiral_entry_meta(); ?>
 
-			<?php the_title( sprintf( '<h2 class="slide-title entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php the_title( sprintf( '<h2 class="slide-title entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-			<div class="entry-content clearfix">
+		<div class="entry-content clearfix">
 
-				<?php the_excerpt(); ?>
+			<?php the_excerpt(); ?>
 
-			</div><!-- .entry-content -->
+		</div><!-- .entry-content -->
 
-		</div>
+	</div>
 
-	</li>
+</li>

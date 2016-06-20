@@ -184,7 +184,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'admiral-thumbnail-large' ); ?></a>
+						<?php admiral_post_image( 'admiral-thumbnail-large' ); ?>
 
 						<div class="post-content">
 
@@ -210,9 +210,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'medium-post clearfix' ); ?>>
 
-						<?php if ( has_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'admiral-thumbnail-medium' ); ?></a>
-						<?php endif; ?>
+						<?php admiral_post_image( 'admiral-thumbnail-medium' ); ?>
 
 						<div class="medium-post-content">
 
@@ -279,7 +277,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 						<header class="entry-header">
 
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'admiral-thumbnail-large' ); ?></a>
+							<?php admiral_post_image( 'admiral-thumbnail-large' ); ?>
 
 							<?php $this->entry_meta( $settings ); ?>
 
@@ -299,9 +297,7 @@ class Admiral_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( 'small-post clearfix' ); ?>>
 
-						<?php if ( has_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'admiral-thumbnail-small' ); ?></a>
-						<?php endif; ?>
+						<?php admiral_post_image( 'admiral-thumbnail-small' ); ?>
 
 						<div class="small-post-content">
 

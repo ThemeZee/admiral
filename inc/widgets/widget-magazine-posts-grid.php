@@ -182,7 +182,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 							<header class="entry-header">
 
-								<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'admiral-thumbnail-large' ); ?></a>
+								<?php admiral_post_image( 'admiral-thumbnail-large' ); ?>
 
 								<?php $this->entry_meta( $settings ); ?>
 
@@ -262,7 +262,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 							<header class="entry-header">
 
-								<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'admiral-thumbnail-medium' ); ?></a>
+								<?php admiral_post_image( 'admiral-thumbnail-medium' ); ?>
 
 								<?php $this->entry_meta( $settings ); ?>
 
