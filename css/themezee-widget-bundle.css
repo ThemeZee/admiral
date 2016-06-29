@@ -144,12 +144,12 @@
 /* Small Sidebar */
 .small-sidebar .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 .small-sidebar .tzwb-tabbed-content .tzwb-tabnavi li a:active {
-	background: #2299dd;
+	background: #ee4444;
 	text-decoration: none;
 }
 
 .small-sidebar .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-	background: #2299dd;
+	background: #ee4444;
 }
 
 /*--------------------------------------------------------------
@@ -180,7 +180,7 @@
 
 /* Small Sidebar */
 .small-sidebar .tzwb-social-icons .social-icons-menu li a {
-	background: #2299dd;
+	background: #ee4444;
 }
 
 .small-sidebar .tzwb-social-icons .social-icons-menu li a:hover {

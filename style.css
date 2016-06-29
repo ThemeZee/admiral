@@ -651,7 +651,7 @@ textarea {
 	display: flex;
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
-	margin: -3.5em auto 3em;
+	margin-top: -3.5em;
 }
 
 .content-area {
@@ -660,6 +660,8 @@ textarea {
 	order: 2;
 	width: 55%;
 	background: #fff;
+	border: 1px solid #eee;
+	border-bottom: none;
 	padding: 0 2em;
 	box-sizing: border-box;
 }
@@ -732,7 +734,7 @@ textarea {
 
 .site-title a:hover,
 .site-title a:active {
-	color: #2299dd;
+	color: #ee4444;
 }
 
 .site-branding .custom-logo {
@@ -933,7 +935,7 @@ textarea {
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 1em 1.5em;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 .sidebar-navigation-menu a:link,
@@ -1159,7 +1161,7 @@ textarea {
 /* Small Sidebar */
 .small-sidebar .widget a:link,
 .small-sidebar .widget a:visited  {
-	color: #2299dd;
+	color: #ee4444;
 }
 
 .small-sidebar .widget a:hover,
@@ -1171,7 +1173,7 @@ textarea {
 .small-sidebar input[type="button"],
 .small-sidebar input[type="reset"],
 .small-sidebar input[type="submit"] {
-	background: #2299dd;
+	background: #ee4444;
 }
 
 .small-sidebar button:hover,
@@ -1419,7 +1421,7 @@ textarea {
 
 .entry-title a:hover,
 .entry-title a:active{
-	color: #2299dd;
+	color: #ee4444;
 }
 
 .type-post .wp-post-image,
@@ -1549,7 +1551,7 @@ textarea {
 /* Small Sidebar */
 .small-sidebar .widget_tag_cloud .tagcloud a:hover,
 .small-sidebar .widget_tag_cloud .tagcloud a:active {
-	background: #2299dd;
+	background: #ee4444;
 }
 
 /* Post Navigation */
@@ -1658,8 +1660,7 @@ textarea {
 .page-header {
 	margin: 0 -2em 2em;
 	background: #f5f5f5;
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #eee;
 }
 
 .main-sidebar .sidebar-header {
@@ -1670,8 +1671,8 @@ textarea {
 
 .small-sidebar .sidebar-header {
 	color: #fff;
-	background: #2299dd;
-	border-bottom: 1px solid #2299dd;
+	background: #ee4444;
+	border-bottom: 1px solid #ee4444;
 }
 
 .blog-title,
@@ -1948,10 +1949,11 @@ textarea {
 # 12.0 - Footer
 --------------------------------------------------------------*/
 .footer-wrap {
-	background: #ee4444;
+	background: #fff;
 }
 
 .footer-content {
+	background: #ee4444;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
@@ -2096,13 +2098,13 @@ object {
 		z-index: 300;
 		padding: 0.95rem 1.25rem;
 		min-height: 3.5rem;
-		background: #2299dd;
+		background: #ee4444;
 	}
 
 	.small-sidebar-toggle:hover,
 	.small-sidebar-toggle:active,
 	.small-sidebar-toggle:focus {
-		background: #2299dd;
+		background: #ee4444;
 	}
 
 	.small-sidebar-toggle:after {
