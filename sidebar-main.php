@@ -22,23 +22,28 @@ $theme_options = admiral_theme_options();
 
 		</header>
 
-		<div id="main-navigation-wrap" class="primary-navigation-wrap">
+		<?php // Check if there is a top navigation menu.
+		if ( has_nav_menu( 'secondary' ) ) : ?>
 
-			<nav id="main-navigation" class="primary-navigation navigation clearfix" role="navigation">
+		<div id="sidebar-navigation-wrap" class="secondary-navigation-wrap">
+
+			<nav id="sidebar-navigation" class="secondary-navigation navigation clearfix" role="navigation">
 				<?php
 					// Display Main Navigation.
 					wp_nav_menu( array(
-						'theme_location' => 'primary',
+						'theme_location' => 'secondary',
 						'container' => false,
-						'menu_class' => 'main-navigation-menu',
+						'menu_class' => 'sidebar-navigation-menu',
 						'echo' => true,
-						'fallback_cb' => 'admiral_default_menu',
+						'fallback_cb' => '',
 						)
 					);
 				?>
 			</nav><!-- #main-navigation -->
 
 		</div>
+
+		<?php endif; ?>
 
 		<?php // Check if Sidebar has widgets.
 		if ( is_active_sidebar( 'sidebar' ) ) :

@@ -41,6 +41,12 @@ function admiral_setup() {
 	// Register Navigation Menu.
 	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'admiral' ) );
 
+	// Register Navigation Menus.
+	register_nav_menus( array(
+		'primary'	=> esc_html__( 'Main Navigation', 'admiral' ),
+		'secondary'	=> esc_html__( 'Sidebar Navigation', 'admiral' ),
+	) );
+
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5.
 	add_theme_support( 'html5', array(
 		'search-form',
@@ -115,6 +121,16 @@ function admiral_widgets_init() {
 	));
 
 	register_sidebar( array(
+		'name' => esc_html__( 'Header', 'admiral' ),
+		'id' => 'header',
+		'description' => esc_html__( 'Appears on header area. You can use a search or ad widget here.', 'admiral' ),
+		'before_widget' => '<aside id="%1$s" class="header-widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h4 class="header-widget-title">',
+		'after_title' => '</h4>',
+	));
+
+	register_sidebar( array(
 		'name' => esc_html__( 'Magazine Homepage', 'admiral' ),
 		'id' => 'magazine-homepage',
 		'description' => esc_html__( 'Appears on Magazine Homepage template only. You can use the Magazine Posts widgets here.', 'admiral' ),
@@ -173,7 +189,7 @@ add_action( 'wp_enqueue_scripts', 'admiral_scripts' );
 function admiral_google_fonts_url() {
 
 	// Set default Fonts.
-	$font_families = array( 'Open Sans:400,400italic,700,700italic', 'Raleway:400,400italic,700,700italic' );
+	$font_families = array( 'Open Sans:400,400italic,700,700italic', 'Montserrat:400,400italic,700,700italic' );
 
 	// Build Fonts URL.
 	$query_args = array(

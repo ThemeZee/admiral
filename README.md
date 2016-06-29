@@ -92,7 +92,7 @@ F) Licenses of bundled resources
 	License: Distributed under the terms of the Apache License version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
 	Copyright: 2016 Steve Matteson
 	
-	6. Raleway Font - https://www.google.com/fonts/specimen/Raleway
+	6. Montserrat Font - https://www.google.com/fonts/specimen/Montserrat
 	License: Distributed under the terms of the SIL Open Font License (http://scripts.sil.org/OFL)
 	Copyright: 2015 Matt McInerney, Pablo Impallari
 	
