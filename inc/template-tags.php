@@ -59,7 +59,7 @@ if ( ! function_exists( 'admiral_post_image' ) ) :
  * @param string $size Post thumbnail size.
  * @param array  $attr Post thumbnail attributes.
  */
-function admiral_post_image( $size = '', $attr = array() ) {
+function admiral_post_image( $size = 'post-thumbnail', $attr = array() ) {
 
 	// Display Post Thumbnail.
 	if ( has_post_thumbnail() ) : ?>

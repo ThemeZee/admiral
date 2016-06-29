@@ -19,7 +19,9 @@
 	--------------------------------------------------------------*/
 	$.fn.responsiveSidebar = function( options ) {
 
-		if (options === undefined) { options = };
+		if ( options === undefined ) {
+			options = {};
+		}
 
 		/* Set Defaults */
 		var defaults = {

@@ -651,7 +651,7 @@ textarea {
 	display: flex;
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
-	margin-top: -3.5em;
+	margin: -3.5em auto 3em;
 }
 
 .content-area {
@@ -693,14 +693,14 @@ textarea {
 }
 
 .header-main {
-	padding: 2.5em 2em;
+	padding: 3em 2em;
 }
 
 .site-branding {
-	float: left;
 	max-width: 100%;
 	margin: 0 1em;
 	padding: 0;
+	text-align: center;
 }
 
 .site-branding a:link,
@@ -744,25 +744,6 @@ textarea {
 	height: auto;
 }
 
-/* Header Widgets */
-.header-widgets {
-	display: inline;
-}
-
-.header-widget {
-	float: right;
-	margin: 1em 0 0 1.5em;
-}
-
-.header-widget ul {
-	margin: 0;
-	padding: 0;
-}
-
-.header-widget-title {
-	margin: 0 0 0.5em;
-}
-
 /*--------------------------------------------------------------
 # 10.0 - Navigation
 --------------------------------------------------------------*/
@@ -793,24 +774,8 @@ textarea {
 	font-weight: bold;
 	text-transform: uppercase;
 	text-decoration: none;
-	padding: 1em;
+	padding: 1em 1.5em;
 	border-bottom: 1px solid #ccc;
-}
-
-.main-navigation-menu a:before {
-	display: inline-block;
-	margin: 0 0.3em 0 0;
-	font-size: 22px;
-	line-height: 1;
-	font-family: 'Genericons';
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-decoration: inherit;
-	vertical-align: top;
-	color: #ee4444;
-	content: '\f431';
-	-webkit-transform: rotate(270deg);
-	transform: rotate(270deg);
 }
 
 .main-navigation-menu a:link,
@@ -1825,11 +1790,10 @@ textarea {
 # 12.0 - Footer
 --------------------------------------------------------------*/
 .footer-wrap {
-	background: #fff;
+	background: #ee4444;
 }
 
 .footer-content {
-	background: #ee4444;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
@@ -2107,24 +2071,6 @@ object {
 		float: none;
 		text-align: center;
 		margin: 0;
-	}
-
-	.header-widgets {
-		display: block;
-		text-align: center;
-	}
-
-	.header-widget {
-		float: none;
-		display: inline-block;
-		margin: 1em 0 0;
-		vertical-align: top;
-		max-width: 100%;
-
-	}
-
-	.header-widget .search-form {
-		max-width: 300px;
 	}
 
 }
