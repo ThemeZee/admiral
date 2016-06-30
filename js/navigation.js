@@ -143,7 +143,7 @@
 		$( '#main-navigation' ).responsiveMenu({
 			menuClass: 'main-navigation-menu',
 			toggleClass: 'main-navigation-toggle',
-			maxWidth: '50em'
+			maxWidth: '60em'
 		});
 
 	} );

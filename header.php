@@ -25,21 +25,9 @@
 
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'admiral' ); ?></a>
 
-		<div id="main-navigation-wrap" class="primary-navigation-wrap">
+		<div id="header-top" class="header-bar-wrap">
 
-			<nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
-				<?php
-					// Display Main Navigation.
-					wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'container' => false,
-						'menu_class' => 'main-navigation-menu',
-						'echo' => true,
-						'fallback_cb' => 'admiral_default_menu',
-						)
-					);
-				?>
-			</nav><!-- #main-navigation -->
+			<?php get_template_part( 'template-parts/header-bar' ); ?>
 
 		</div>
 

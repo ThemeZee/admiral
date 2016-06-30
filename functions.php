@@ -36,7 +36,7 @@ function admiral_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Set detfault Post Thumbnail size.
-	set_post_thumbnail_size( 820, 460, true );
+	set_post_thumbnail_size( 820, 510, true );
 
 	// Register Navigation Menu.
 	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'admiral' ) );
@@ -45,6 +45,7 @@ function admiral_setup() {
 	register_nav_menus( array(
 		'primary'	=> esc_html__( 'Main Navigation', 'admiral' ),
 		'secondary'	=> esc_html__( 'Sidebar Navigation', 'admiral' ),
+		'social'	=> esc_html__( 'Social Icons', 'admiral' ),
 	) );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5.

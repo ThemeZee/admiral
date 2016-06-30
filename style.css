@@ -695,7 +695,7 @@ textarea {
 }
 
 .header-main {
-	padding: 3em 2em;
+	padding: 3em 2em 2.5em;
 }
 
 .site-branding {
@@ -773,7 +773,7 @@ textarea {
 /*--------------------------------------------------------------
 ## 10.1 - Main Navigation
 --------------------------------------------------------------*/
-.primary-navigation-wrap {
+.header-bar-wrap {
 	background: #ee4444;
 }
 
@@ -782,6 +782,7 @@ textarea {
 }
 
 .main-navigation-menu {
+	display: inline;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
@@ -841,6 +842,7 @@ textarea {
 	list-style-position: outside;
 	background: #ee4444;
 	text-align: left;
+	border-top: 1px solid #fff;
 }
 
 .main-navigation-menu ul li{
@@ -864,10 +866,6 @@ textarea {
 	border-bottom: none;
 }
 
-.main-navigation-menu ul a:hover {
-	background: rgba(0,0,0,0.25);
-}
-
 .main-navigation-menu ul .menu-item-has-children > a:after {
 	display: inline-block;
 	margin: 0.4em 0 0 0.2em;
@@ -889,6 +887,8 @@ textarea {
 .main-navigation-menu li ul ul {
 	margin-left: 250px;
 	margin-left: 16rem;
+	margin-top: -1px;
+	border-left: 1px solid #fff;
 }
 
 .main-navigation-menu li:hover ul ul,
@@ -1039,6 +1039,7 @@ textarea {
 
 .social-icons-menu li {
 	float: left;
+	display: inline-block;
 	margin: 0;
 	padding: 0;
 }
@@ -1099,6 +1100,28 @@ textarea {
 .social-icons-menu li a[href*="?feed=rss2"]:before,
 .social-icons-menu li a[href*="feedburner.google.com"]:before,
 .social-icons-menu li a[href*="feedburner.com"]:before { content: '\f413'; }
+
+/* Header Bar */
+.header-bar .social-icons-navigation {
+	float: right;
+}
+
+.header-bar .social-icons-menu li a {
+	padding: 0.9em;
+}
+
+.header-bar .social-icons-menu li a:before {
+	font-size: 24px;
+}
+
+.header-bar .social-icons-menu li a:hover:before {
+	text-decoration: none;
+}
+
+.header-bar .social-icons-menu li a:hover,
+.header-bar .social-icons-menu li a:active {
+	background: rgba(0,0,0,0.25);
+}
 
 /*--------------------------------------------------------------
 # 11.0 - Widgets
@@ -1650,7 +1673,7 @@ textarea {
 .sidebar-header,
 .archive-header {
 	margin: 0 0 1em;
-	padding: 0 1.25em;
+	padding: 0 1.25em 0.75em;
 	min-height: 3.5em;
 	color: #303030;
 }
@@ -1658,7 +1681,7 @@ textarea {
 .blog-header,
 .archive-header,
 .page-header {
-	margin: 0 -2em 2em;
+	margin: 0 -2rem 2em;
 	background: #f5f5f5;
 	border-bottom: 1px solid #eee;
 }
@@ -1683,7 +1706,7 @@ textarea {
 	font-size: 15px;
 	font-size: 0.9375rem;
 	text-transform: uppercase;
-	padding: 0.95em 0 0;
+	padding: 1em 0 0;
 	margin: 0;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
@@ -2083,7 +2106,7 @@ object {
 	.blog-header,
 	.archive-header,
 	.page-header {
-		margin-right: 2rem;
+		padding-right: 5rem;
 	}
 
 	.small-sidebar .sidebar-header .sidebar-title {
@@ -2096,7 +2119,7 @@ object {
 		top: 0;
 		right: 2rem;
 		z-index: 300;
-		padding: 0.95rem 1.25rem;
+		padding: 1rem 1.6rem;
 		min-height: 3.5rem;
 		background: #ee4444;
 	}
@@ -2111,18 +2134,15 @@ object {
 		float: left;
 		display: inline-block;
 		font-size: 24px;
+		vertical-align: top;
 		line-height: 1;
-		font-family: 'Genericons';
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-decoration: inherit;
-		vertical-align: middle;
-		content: '\f510';
 		color: #fff;
+		margin: -6px 0 0;
+		content: "\00AB";
 	}
 
 	.small-sidebar-toggle.active:after {
-		content: '\f50e';
+		content: "\00BB";
 	}
 
 	.small-sidebar {
@@ -2170,7 +2190,7 @@ object {
 	.blog-header,
 	.archive-header,
 	.page-header {
-		margin-left: 2rem;
+		padding-left: 5.25rem;
 	}
 
 	.main-sidebar .sidebar-header .sidebar-title {
@@ -2183,7 +2203,7 @@ object {
 		top: 0;
 		left: 2rem;
 		z-index: 300;
-		padding: 0.95rem 1.25rem;
+		padding: 1rem 1.6rem;
 		min-height: 3.5rem;
 		background: #ee4444;
 	}
@@ -2198,18 +2218,15 @@ object {
 		float: left;
 		display: inline-block;
 		font-size: 24px;
+		vertical-align: top;
 		line-height: 1;
-		font-family: 'Genericons';
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-decoration: inherit;
-		vertical-align: middle;
-		content: '\f419';
 		color: #fff;
+		margin: -6px 0 0;
+		content: "\00BB";
 	}
 
 	.main-sidebar-toggle.active:after {
-		content: '\f406';
+		content: "\00AB";
 	}
 
 	.main-sidebar {
@@ -2252,6 +2269,14 @@ object {
 
 	/*** Mobile Main Navigation ***/
 
+	.header-bar {
+		padding: 0;
+	}
+
+	.header-bar .social-icons-navigation {
+		margin-right: 1em;
+	}
+
 	/* Reset */
 	.primary-navigation,
 	.main-navigation-menu li {
@@ -2290,13 +2315,13 @@ object {
 
 	/* Main Navigation Toggle */
 	.main-navigation-toggle {
-		display: block;
-		width: 100%;
-		font-size: 14px;
-		font-size: 0.875rem;
-		font-weight: bold;
-		padding: 0.75em 1.5em;
-		background: #353535;
+		float: left;
+		display: inline-block;
+		font-size: 16px;
+		font-size: 1rem;
+		margin-left: 1em;
+		padding: 0.9em;
+		background: none;
 		text-align: left;
 	}
 
@@ -2304,12 +2329,13 @@ object {
 	.main-navigation-toggle:focus,
 	.main-navigation-toggle:active {
 		cursor: pointer;
+		background: rgba(0,0,0,0.25);
 	}
 
 	.main-navigation-toggle:after {
 		float: left;
 		display: inline-block;
-		margin: 0 0.75em 0 0;
+		margin: 0;
 		font-size: 24px;
 		line-height: 1;
 		font-family: 'Genericons';
@@ -2332,9 +2358,6 @@ object {
 	.main-navigation-menu a {
 		display: block;
 		clear: left;
-		font-size: 14px;
-		font-size: 0.875rem;
-		padding: 1em 1.5em;
 		border-bottom: 1px solid rgba(255,255,255,0.1);
 	}
 
@@ -2370,8 +2393,9 @@ object {
 		border-bottom: 1px solid rgba(255,255,255,0.1);
 	}
 
-	.main-navigation-menu ul ul {
-		border-bottom: 1px solid rgba(255,255,255,0.1);
+	.main-navigation-menu li ul ul {
+		border: none;
+		border-top: 1px solid rgba(255,255,255,0.1);
 	}
 
 	.main-navigation-menu li.current-menu-item > a {
@@ -2384,11 +2408,12 @@ object {
 		float: right;
 		display: block;
 		margin: 0;
-		padding: 0.6em 1.2em;
+		padding: 0.65em 1.2em 0.6em;
 	}
 
 	.main-navigation-menu .submenu-dropdown-toggle:hover {
 		cursor: pointer;
+		background: rgba(0,0,0,0.25);
 	}
 
 	.main-navigation-menu .submenu-dropdown-toggle:before {
@@ -2401,10 +2426,6 @@ object {
 		vertical-align: middle;
 		content: '\f431';
 		color: #fff;
-	}
-
-	.main-navigation-menu .submenu-dropdown-toggle:hover:before {
-		color: #aaa;
 	}
 
 	.main-navigation-menu .submenu-dropdown-toggle.active:before {
@@ -2625,6 +2646,19 @@ object {
 	.alignright, .alignleft {
 		float: none;
 		margin: 1em 0;
+	}
+
+	.main-navigation-toggle,
+	.header-bar .social-icons-navigation {
+		margin: 0;
+	}
+
+	.header-bar .social-icons-menu li a {
+		padding: 1.1em 0.9em;
+	}
+
+	.header-bar .social-icons-menu li a:before {
+		font-size: 18px;
 	}
 
 	/* Magazine Homepage: Category Post Widgets */
