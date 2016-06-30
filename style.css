@@ -1181,35 +1181,6 @@ textarea {
 	color: #ee4444;
 }
 
-/* Small Sidebar */
-.small-sidebar .widget a:link,
-.small-sidebar .widget a:visited  {
-	color: #ee4444;
-}
-
-.small-sidebar .widget a:hover,
-.small-sidebar .widget a:active  {
-	color: #303030;
-}
-
-.small-sidebar button,
-.small-sidebar input[type="button"],
-.small-sidebar input[type="reset"],
-.small-sidebar input[type="submit"] {
-	background: #ee4444;
-}
-
-.small-sidebar button:hover,
-.small-sidebar input[type="button"]:hover,
-.small-sidebar input[type="reset"]:hover,
-.small-sidebar input[type="submit"]:hover,
-.small-sidebar button:active,
-.small-sidebar input[type="button"]:active,
-.small-sidebar input[type="reset"]:active,
-.small-sidebar input[type="submit"]:active {
-	background: #303030;
-}
-
 /*--------------------------------------------------------------
 ## 11.1 - Default Widgets
 --------------------------------------------------------------*/
@@ -1409,6 +1380,17 @@ textarea {
 .widget-magazine-posts-columns .medium-post {
 	width: 100%;
 	padding-right: 0;
+}
+
+/* Magazine Posts Sidebar Widget */
+.main-sidebar .widget-magazine-posts-sidebar .entry-title {
+	font-size: 20px;
+	font-size: 1.25rem;
+}
+
+.small-sidebar .widget-magazine-posts-sidebar .entry-title {
+	font-size: 16px;
+	font-size: 1rem;
 }
 
 /*--------------------------------------------------------------
