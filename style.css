@@ -746,26 +746,6 @@ textarea {
 	height: auto;
 }
 
-/* Header Widgets */
-.header-widgets {
-	display: inline;
-}
-
-.header-widget {
-	float: right;
-	margin: 0.5em 0 0 1.5em;
-}
-
-.header-widget ul {
-	margin: 0;
-	padding: 0;
-}
-
-.header-widget-title {
-	margin: 0 0 0.5em;
-}
-
-
 /*--------------------------------------------------------------
 # 10.0 - Navigation
 --------------------------------------------------------------*/
@@ -2230,23 +2210,6 @@ object {
 		float: none;
 		text-align: center;
 		margin: 0;
-	}
-
-	.header-widgets {
-		display: block;
-		text-align: center;
-	}
-
-	.header-widget {
-		float: none;
-		display: inline-block;
-		margin: 1em 0 0;
-		vertical-align: top;
-		max-width: 100%;
-	}
-
-	.header-widget .search-form {
-		max-width: 300px;
 	}
 
 	/*** Mobile Main Navigation ***/

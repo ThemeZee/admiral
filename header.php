@@ -42,18 +42,11 @@
 
 				</div><!-- .site-branding -->
 
-				<div class="header-widgets clearfix">
-
-					<?php // Display Header Widgets.
-					if ( is_active_sidebar( 'header' ) ) :
-
-						dynamic_sidebar( 'header' );
-
-					endif; ?>
-
-				</div><!-- .header-widgets -->
+				<?php do_action( 'admiral_header_widgets' ); ?>
 
 			</div><!-- .header-main -->
+
+			<?php do_action( 'admiral_header_menu' ); ?>
 
 		</header><!-- #masthead -->
 
