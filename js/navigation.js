@@ -1,6 +1,5 @@
 /**
- * Navigation Plugin
- * Includes responsiveMenu() function
+ * Navigation Menu Plugin
  *
  * Copyright 2016 ThemeZee
  * Free to use under the GPLv2 and later license.
@@ -14,122 +13,72 @@
 (function($) {
 
 	/**--------------------------------------------------------------
-	# Responsive Navigation for WordPress menus
+	# Add Desktop Dropdown Animation
 	--------------------------------------------------------------*/
-	$.fn.responsiveMenu = function( options ) {
+	$.fn.addDropdownAnimation = function() {
 
-		if ( options === undefined ) {
-			options = {};
-		}
+		/* Add dropdown animation for desktop navigation menu */
+		$(this).find('ul').css({display: 'none'});
+		$(this).find('li').hover(function(){
+			$(this).find('ul:first').css({visibility: 'visible',display: 'none'}).slideDown(300);
+		},function(){
+			$(this).find('ul:first').css({visibility: 'hidden'});
+		});
 
-		/* Set Defaults */
-		var defaults = {
-			menuClass: 'menu',
-			toggleClass: 'menu-toggle',
-			toggleText: '',
-			maxWidth: '60em'
-		};
+		// Add menu items with submenus to aria-haspopup="true".
+		$(this).find( '.menu-item-has-children' ).attr( 'aria-haspopup', 'true' ).attr( 'aria-expanded', 'false' );
 
-		/* Set Variables */
-		var vars = $.extend( {}, defaults, options ),
-			menuClass = vars.menuClass,
-			toggleID = ( vars.toggleID ) ? vars.toggleID : vars.toggleClass,
-			toggleClass = vars.toggleClass,
-			toggleText = vars.toggleText,
-			maxWidth = vars.maxWidth,
-			$this = $( this ),
-			$menu = $( '.' + menuClass );
+		/* Properly update the ARIA states on focus (keyboard) and mouse over events */
+		$(this).find( 'li.menu-item-has-children a' ).on( 'focus.aria mouseenter.aria', function() {
+			$( this ).parents( '.menu-item' ).attr( 'aria-expanded', true ).find('ul:first').css({visibility: 'visible',display: 'block'});
+		} );
 
-		/*********************
-		* Desktop Navigation *
-		**********************/
+		/* Properly update the ARIA states on blur (keyboard) and mouse out events */
+		$(this).find( 'li.menu-item-has-children a' ).on( 'blur.aria  mouseleave.aria', function() {
 
-		/* Set and reset dropdown animations based on screen size */
-		if ( typeof matchMedia == 'function' ) {
-			var mq = window.matchMedia( '(max-width: ' + maxWidth + ')' );
-			mq.addListener( widthChange );
-			widthChange( mq );
-		}
-		function widthChange( mq ) {
+			if( ! $(this).parent().next('li').length > 0 && ! $(this).next('ul').length > 0 ) {
 
-			if ( mq.matches ) {
-
-				/* Reset desktop navigation menu dropdown animation on smaller screens */
-				$menu.find( 'ul' ).css( {display: 'block'} );
-				$menu.find( 'li ul' ).css( {visibility: 'visible', display: 'block'} );
-				$menu.find( 'li' ).unbind( 'mouseenter mouseleave' );
-
-				$menu.find( 'li.menu-item-has-children ul' ).each( function() {
-					$( this ).hide();
-					$( this ).parent().find( '.submenu-dropdown-toggle' ).removeClass( 'active' );
-				} );
-
-				/* Remove ARIA states on mobile devices */
-				$menu.find( 'li.menu-item-has-children a' ).unbind( 'focus.aria mouseenter.aria blur.aria  mouseleave.aria' );
-
-			} else {
-
-				/* Add dropdown animation for desktop navigation menu */
-				$menu.find( 'ul' ).css( {display: 'none'} );
-				$menu.find( 'li' ).hover( function() {
-					$( this ).find( 'ul:first' ).css( {visibility: 'visible', display: 'none'} ).slideDown( 300 );
-				}, function() {
-					$( this ).find( 'ul:first' ).css( {visibility: 'hidden'} );
-				} );
-
-				/* Make sure menu does not fly off the right of the screen */
-				$menu.find( 'li ul .menu-item-has-children' ).mouseenter( function() {
-					if ( $( this ).children( 'ul' ).offset().left + 250 > $( window ).width() ) {
-						$( this ).children( 'ul' ).css( 'right', '16rem' );
-					}
-				});
-
-				// Add menu items with submenus to aria-haspopup="true".
-				$menu.find( '.menu-item-has-children' ).attr( 'aria-haspopup', 'true' ).attr( 'aria-expanded', 'false' );
-
-				/* Properly update the ARIA states on focus (keyboard) and mouse over events */
-				$menu.find( 'li.menu-item-has-children a' ).on( 'focus.aria mouseenter.aria', function() {
-					$( this ).parents( '.menu-item' ).attr( 'aria-expanded', true ).find('ul:first').css({visibility: 'visible',display: 'block'});
-				} );
-
-				/* Properly update the ARIA states on blur (keyboard) and mouse out events */
-				$menu.find( 'li.menu-item-has-children a' ).on( 'blur.aria  mouseleave.aria', function() {
-
-					if( ! $(this).parent().next('li').length > 0 && ! $(this).next('ul').length > 0 ) {
-
-						$( this ).closest( '.menu-item-has-children' ).attr( 'aria-expanded', false ).find('.sub-menu').css({display: 'none'});
-
-					}
-
-				} );
+				$( this ).closest( '.menu-item-has-children' ).attr( 'aria-expanded', false ).find('.sub-menu').css({display: 'none'});
 
 			}
 
-		}
+		} );
 
-		/********************
-		* Mobile Navigation *
-		*********************/
+	};
 
-		/* Add Menu Toggle Button for mobile navigation */
-		$this.before( '<button id=\"' + toggleID + '\" class=\"' + toggleClass + '\">' + toggleText + '</button>' );
+	/**--------------------------------------------------------------
+	# Reset Desktop Dropdown Animation
+	--------------------------------------------------------------*/
+	$.fn.resetDropdownAnimation = function() {
+
+		/* Reset desktop navigation menu dropdown animation on smaller screens */
+		$(this).find('ul').css({display: 'block'});
+		$(this).find('li ul').css({visibility: 'visible', display: 'block'});
+		$(this).find('li').unbind('mouseenter mouseleave');
+
+		$(this).find('li ul').each( function () {
+			$(this).hide();
+			$(this).parent().find('.submenu-dropdown-toggle').removeClass('active');
+		} );
+
+		/* Remove ARIA states on mobile devices */
+		$(this).find( 'li.menu-item-has-children a' ).unbind( 'focus.aria mouseenter.aria blur.aria  mouseleave.aria' );
+
+	};
+
+	/**--------------------------------------------------------------
+	# Add submenus dropdowns for mobile menu
+	--------------------------------------------------------------*/
+	$.fn.addMobileSubmenu = function() {
 
 		/* Add dropdown toggle for submenus on mobile navigation */
-		$menu.find( 'li.menu-item-has-children' ).prepend( '<span class=\"submenu-dropdown-toggle\"></span>' );
-
-		/* Add dropdown slide animation for mobile devices */
-		$( '#' + toggleID ).on( 'click', function() {
-			$menu.slideToggle();
-			$( this ).toggleClass( 'active' );
-		});
+		$(this).find('li.menu-item-has-children').prepend('<span class=\"submenu-dropdown-toggle\"></span>');
+		$(this).find('li.page_item_has_children').prepend('<span class=\"submenu-dropdown-toggle\"></span>');
 
 		/* Add dropdown animation for submenus on mobile navigation */
-		$menu.find( 'li.menu-item-has-children ul' ).each( function () {
-			$( this ).hide();
-		} );
-		$menu.find( '.submenu-dropdown-toggle' ).on( 'click', function() {
-			$( this ).parent().find( 'ul:first' ).slideToggle();
-			$( this ).toggleClass( 'active' );
+		$(this).find('.submenu-dropdown-toggle').on('click', function(){
+			$(this).parent().find('ul:first').slideToggle();
+			$(this).toggleClass('active');
 		});
 
 	};
@@ -139,19 +88,53 @@
 	--------------------------------------------------------------*/
 	$( document ).ready( function() {
 
-		/* Setup Main Navigation */
-		$( '#main-navigation' ).responsiveMenu({
-			menuClass: 'main-navigation-menu',
-			toggleClass: 'main-navigation-toggle',
-			maxWidth: '60em'
+		/* Variables */
+		var main_menu = $('.main-navigation-menu'),
+			header_menu = $('.header-navigation-menu'),
+			menu_wrap = $('.main-navigation-menu-wrap');
+
+		/* Add Listener for screen size */
+		if(typeof matchMedia == 'function') {
+			var mq = window.matchMedia('(max-width: 60em)');
+			mq.addListener(widthChange);
+			widthChange(mq);
+		}
+		function widthChange(mq) {
+
+			if (mq.matches) {
+
+				/* Reset desktop navigation menu dropdown animation on smaller screens */
+				main_menu.resetDropdownAnimation();
+				header_menu.resetDropdownAnimation();
+
+				/* Copy header navigation items to main navigation on mobile screens */
+				header_menu.appendTo( menu_wrap ).addClass('mobile-header-menu');
+
+			} else {
+
+				/* Add dropdown animation for desktop navigation menu */
+				main_menu.addDropdownAnimation();
+				header_menu.addDropdownAnimation();
+
+				/* Copy Header Navigation back to original spot */
+				$('.mobile-header-menu').removeClass('mobile-header-menu').appendTo( $('#header-navigation') );
+
+			}
+
+		}
+
+		/* Add Menu Toggle Button for mobile navigation */
+		$("#main-navigation").before('<button id=\"main-navigation-toggle\" class=\"main-navigation-toggle\"></button>');
+
+		/* Add dropdown slide animation for mobile devices */
+		$('#main-navigation-toggle').on('click', function(){
+			menu_wrap.slideToggle();
+			$(this).toggleClass('active');
 		});
 
-		/* Setup Header Navigation */
-		$( '#header-navigation' ).responsiveMenu({
-			menuClass: 'header-navigation-menu',
-			toggleClass: 'header-navigation-toggle',
-			maxWidth: '60em'
-		});
+		/* Add submenus for mobile navigation menu */
+		main_menu.addMobileSubmenu();
+		header_menu.addMobileSubmenu();
 
 	} );
 

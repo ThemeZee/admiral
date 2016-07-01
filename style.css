@@ -695,7 +695,7 @@ textarea {
 }
 
 .header-main {
-	padding: 3em 2em 2.5em;
+	padding: 3em 2em;
 }
 
 .site-branding {
@@ -2258,7 +2258,7 @@ object {
 	}
 
 	/* Main Navigation Menu */
-	.main-navigation-menu {
+	.main-navigation-menu-wrap {
 		float: left;
 		width: 100%;
 		display: none;
@@ -2284,11 +2284,11 @@ object {
 	.main-navigation-menu ul a {
 		display: block;
 		width: 100%;
-		padding-left: 2em;
+		padding-left: 3em;
 	}
 
 	.main-navigation-menu ul li ul a {
-		padding-left: 4em;
+		padding-left: 4.5em;
 	}
 
 	.main-navigation-menu ul li ul li ul a {
@@ -2296,7 +2296,7 @@ object {
 	}
 
 	.main-navigation-menu ul li ul li ul li ul a {
-		padding-left: 8em;
+		padding-left: 7.5em;
 	}
 
 	.main-navigation-menu ul li:last-child a {
@@ -2645,7 +2645,7 @@ object {
 		max-width: 100% !important;
 	}
 
-	.main-navigation-menu {
+	.main-navigation-menu-wrap {
 		display: block !important;
 	}
 
