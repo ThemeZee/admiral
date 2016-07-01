@@ -48,7 +48,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 			'number'			=> 6,
 			'excerpt'			=> false,
 			'meta_date'			=> true,
-			'meta_author'		=> false,
+			'meta_comments'		=> false,
 		);
 
 		return $defaults;
@@ -319,9 +319,9 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 		}
 
-		if ( true === $settings['meta_author'] ) {
+		if ( true === $settings['meta_comments'] ) {
 
-			$postmeta .= admiral_meta_author();
+			$postmeta .= admiral_meta_comments();
 
 		}
 
@@ -387,7 +387,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$instance['number'] = (int) $new_instance['number'];
 		$instance['excerpt'] = ! empty( $new_instance['excerpt'] );
 		$instance['meta_date'] = ! empty( $new_instance['meta_date'] );
-		$instance['meta_author'] = ! empty( $new_instance['meta_author'] );
+		$instance['meta_comments'] = ! empty( $new_instance['meta_comments'] );
 
 		$this->delete_widget_cache();
 
@@ -456,9 +456,9 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_author' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_author'] ); ?> id="<?php echo $this->get_field_id( 'meta_author' ); ?>" name="<?php echo $this->get_field_name( 'meta_author' ); ?>" />
-				<?php esc_html_e( 'Display post author', 'admiral' ); ?>
+			<label for="<?php echo $this->get_field_id( 'meta_comments' ); ?>">
+				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_comments'] ); ?> id="<?php echo $this->get_field_id( 'meta_comments' ); ?>" name="<?php echo $this->get_field_name( 'meta_comments' ); ?>" />
+				<?php esc_html_e( 'Display post comments', 'admiral' ); ?>
 			</label>
 		</p>
 

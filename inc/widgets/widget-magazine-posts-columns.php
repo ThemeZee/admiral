@@ -48,8 +48,7 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 			'category_two_title'	=> '',
 			'number'				=> 4,
 			'highlight_post'		=> true,
-			'meta_date'				=> true,
-			'meta_author'			=> false,
+			'post_meta'				=> true,
 		);
 
 		return $defaults;
@@ -203,7 +202,7 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 							<?php admiral_post_image( 'admiral-thumbnail-large' ); ?>
 
-							<?php $this->entry_meta( $settings ); ?>
+							<?php $this->entry_meta( $settings, true ); ?>
 
 							<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -250,26 +249,18 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 	/**
 	 * Displays Entry Meta of Posts
-	 *
-	 * @param array $settings / Settings for this widget instance.
 	 */
-	function entry_meta( $settings ) {
+	function entry_meta( $settings, $comments = false ) {
 
-		$postmeta = '';
+		if( true == $settings['post_meta'] ) {
 
-		if ( true === $settings['meta_date'] ) {
+			$postmeta = admiral_meta_date();
 
-			$postmeta .= admiral_meta_date();
+			if ( true == $comments ) {
 
-		}
+				$postmeta .= admiral_meta_comments();
 
-		if ( true === $settings['meta_author'] ) {
-
-			$postmeta .= admiral_meta_author();
-
-		}
-
-		if ( $postmeta ) {
+			}
 
 			echo '<div class="entry-meta">' . $postmeta . '</div>';
 
@@ -333,8 +324,7 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 		$instance['category_two'] = (int) $new_instance['category_two'];
 		$instance['number'] = (int) $new_instance['number'];
 		$instance['highlight_post'] = ! empty( $new_instance['highlight_post'] );
-		$instance['meta_date'] = ! empty( $new_instance['meta_date'] );
-		$instance['meta_author'] = ! empty( $new_instance['meta_author'] );
+		$instance['post_meta'] = ! empty( $new_instance['post_meta'] );
 
 		$this->delete_widget_cache();
 
@@ -409,16 +399,9 @@ class Admiral_Magazine_Posts_Columns_Widget extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_date' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_date'] ); ?> id="<?php echo $this->get_field_id( 'meta_date' ); ?>" name="<?php echo $this->get_field_name( 'meta_date' ); ?>" />
-				<?php esc_html_e( 'Display post date', 'admiral' ); ?>
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_author' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_author'] ); ?> id="<?php echo $this->get_field_id( 'meta_author' ); ?>" name="<?php echo $this->get_field_name( 'meta_author' ); ?>" />
-				<?php esc_html_e( 'Display post author', 'admiral' ); ?>
+			<label for="<?php echo $this->get_field_id( 'post_meta' ); ?>">
+				<input class="checkbox" type="checkbox" <?php checked( $settings['post_meta'] ); ?> id="<?php echo $this->get_field_id( 'post_meta' ); ?>" name="<?php echo $this->get_field_name( 'post_meta' ); ?>" />
+				<?php esc_html_e( 'Display post meta', 'admiral' ); ?>
 			</label>
 		</p>
 
