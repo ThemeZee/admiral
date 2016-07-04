@@ -35,7 +35,7 @@
 			maxWidth = vars.maxWidth,
 			$sidebar = $( this );
 
-		/* Add sidebare toggle effect */
+		/* Add sidebar toggle effect */
 		$( '#' + toggleID ).on('click', function(){
 			$( this ).toggleClass( 'active' );
 			if ( $sidebar.is( ':visible' ) ) {
@@ -45,11 +45,20 @@
 			}
 		});
 
+		/* Close Sidebar when title is clicked */
+		$sidebar.find( '.sidebar-header' ).on('click', function(){
+			$( this ).toggleClass( 'active' );
+			if ( $sidebar.is( ':visible' ) ) {
+				hideSidebar();
+			}
+		});
+
 		/* Show sidebar and fade content area */
 		function showSidebar() {
 
 			$sidebar.show();
 			$sidebar.animate( { 'max-width': maxWidth }, 300 );
+			$( '#' + toggleID ).hide();
 
 		}
 
@@ -59,6 +68,8 @@
 			$sidebar.animate({ 'max-width': '0' },  300, function(){
 				$sidebar.hide();
 			});
+
+			$( '#' + toggleID ).show();
 
 		}
 

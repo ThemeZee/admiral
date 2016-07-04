@@ -370,7 +370,7 @@ html {
 }
 
 body {
-	background: #e5e5e5; /* Fallback for when there is no custom background color defined. */
+	background: #46c6f6; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote:before,
@@ -1223,6 +1223,11 @@ textarea {
 	border-bottom: 1px solid #eee;
 }
 
+.magazine-homepage-widget-area .widget:last-child {
+	padding: 0;
+	border-bottom: none;
+}
+
 .widget-magazine-posts {
 	margin-bottom: -2em;
 }
@@ -1595,10 +1600,10 @@ textarea {
 }
 
 /* Archives and Search Heading */
-.page-header,
 .blog-header,
-.sidebar-header,
-.archive-header {
+.archive-header,
+.page-header,
+.sidebar-header {
 	margin: 0 0 1em;
 	padding: 0 1.25em 0.75em;
 	min-height: 3.5em;
@@ -1899,11 +1904,10 @@ textarea {
 # 12.0 - Footer
 --------------------------------------------------------------*/
 .footer-wrap {
-	background: #fff;
+	background: #ee4444;
 }
 
 .footer-content {
-	background: #ee4444;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
@@ -1915,7 +1919,7 @@ textarea {
 
 .footer-content .site-info {
 	float: left;
-	padding: 1em 2em;
+	padding: 1em 0;
 	color: #fff;
 }
 
@@ -2036,10 +2040,6 @@ object {
 		padding-right: 5rem;
 	}
 
-	.small-sidebar .sidebar-header .sidebar-title {
-		margin-right: 3rem;
-	}
-
 	.small-sidebar-toggle {
 		display: block;
 		position: absolute;
@@ -2068,7 +2068,20 @@ object {
 		content: "\00AB";
 	}
 
-	.small-sidebar-toggle.active:after {
+	.small-sidebar .sidebar-header:hover,
+	.small-sidebar .sidebar-header:active,
+	.small-sidebar .sidebar-header:focus {
+		cursor: pointer;
+	}
+
+	.small-sidebar .sidebar-header .sidebar-title:after {
+		float: right;
+		display: inline-block;
+		font-size: 24px;
+		vertical-align: top;
+		line-height: 1;
+		color: #fff;
+		margin: -2px 5px 0 0;
 		content: "\00BB";
 	}
 
@@ -2079,7 +2092,7 @@ object {
 		right: 2em;
 		width: 80%;
 		height: 100%;
-		overflow: hidden;
+		overflow: auto;
 		z-index: 200;
 	}
 
@@ -2120,10 +2133,6 @@ object {
 		padding-left: 5.25rem;
 	}
 
-	.main-sidebar .sidebar-header .sidebar-title {
-		margin-left: 3rem;
-	}
-
 	.main-sidebar-toggle {
 		display: block;
 		position: absolute;
@@ -2152,7 +2161,20 @@ object {
 		content: "\00BB";
 	}
 
-	.main-sidebar-toggle.active:after {
+	.main-sidebar .sidebar-header:hover,
+	.main-sidebar .sidebar-header:active,
+	.main-sidebar .sidebar-header:focus {
+		cursor: pointer;
+	}
+
+	.main-sidebar .sidebar-header .sidebar-title:before {
+		float: left;
+		display: inline-block;
+		font-size: 24px;
+		vertical-align: top;
+		line-height: 1;
+		color: #fff;
+		margin: -2px 1em 0 5px;
 		content: "\00AB";
 	}
 
@@ -2163,7 +2185,7 @@ object {
 		right: left;
 		width: 90%;
 		height: 100%;
-		overflow: hidden;
+		overflow: auto;
 		z-index: 200;
 	}
 
@@ -2366,8 +2388,7 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
 
-	.site-content,
-	.site-footer {
+	.site-content {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -2635,6 +2656,10 @@ object {
 		max-width: 100% !important;
 	}
 
+	.small-sidebar-toggle {
+		display: none !important;
+	}
+
 }
 
 /* Ensure main sidebar is visible on desktop view */
@@ -2647,6 +2672,10 @@ object {
 
 	.main-navigation-menu-wrap {
 		display: block !important;
+	}
+
+	.main-sidebar-toggle {
+		display: none !important;
 	}
 
 }
