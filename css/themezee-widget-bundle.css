@@ -77,7 +77,7 @@
 .tzwb-comments-list .tzwb-comment-date {
 	font-size: 12px;
 	font-size: 0.75rem;
-	color: #303030;
+	color: #999;
 }
 
 
@@ -118,6 +118,8 @@
 	text-transform: uppercase;
 	color: #fff;
 	text-decoration: none;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .tzwb-tabbed-content .tzwb-tabnavi li a:link,
@@ -139,17 +141,6 @@
 .tzwb-tabbed-content .tzwb-tabcontent {
 	padding: 0;
 	margin: 1em 0 0 0;
-}
-
-/* Small Sidebar */
-.small-sidebar .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
-.small-sidebar .tzwb-tabbed-content .tzwb-tabnavi li a:active {
-	background: #ee4444;
-	text-decoration: none;
-}
-
-.small-sidebar .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-	background: #ee4444;
 }
 
 /*--------------------------------------------------------------
@@ -175,15 +166,6 @@
 
 .tzwb-social-icons .social-icons-menu li a:hover {
 	text-decoration: none;
-	background: #303030;
-}
-
-/* Small Sidebar */
-.small-sidebar .tzwb-social-icons .social-icons-menu li a {
-	background: #ee4444;
-}
-
-.small-sidebar .tzwb-social-icons .social-icons-menu li a:hover {
 	background: #303030;
 }
 

@@ -52,6 +52,33 @@ function admiral_site_title() {
 endif;
 
 
+if ( ! function_exists( 'admiral_site_description' ) ) :
+/**
+ * Displays the site description in the header area
+ */
+function admiral_site_description() {
+
+	// Get theme options from database.
+	$theme_options = admiral_theme_options();
+
+	// Return early if site title is deactivated.
+	if ( false === $theme_options['site_description'] ) {
+		return;
+	}
+
+	$description = get_bloginfo( 'description', 'display' ); /* WPCS: xss ok. */
+
+	if ( $description || is_customize_preview() ) : ?>
+
+		<p class="site-description"><?php echo $description; ?></p>
+
+	<?php
+	endif;
+
+}
+endif;
+
+
 if ( ! function_exists( 'admiral_post_image' ) ) :
 /**
  * Displays the featured image on archive posts.

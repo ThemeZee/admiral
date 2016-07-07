@@ -17,7 +17,7 @@
 
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '#logo .site-description' ).text( to );
+			$( '.header-main .site-description' ).text( to );
 		} );
 	} );
 

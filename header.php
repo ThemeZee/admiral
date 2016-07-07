@@ -42,6 +42,8 @@
 
 				</div><!-- .site-branding -->
 
+				<?php admiral_site_description(); ?>
+
 				<?php do_action( 'admiral_header_widgets' ); ?>
 
 			</div><!-- .header-main -->

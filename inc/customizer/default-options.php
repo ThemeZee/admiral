@@ -32,6 +32,7 @@ function admiral_default_options() {
 
 	$default_options = array(
 		'site_title'						=> true,
+		'site_description'					=> true,
 		'blog_title'						=> wp_kses_post( get_bloginfo( 'description' ) ),
 		'sidebar_main_title'				=> esc_html__( 'Navigation', 'admiral' ),
 		'sidebar_small_title'				=> esc_html__( 'Sidebar', 'admiral' ),

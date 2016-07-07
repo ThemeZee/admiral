@@ -57,6 +57,23 @@ function admiral_customize_register_options( $wp_customize ) {
 		)
 	);
 
+	// Add Display Tagline Setting.
+	$wp_customize->add_setting( 'admiral_theme_options[site_description]', array(
+		'default'           => true,
+		'type'           	=> 'option',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'admiral_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control( 'admiral_theme_options[site_description]', array(
+		'label'    => esc_html__( 'Display Tagline', 'admiral' ),
+		'section'  => 'title_tagline',
+		'settings' => 'admiral_theme_options[site_description]',
+		'type'     => 'checkbox',
+		'priority' => 11,
+		)
+	);
+
 } // admiral_customize_register_options()
 add_action( 'customize_register', 'admiral_customize_register_options' );
 

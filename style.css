@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/admiral/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Admiral is a beautiful and stylish Magazine WordPress theme featuring a unique and responsive two sidebar layout. The theme comes with several awesome features, including a featured posts slideshow, a magazine homepage template, a widgetized header area, two different post layouts and support for infinite scroll.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: admiral
@@ -517,6 +517,8 @@ input[type="submit"] {
 	background: #ee4444;
 	border: none;
 	text-decoration: none;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 button:hover,
@@ -651,7 +653,7 @@ textarea {
 	display: flex;
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
-	margin-top: -3.5em;
+	margin-top: -3.5rem;
 }
 
 .content-area {
@@ -660,8 +662,8 @@ textarea {
 	order: 2;
 	width: 55%;
 	background: #fff;
-	border: 1px solid #eee;
-	border-bottom: none;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
 	padding: 0 2em;
 	box-sizing: border-box;
 }
@@ -690,12 +692,12 @@ textarea {
 # 9.0 - Header
 --------------------------------------------------------------*/
 .site-header {
-	background: #fff;
-	padding-bottom: 3.5em;
+	background: #404040;
+	padding-bottom: 3.5rem;
 }
 
 .header-main {
-	padding: 3em 2em;
+	padding: 2.5em 2em;
 }
 
 .site-branding {
@@ -717,7 +719,7 @@ textarea {
 	display: inline-block;
 	margin: 0;
 	padding: 0;
-	color: #303030;
+	color: #fff;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 40px;
 	font-size: 2.5rem;
@@ -727,14 +729,14 @@ textarea {
 
 .site-title a:link,
 .site-title a:visited {
-	color: #303030;
+	color: #fff;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
 .site-title a:hover,
 .site-title a:active {
-	color: #ee4444;
+	color: #ccc;
 }
 
 .site-branding .custom-logo {
@@ -746,6 +748,15 @@ textarea {
 	height: auto;
 }
 
+.site-description {
+	float: right;
+	display: inline-block;
+	margin: 0.75em 0 0 1em;
+	font-size: 22px;
+	font-size: 1.375rem;
+	color: #fff;
+}
+
 /*--------------------------------------------------------------
 # 10.0 - Navigation
 --------------------------------------------------------------*/
@@ -754,7 +765,8 @@ textarea {
 ## 10.1 - Main Navigation
 --------------------------------------------------------------*/
 .header-bar-wrap {
-	background: #ee4444;
+	background: #404040;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .main-navigation-toggle {
@@ -809,7 +821,7 @@ textarea {
 }
 
 .main-navigation-menu a:hover {
-	background: rgba(0,0,0,0.25);
+	background: rgba(0,0,0,0.2);
 }
 
 .main-navigation-menu ul {
@@ -820,9 +832,9 @@ textarea {
 	padding: 0;
 	list-style-type: none;
 	list-style-position: outside;
-	background: #ee4444;
+	background: #404040;
 	text-align: left;
-	border-top: 1px solid #fff;
+	border-top: 1px solid rgba(255,255,255,0.2);
 }
 
 .main-navigation-menu ul li{
@@ -837,6 +849,7 @@ textarea {
 	float: left;
 	font-size: 13px;
 	font-size: 0.8125rem;
+	background: rgba(0,0,0,0.2);
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 	-webkit-transition: none;
 	transition: none;
@@ -844,6 +857,10 @@ textarea {
 
 .main-navigation-menu ul li:last-child a {
 	border-bottom: none;
+}
+
+.main-navigation-menu ul a:hover {
+	background: rgba(0,0,0,0.05);
 }
 
 .main-navigation-menu ul .menu-item-has-children > a:after {
@@ -868,7 +885,7 @@ textarea {
 	margin-left: 250px;
 	margin-left: 16rem;
 	margin-top: -1px;
-	border-left: 1px solid #fff;
+	border-left: 1px solid rgba(255,255,255,0.1);
 }
 
 .main-navigation-menu li:hover ul ul,
@@ -949,61 +966,19 @@ textarea {
 }
 
 .sidebar-navigation-menu ul li ul a {
-	padding-left: 5em;
+	padding-left: 4.5em;
 }
 
 .sidebar-navigation-menu ul li ul li ul a {
-	padding-left: 7em;
+	padding-left: 6em;
 }
 
 .sidebar-navigation-menu ul li ul li ul li ul a {
-	padding-left: 9em;
+	padding-left: 7.5em;
 }
 
 .sidebar-navigation-menu li.current-menu-item > a {
 	background: #fcfcfc;
-}
-
-/* Mobile Submenu Dropdowns */
-.sidebar-navigation-menu .submenu-dropdown-toggle {
-	float: right;
-	display: block;
-	margin: 0;
-	padding: 0.7em 1em;
-	background: none;
-}
-
-.sidebar-navigation-menu .submenu-dropdown-toggle:hover {
-	cursor: pointer;
-}
-
-.sidebar-navigation-menu .submenu-dropdown-toggle:before {
-	font-size: 28px;
-	line-height: 1;
-	font-family: 'Genericons';
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-decoration: inherit;
-	vertical-align: middle;
-	content: '\f431';
-	color: #ee4444;
-}
-
-.sidebar-navigation-menu .submenu-dropdown-toggle:hover:before,
-.sidebar-navigation-menu .submenu-dropdown-toggle:active:before {
-	color: #303030;
-}
-
-.sidebar-navigation-menu .submenu-dropdown-toggle.active:before {
-	content: '\f432';
-}
-
-.sidebar-navigation-menu ul li .submenu-dropdown-toggle {
-	padding: 0.65em 1em;
-}
-
-.sidebar-navigation-menu ul li .submenu-dropdown-toggle:before {
-	font-size: 24px;
 }
 
 /*--------------------------------------------------------------
@@ -1029,6 +1004,8 @@ textarea {
 	display: inline-block;
 	padding: 0.5em;
 	text-decoration: none;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .social-icons-menu li a .screen-reader-text {
@@ -1152,12 +1129,14 @@ textarea {
 }
 
 .widget-title a:link,
-.widget-title a:visited  {
+.widget-title a:visited {
 	color: #303030;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .widget-title a:hover,
-.widget-title a:active  {
+.widget-title a:active {
 	color: #ee4444;
 }
 
@@ -1503,12 +1482,6 @@ textarea {
 	background: #ee4444;
 }
 
-/* Small Sidebar */
-.small-sidebar .widget_tag_cloud .tagcloud a:hover,
-.small-sidebar .widget_tag_cloud .tagcloud a:active {
-	background: #ee4444;
-}
-
 /* Post Navigation */
 .post-navigation {
 	margin: 1em 0 0;
@@ -1557,6 +1530,8 @@ textarea {
 .post-pagination a:link,
 .post-pagination a:visited {
 	color: #fff;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .post-pagination a:hover,
@@ -1593,6 +1568,8 @@ textarea {
 	font-weight: bold;
 	text-transform: uppercase;
 	text-decoration: none;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .infinite-scroll #infinite-handle span:hover {
@@ -1614,20 +1591,18 @@ textarea {
 .archive-header,
 .page-header {
 	margin: 0 -2rem 2em;
-	background: #f5f5f5;
+	background: #fff;
 	border-bottom: 1px solid #eee;
 }
 
 .main-sidebar .sidebar-header {
 	color: #fff;
 	background: #ee4444;
-	border-bottom: 1px solid #ee4444;
 }
 
 .small-sidebar .sidebar-header {
 	color: #fff;
 	background: #ee4444;
-	border-bottom: 1px solid #ee4444;
 }
 
 .blog-title,
@@ -1904,7 +1879,7 @@ textarea {
 # 12.0 - Footer
 --------------------------------------------------------------*/
 .footer-wrap {
-	background: #ee4444;
+	background: #404040;
 }
 
 .footer-content {
@@ -2028,6 +2003,7 @@ object {
 
 	.content-area {
 		width: 70%;
+		border-right: none;
 	}
 
 	.main-sidebar {
@@ -2107,6 +2083,12 @@ object {
 		max-width: 70%;
 	}
 
+	.site-description {
+		margin-top: 0.8em;
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+
 }
 
 /*--------------------------------------------------------------
@@ -2125,6 +2107,7 @@ object {
 
 	.content-area {
 		width: 100%;
+		border-left: none;
 	}
 
 	.blog-header,
@@ -2190,13 +2173,21 @@ object {
 	}
 
 	.header-main {
-		padding-top: 1.5em;
+		padding-top: 2em;
+		padding-bottom: 2em;
 	}
 
 	.site-branding {
 		float: none;
 		text-align: center;
 		margin: 0;
+	}
+
+	.site-description {
+		float: none;
+		display: block;
+		margin: 0 0 0.75em;
+		text-align: center;
 	}
 
 	/*** Mobile Main Navigation ***/
@@ -2388,9 +2379,15 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
 
+	.site-header {
+		padding-bottom: 0;
+	}
+
+
 	.site-content {
 		padding-left: 0;
 		padding-right: 0;
+		margin-top: 0;
 	}
 
 	.main-sidebar,
@@ -2429,6 +2426,7 @@ object {
 	.archive-header,
 	.page-header {
 		margin-right: -2rem;
+		padding-right: 2em;
 	}
 
 	.small-sidebar .sidebar-header .sidebar-title {
@@ -2436,7 +2434,7 @@ object {
 	}
 
 	.small-sidebar-toggle {
-		display: none;
+		display: none !important;
 	}
 
 	.small-sidebar {
@@ -2448,6 +2446,16 @@ object {
 		width: 100%;
 		height: auto;
 		overflow: auto;
+	}
+
+	.small-sidebar .sidebar-header:hover,
+	.small-sidebar .sidebar-header:active,
+	.small-sidebar .sidebar-header:focus {
+		cursor: default;
+	}
+
+	.small-sidebar .sidebar-header .sidebar-title:after {
+		display: none;
 	}
 
 	.entry-title,
@@ -2551,6 +2559,12 @@ object {
 		font-size: 2.25rem;
 	}
 
+	.site-description {
+		margin: 0 0 0.5em;
+		font-size: 18px;
+		font-size: 1.125rem;
+	}
+
 	.entry-title,
 	.post-wrapper .type-post .entry-title {
 		font-size: 22px;
@@ -2608,6 +2622,11 @@ object {
 	.site-branding .site-title {
 		font-size: 32px;
 		font-size: 2rem;
+	}
+
+	.site-description {
+		font-size: 16px;
+		font-size: 1rem;
 	}
 
 	.entry-title,
