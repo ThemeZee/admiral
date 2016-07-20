@@ -18,27 +18,34 @@
 	$.fn.addDropdownAnimation = function() {
 
 		/* Add dropdown animation for desktop navigation menu */
-		$(this).find('ul').css({display: 'none'});
-		$(this).find('li').hover(function(){
-			$(this).find('ul:first').css({visibility: 'visible',display: 'none'}).slideDown(300);
-		},function(){
-			$(this).find('ul:first').css({visibility: 'hidden'});
+		$( this ).find( 'ul.sub-menu' ).css( { display: 'none' } );
+		$( this ).find( 'li.menu-item-has-children' ).hover( function() {
+			$( this ).find( 'ul:first' ).css( { visibility: 'visible', display: 'none' } ).slideDown( 300 );
+		}, function() {
+			$( this ).find( 'ul:first' ).css( { visibility: 'hidden' } );
+		} );
+
+		/* Make sure menu does not fly off the right of the screen */
+		$( this ).find( 'li ul.sub-menu li.menu-item-has-children' ).mouseenter( function() {
+			if ( $( this ).children( 'ul.sub-menu' ).offset().left + 250 > $( window ).width() ) {
+				$( this ).children( 'ul.sub-menu' ).css( { right: '100%', left: 'auto' } );
+			}
 		});
 
 		// Add menu items with submenus to aria-haspopup="true".
-		$(this).find( '.menu-item-has-children' ).attr( 'aria-haspopup', 'true' ).attr( 'aria-expanded', 'false' );
+		$( this ).find( 'li.menu-item-has-children' ).attr( 'aria-haspopup', 'true' ).attr( 'aria-expanded', 'false' );
 
 		/* Properly update the ARIA states on focus (keyboard) and mouse over events */
-		$(this).find( 'li.menu-item-has-children a' ).on( 'focus.aria mouseenter.aria', function() {
-			$( this ).parents( '.menu-item' ).attr( 'aria-expanded', true ).find('ul:first').css({visibility: 'visible',display: 'block'});
+		$( this ).find( 'li.menu-item-has-children > a' ).on( 'focus.aria mouseenter.aria', function() {
+			$( this ).parents( '.menu-item' ).attr( 'aria-expanded', true ).find( 'ul:first' ).css( { visibility: 'visible', display: 'block' } );
 		} );
 
 		/* Properly update the ARIA states on blur (keyboard) and mouse out events */
-		$(this).find( 'li.menu-item-has-children a' ).on( 'blur.aria  mouseleave.aria', function() {
+		$( this ).find( 'li.menu-item-has-children > a' ).on( 'blur.aria  mouseleave.aria', function() {
 
-			if( ! $(this).parent().next('li').length > 0 && ! $(this).next('ul').length > 0 ) {
+			if( ! $( this ).parent().next( 'li' ).length > 0 && ! $( this ).next('ul').length > 0 ) {
 
-				$( this ).closest( '.menu-item-has-children' ).attr( 'aria-expanded', false ).find('.sub-menu').css({display: 'none'});
+				$( this ).closest( 'li.menu-item-has-children' ).attr( 'aria-expanded', false ).find( '.sub-menu' ).css( { display: 'none' } );
 
 			}
 
@@ -52,17 +59,17 @@
 	$.fn.resetDropdownAnimation = function() {
 
 		/* Reset desktop navigation menu dropdown animation on smaller screens */
-		$(this).find('ul').css({display: 'block'});
-		$(this).find('li ul').css({visibility: 'visible', display: 'block'});
-		$(this).find('li').unbind('mouseenter mouseleave');
+		$( this ).find( 'ul.sub-menu' ).css( { display: 'block' } );
+		$( this ).find( 'li ul.sub-menu' ).css( { visibility: 'visible', display: 'block' } );
+		$( this ).find( 'li.menu-item-has-children' ).unbind( 'mouseenter mouseleave' );
 
-		$(this).find('li ul').each( function () {
-			$(this).hide();
-			$(this).parent().find('.submenu-dropdown-toggle').removeClass('active');
+		$( this ).find( 'li.menu-item-has-children ul.sub-menu' ).each( function() {
+			$( this ).hide();
+			$( this ).parent().find( '.submenu-dropdown-toggle' ).removeClass( 'active' );
 		} );
 
 		/* Remove ARIA states on mobile devices */
-		$(this).find( 'li.menu-item-has-children a' ).unbind( 'focus.aria mouseenter.aria blur.aria  mouseleave.aria' );
+		$( this ).find( 'li.menu-item-has-children > a' ).unbind( 'focus.aria mouseenter.aria blur.aria  mouseleave.aria' );
 
 	};
 
@@ -72,13 +79,13 @@
 	$.fn.addMobileSubmenu = function() {
 
 		/* Add dropdown toggle for submenus on mobile navigation */
-		$(this).find('li.menu-item-has-children').prepend('<span class=\"submenu-dropdown-toggle\"></span>');
-		$(this).find('li.page_item_has_children').prepend('<span class=\"submenu-dropdown-toggle\"></span>');
+		$( this ).find('li.menu-item-has-children').prepend('<span class=\"submenu-dropdown-toggle\"></span>');
+		$( this ).find('li.page_item_has_children').prepend('<span class=\"submenu-dropdown-toggle\"></span>');
 
 		/* Add dropdown animation for submenus on mobile navigation */
-		$(this).find('.submenu-dropdown-toggle').on('click', function(){
-			$(this).parent().find('ul:first').slideToggle();
-			$(this).toggleClass('active');
+		$( this ).find('.submenu-dropdown-toggle').on('click', function(){
+			$( this ).parent().find('ul:first').slideToggle();
+			$( this ).toggleClass('active');
 		});
 
 	};
@@ -129,7 +136,7 @@
 		/* Add dropdown slide animation for mobile devices */
 		$('#main-navigation-toggle').on('click', function(){
 			menu_wrap.slideToggle();
-			$(this).toggleClass('active');
+			$( this ).toggleClass('active');
 		});
 
 		/* Add submenus for mobile navigation menu */
