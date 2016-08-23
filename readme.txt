@@ -26,6 +26,9 @@ For more information about Admiral please go to https://themezee.com/themes/admi
 
 == Changelog ==
 
+= 1.0.4 =
+* remove depracated tags in style.css
+
 = 1.0.3 =
 * added readme.txt file
 * improved styling of navigation menus
