@@ -69,10 +69,13 @@ li > ol {
 
 .main-navigation-menu {
 	float: right;
+	width: 100%;
 }
 
 .main-navigation-menu li {
 	float: right;
+	display: block;
+	width: 100%;
 }
 
 .main-navigation-menu > .menu-item-has-children > a:after {
