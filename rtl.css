@@ -69,13 +69,10 @@ li > ol {
 
 .main-navigation-menu {
 	float: right;
-	width: 100%;
 }
 
 .main-navigation-menu li {
 	float: right;
-	display: block;
-	width: 100%;
 }
 
 .main-navigation-menu > .menu-item-has-children > a:after {
@@ -391,6 +388,11 @@ li > ol {
 	.mega-menu-item .mega-menu-content .mega-menu-widget {
 		right: auto;
 		left: auto;
+	}
+
+	.main-navigation-menu,
+	.main-navigation-menu li {
+		width: 100%;
 	}
 
 	.main-navigation-menu li ul ul {
