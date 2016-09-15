@@ -12,13 +12,13 @@
 	<div id="header-bar" class="header-bar container clearfix">
 
 		<?php
-		// Check if there is a social menu
+		// Check if there is a social menu.
 		if( has_nav_menu( 'social' ) ) : ?>
 
 			<div id="header-social-icons" class="header-social-icons social-icons-navigation clearfix">
 
 				<?php
-				// Display Social Icons Menu
+				// Display Social Icons Menu.
 				wp_nav_menu( array(
 					'theme_location' => 'social',
 					'container' => false,

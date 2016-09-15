@@ -29,7 +29,7 @@ function admiral_customize_register_options( $wp_customize ) {
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
 		'title'          => esc_html__( 'Theme Options', 'admiral' ),
-		'description'    => '',
+		'description'    => admiral_customize_theme_links(),
 	) );
 
 	// Add postMessage support for site title and description.
@@ -88,32 +88,54 @@ add_action( 'customize_preview_init', 'admiral_customize_preview_js' );
 
 
 /**
- * Embed JS file for Customizer Controls
- */
-function admiral_customize_controls_js() {
-
-	wp_enqueue_script( 'admiral-customizer-controls', get_template_directory_uri() . '/js/customizer-controls.js', array(), '20151202', true );
-
-	// Localize the script.
-	wp_localize_script( 'admiral-customizer-controls', 'admiral_theme_links', array(
-		'title'      => esc_html__( 'Theme Links', 'admiral' ),
-		'themeURL'   => esc_url( __( 'https://themezee.com/themes/admiral/', 'admiral' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=admiral&utm_content=theme-page' ),
-		'themeLabel' => esc_html__( 'Theme Page', 'admiral' ),
-		'docuURL'    => esc_url( __( 'https://themezee.com/docs/admiral-documentation/', 'admiral' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=admiral&utm_content=documentation' ),
-		'docuLabel'  => esc_html__( 'Theme Documentation', 'admiral' ),
-		'rateURL'    => esc_url( 'http://wordpress.org/support/view/theme-reviews/admiral?filter=5' ),
-		'rateLabel'  => esc_html__( 'Rate this theme', 'admiral' ),
-		)
-	);
-
-}
-add_action( 'customize_controls_enqueue_scripts', 'admiral_customize_controls_js' );
-
-
-/**
  * Embed CSS styles for the theme options in the Customizer
  */
 function admiral_customize_preview_css() {
-	wp_enqueue_style( 'admiral-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20151202' );
+	wp_enqueue_style( 'admiral-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20160915' );
 }
 add_action( 'customize_controls_print_styles', 'admiral_customize_preview_css' );
+
+/**
+ * Returns Theme Links
+ */
+function admiral_customize_theme_links() {
+
+	ob_start();
+	?>
+
+		<div class="theme-links">
+
+			<span class="customize-control-title"><?php esc_html_e( 'Theme Links', 'admiral' ); ?></span>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/admiral/', 'admiral' ) ); ?>?utm_source=customizer&utm_medium=textlink&utm_campaign=admiral&utm_content=theme-page" target="_blank">
+					<?php esc_html_e( 'Theme Page', 'admiral' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="http://preview.themezee.com/admiral/?utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=demo" target="_blank">
+					<?php esc_html_e( 'Theme Demo', 'admiral' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/admiral-documentation/', 'admiral' ) ); ?>?utm_source=customizer&utm_medium=textlink&utm_campaign=admiral&utm_content=documentation" target="_blank">
+					<?php esc_html_e( 'Theme Documentation', 'admiral' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/admiral/reviews/?filter=5', 'admiral' ) ); ?>" target="_blank">
+					<?php esc_html_e( 'Rate this theme', 'admiral' ); ?>
+				</a>
+			</p>
+
+		</div>
+
+	<?php
+	$theme_links = ob_get_contents();
+	ob_end_clean();
+
+	return $theme_links;
+}

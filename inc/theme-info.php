@@ -45,9 +45,9 @@ function admiral_theme_info_page() {
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'admiral' ); ?>:</strong>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/admiral/', 'admiral' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'admiral' ); ?></a>
-				<a href="<?php echo esc_url( 'http://preview.themezee.com/admiral/?utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=demo' ); ?>" target="_blank"><?php esc_html_e( 'Theme Demo', 'admiral' ); ?></a>
+				<a href="http://preview.themezee.com/admiral/?utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=demo" target="_blank"><?php esc_html_e( 'Theme Demo', 'admiral' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/admiral-documentation/', 'admiral' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'admiral' ); ?></a>
-				<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/admiral?filter=5' ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'admiral' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/admiral/reviews/?filter=5', 'admiral' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'admiral' ); ?></a>
 			</p>
 		</div>
 		<hr>
@@ -107,10 +107,10 @@ function admiral_theme_info_page() {
 				<div class="column column-half clearfix">
 
 					<div class="section">
-						<h4><?php esc_html_e( 'Pro Version', 'admiral' ); ?></h4>
+						<h4><?php esc_html_e( 'Pro Version Add-on', 'admiral' ); ?></h4>
 
 						<p class="about">
-							<?php printf( esc_html__( 'Purchase the Pro Version of %s to get additional features and advanced customization options.', 'admiral' ), 'Admiral' ); ?>
+							<?php printf( esc_html__( 'Purchase the %s Pro Add-on and get additional features and advanced customization options.', 'admiral' ), 'Admiral' ); ?>
 						</p>
 						<p>
 							<a href="<?php echo esc_url( __( 'https://themezee.com/addons/admiral-pro/', 'admiral' ) . '?utm_source=theme-info&utm_medium=button&utm_campaign=admiral&utm_content=pro-version' ); ?>" target="_blank" class="button button-secondary">
@@ -124,17 +124,14 @@ function admiral_theme_info_page() {
 				<div class="column column-half clearfix">
 
 					<div class="section">
-						<h4><?php esc_html_e( 'ThemeZee Plugins', 'admiral' ); ?></h4>
+						<h4><?php esc_html_e( 'Recommended Plugins', 'admiral' ); ?></h4>
 
 						<p class="about">
-							<?php esc_html_e( 'Extend the functionality of your WordPress website with our customized plugins.', 'admiral' ); ?>
+							<?php esc_html_e( 'Extend the functionality of your WordPress website with our free and easy to use plugins.', 'admiral' ); ?>
 						</p>
 						<p>
-							<a href="<?php echo esc_url( __( 'https://themezee.com/plugins/', 'admiral' ) . '?utm_source=theme-info&utm_medium=button&utm_campaign=admiral&utm_content=plugins' ); ?>" target="_blank" class="button button-secondary">
-								<?php esc_html_e( 'Browse Plugins', 'admiral' ); ?>
-							</a>
-							<a href="<?php echo admin_url( 'plugin-install.php?tab=search&type=author&s=themezee' ); ?>" class="button button-primary">
-								<?php esc_html_e( 'Install now', 'admiral' ); ?>
+							<a href="<?php echo admin_url( 'plugin-install.php?tab=search&type=author&s=themezee' ); ?>" class="button button-secondary">
+								<?php esc_html_e( 'Install Plugins', 'admiral' ); ?>
 							</a>
 						</p>
 					</div>
@@ -152,7 +149,7 @@ function admiral_theme_info_page() {
 			<p><?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'admiral' ),
 				$theme->get( 'Name' ),
 				'<a target="_blank" href="' . __( 'https://themezee.com/', 'admiral' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=admiral" title="ThemeZee">ThemeZee</a>',
-			'<a target="_blank" href="http://wordpress.org/support/view/theme-reviews/admiral?filter=5" title="Admiral Review">' . esc_html__( 'rate it', 'admiral' ) . '</a>'); ?>
+				'<a target="_blank" href="' . __( 'https://wordpress.org/support/theme/admiral/reviews/?filter=5', 'admiral' ) . '" title="' . esc_attr__( 'Review Admiral', 'admiral' ) . '">' . esc_html__( 'rate it', 'admiral' ) . '</a>'); ?>
 			</p>
 
 		</div>

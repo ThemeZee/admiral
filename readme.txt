@@ -26,6 +26,10 @@ For more information about Admiral please go to https://themezee.com/themes/admi
 
 == Changelog ==
 
+= 1.0.5 =
+* fixed mobile menus on RTL language sites
+* moved Theme Links to Theme Options panel dropdown
+
 = 1.0.4 =
 * remove depracated tags in style.css
 
