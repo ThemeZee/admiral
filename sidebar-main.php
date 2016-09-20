@@ -11,17 +11,6 @@ $theme_options = admiral_theme_options();
 
 	<section id="secondary" class="main-sidebar widget-area clearfix" role="complementary">
 
-		<header class="sidebar-header clearfix">
-
-			<?php // Display Homepage Title.
-			if ( '' !== $theme_options['sidebar_main_title'] ) : ?>
-
-				<h2 class="sidebar-title"><?php echo wp_kses_post( $theme_options['sidebar_main_title'] ); ?></h2>
-
-			<?php endif; ?>
-
-		</header>
-
 		<?php // Check if there is a top navigation menu.
 		if ( has_nav_menu( 'secondary' ) ) : ?>
 

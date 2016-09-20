@@ -19,7 +19,7 @@ $theme_options = admiral_theme_options();
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="blog-header clearfix">
+			<header class="page-header clearfix">
 
 				<?php // Display Homepage Title.
 				if ( '' !== $theme_options['blog_title'] ) : ?>

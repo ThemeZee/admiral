@@ -146,6 +146,13 @@ function admiral_entry_meta() {
 
 	}
 
+	// Display categories on single posts unless user has deactivated it via settings.
+	if ( true === $theme_options['meta_comments'] && is_single() ) {
+
+		$postmeta .= admiral_meta_category();
+
+	}
+
 	if ( $postmeta ) {
 
 		echo '<div class="entry-meta">' . $postmeta . '</div>';
@@ -207,6 +214,18 @@ function admiral_meta_comments() {
 	return '<span class="meta-comments"> ' . $comments_string . '</span>';
 
 }  // admiral_meta_comments()
+endif;
+
+
+if ( ! function_exists( 'admiral_meta_category' ) ) :
+/**
+ * Displays the category of posts
+ */
+function admiral_meta_category() {
+
+	return '<span class="meta-category"> ' . get_the_category_list( ', ' ) . '</span>';
+
+} // admiral_meta_category()
 endif;
 
 

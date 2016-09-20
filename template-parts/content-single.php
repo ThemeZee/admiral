@@ -7,14 +7,6 @@
 
 ?>
 
-<header class="page-header clearfix">
-
-	<h2 class="page-title"><?php echo get_the_category_list( ', ' ); ?></h2>
-
-</header>
-
-<?php admiral_breadcrumbs(); ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php admiral_post_image_single(); ?>
