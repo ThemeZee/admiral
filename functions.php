@@ -115,8 +115,8 @@ function admiral_widgets_init() {
 		'name' => esc_html__( 'Small Sidebar', 'admiral' ),
 		'id' => 'sidebar-small',
 		'description' => esc_html__( 'Appears on posts and pages except the full width template.', 'admiral' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-		'after_widget' => '</aside>',
+		'before_widget' => '<div class="widget-wrap"><aside id="%1$s" class="widget %2$s clearfix">',
+		'after_widget' => '</aside></div>',
 		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
 		'after_title' => '</h3></div>',
 	));

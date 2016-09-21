@@ -19,16 +19,16 @@ $theme_options = admiral_theme_options();
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header clearfix">
+			<?php // Display Homepage Title.
+			if ( '' !== $theme_options['blog_title'] ) : ?>
 
-				<?php // Display Homepage Title.
-				if ( '' !== $theme_options['blog_title'] ) : ?>
+				<header class="page-header clearfix">
 
 					<h1 class="blog-title"><?php echo wp_kses_post( $theme_options['blog_title'] ); ?></h1>
 
-				<?php endif; ?>
+				</header>
 
-			</header>
+			<?php endif; ?>
 
 			<?php admiral_breadcrumbs(); ?>
 

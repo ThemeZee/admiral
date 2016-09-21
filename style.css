@@ -661,8 +661,8 @@ textarea {
 	order: 2;
 	width: 55%;
 	background: #fff;
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
+	border-left: 1px solid #e5e5e5;
+	border-right: 1px solid #e5e5e5;
 	padding: 2em 2em 0;
 	box-sizing: border-box;
 }
@@ -672,7 +672,9 @@ textarea {
 	-webkit-box-ordinal-group: 2;
 	-ms-flex-order: 1;
 	order: 1;
-	background: #f5f5f5;
+	background: #fafafa;
+	padding: 0.5em 0 0;
+	border-left: 1px solid #e5e5e5;
 }
 
 .small-sidebar {
@@ -681,6 +683,7 @@ textarea {
 	-ms-flex-order: 3;
 	order: 3;
 	background: #f5f5f5;
+	padding: 0.5em 0 0;
 }
 
 .sidebar-toggle {
@@ -692,6 +695,7 @@ textarea {
 --------------------------------------------------------------*/
 .site-header {
 	background: #404040;
+	border-bottom: 10px solid #ee4444;
 }
 
 .header-main {
@@ -945,8 +949,7 @@ textarea {
 ## 10.2 - Sidebar Navigation
 --------------------------------------------------------------*/
 .secondary-navigation-wrap {
-	margin: 1.5em;
-	border-top: 1px solid #e5e5e5;
+	margin: -0.5em 0 1em 0;
 }
 
 .sidebar-navigation-menu {
@@ -979,7 +982,7 @@ textarea {
 
 .sidebar-navigation-menu a:hover,
 .sidebar-navigation-menu a:active {
-	background: #fff;
+	background: #f5f5f5;
 }
 
 .sidebar-navigation-menu ul {
@@ -1015,7 +1018,7 @@ textarea {
 }
 
 .sidebar-navigation-menu li.current-menu-item > a {
-	background: #fcfcfc;
+	text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
@@ -1523,7 +1526,7 @@ textarea {
 .post-navigation {
 	margin: 1em 0 0;
 	padding: 0.6em 0 0;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #e5e5e5;
 }
 
 .post-navigation .nav-links .nav-previous {
@@ -1615,9 +1618,8 @@ textarea {
 
 /* Archives and Search Heading */
 .page-header {
-	margin: -2em -2em 1em;
+	margin: -1.5em -1.5em 0.5em;
 	color: #303030;
-	border-bottom: 1px solid #eee;
 }
 
 .blog-title,
@@ -1704,8 +1706,9 @@ textarea {
 
 /* One Column Layout */
 .post-layout-one-column .post-wrapper .type-post {
-	padding: 0 0 1.5em;
-	border-bottom: 1px solid #eee;
+	margin: -7px 0 1.4em;
+	padding: 0 0 0.5em;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 .post-layout-one-column .post-wrapper .type-post .wp-post-image {
@@ -1905,7 +1908,7 @@ textarea {
 
 .footer-content .site-info {
 	float: left;
-	padding: 1em 0;
+	padding: 1em;
 	color: #fff;
 }
 
@@ -2023,6 +2026,34 @@ object {
 		-ms-flex-order: 3;
 		order: 3;
 		background: #f5f5f5;
+		border-top: 1px solid #e5e5e5;
+	}
+
+	.small-sidebar {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		padding: 1.5em 0.75em;
+	}
+
+	.small-sidebar .widget-wrap {
+		float: right;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		width: 25%;
+		padding: 0 0.75em;
+		box-sizing: border-box;
+	}
+
+	.small-sidebar .widget-wrap .widget {
+		width: 100%;
+	}
+
+	.small-sidebar .widget-wrap:nth-child(4n + 1) {
+		clear: left;
 	}
 
 }
@@ -2049,7 +2080,22 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 65em) {
 
+	.small-sidebar {
+		padding: 1em 0.5em;
+	}
 
+	.small-sidebar .widget-wrap {
+		width: 33.3333333333333%;
+		padding: 0 0.5em;
+	}
+
+	.small-sidebar .widget-wrap:nth-child(4n + 1) {
+		clear: none;
+	}
+
+	.small-sidebar .widget-wrap:nth-child(3n + 1) {
+		clear: left;
+	}
 
 }
 
@@ -2071,6 +2117,7 @@ object {
 		-webkit-box-ordinal-group: 3;
 		-ms-flex-order: 2;
 		order: 2;
+		border-top: 1px solid #e5e5e5;
 	}
 
 	.header-main {
@@ -2291,6 +2338,18 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
 
+	.small-sidebar .widget-wrap {
+		width: 50%;
+	}
+
+	.small-sidebar .widget-wrap:nth-child(2n + 1) {
+		clear: left;
+	}
+
+	.small-sidebar .widget-wrap:nth-child(3n + 1) {
+		clear: none;
+	}
+
 	/* Magazine Widgets */
 	.widget-magazine-posts .small-post .entry-meta span:after,
 	.widget-magazine-posts .small-post .entry-meta .meta-author {
@@ -2405,6 +2464,20 @@ object {
 	/* Mega Menu Styling */
 	.mega-menu-item .mega-menu-four-columns > li,
 	.mega-menu-item .mega-menu-six-columns > li {
+		width: 100%;
+	}
+
+}
+
+/*--------------------------------------------------------------
+## 14.8.5 - Mobile Medium ( < 480px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 35em) {
+
+	/* Small Sidebar */
+	.small-sidebar .widget-wrap {
+		float: none;
+		display: block;
 		width: 100%;
 	}
 
