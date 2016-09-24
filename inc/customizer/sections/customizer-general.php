@@ -25,8 +25,8 @@ function admiral_customize_register_general_settings( $wp_customize ) {
 	// Add Blog Title.
 	$wp_customize->add_setting( 'admiral_theme_options[blog_title]', array(
 		'default'           => '',
-		'type'           	=> 'option',
-		'transport'         => 'postMessage',
+		'type'              => 'option',
+		'transport'         => 'refresh',
 		'sanitize_callback' => 'wp_kses_post',
 		)
 	);

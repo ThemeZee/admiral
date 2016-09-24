@@ -2221,6 +2221,10 @@ object {
 		border-top: 1px solid rgba(255,255,255,0.1);
 	}
 
+	.main-navigation-menu {
+		width: 100%;
+	}
+
 	.main-navigation-menu a {
 		display: block;
 		clear: left;
@@ -2601,19 +2605,10 @@ object {
 # 16.0 - Media Query Fixes
 --------------------------------------------------------------*/
 
-/* Ensure small sidebar is visible on desktop view */
-@media only screen and (min-width: 80.001em) {
+/* Ensure main navigation is visible on desktop view */
+@media only screen and (min-width: 60.01em) {
 
-	.small-sidebar {
-		display: block !important;
-	}
-
-}
-
-/* Ensure main sidebar is visible on desktop view */
-@media only screen and (min-width: 60.001em) {
-
-	.main-sidebar {
+	.main-navigation-menu-wrap {
 		display: block !important;
 	}
 

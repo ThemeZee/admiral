@@ -21,24 +21,4 @@
 		} );
 	} );
 
-	/* Blog Title */
-	wp.customize( 'admiral_theme_options[blog_title]', function( value ) {
-		value.bind( function( to ) {
-			$( '#main .blog-header .blog-title' ).text( to );
-		} );
-	} );
-
-	/* Sidebar Titles */
-	wp.customize( 'admiral_theme_options[sidebar_main_title]', function( value ) {
-		value.bind( function( to ) {
-			$( '#secondary .sidebar-header .sidebar-title' ).text( to );
-		} );
-	} );
-
-	wp.customize( 'admiral_theme_options[sidebar_small_title]', function( value ) {
-		value.bind( function( to ) {
-			$( '#tertiary .sidebar-header .sidebar-title' ).text( to );
-		} );
-	} );
-
 } )( jQuery );
