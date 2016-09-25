@@ -25,13 +25,9 @@
 
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'admiral' ); ?></a>
 
-		<div id="header-top" class="header-bar-wrap">
-
-			<?php get_template_part( 'template-parts/header-bar' ); ?>
-
-		</div>
-
 		<header id="masthead" class="site-header clearfix" role="banner">
+
+			<?php do_action( 'admiral_header_menu' ); ?>
 
 			<div class="header-main container clearfix">
 
@@ -48,7 +44,11 @@
 
 			</div><!-- .header-main -->
 
-			<?php do_action( 'admiral_header_menu' ); ?>
+			<div class="main-navigation-wrap">
+
+				<?php get_template_part( 'template-parts/main-navigation' ); ?>
+
+			</div>
 
 		</header><!-- #masthead -->
 

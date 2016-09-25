@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/admiral/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Admiral is a beautiful and stylish Magazine WordPress theme featuring a unique and responsive two sidebar layout. The theme comes with several awesome features, including a featured posts slideshow, a magazine homepage template, a widgetized header area, two different post layouts and support for infinite scroll.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: admiral
@@ -699,7 +699,7 @@ textarea {
 }
 
 .header-main {
-	padding: 2.5em 1.5em;
+	padding: 1.5em;
 }
 
 .site-branding {
@@ -766,13 +766,13 @@ textarea {
 /*--------------------------------------------------------------
 ## 10.1 - Main Navigation
 --------------------------------------------------------------*/
-.header-bar-wrap {
+.main-navigation-wrap {
 	color: #fff;
 	background: #404040;
-	border-bottom: 1px solid rgba(255,255,255,0.2);
+	border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-.header-bar {
+.main-navigation-container {
 	position: relative;
 }
 
@@ -799,7 +799,7 @@ textarea {
 	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: bold;
-	padding: 1em 1.5em;
+	padding: 1.25em 1.5em;
 	text-transform: uppercase;
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease;
@@ -833,14 +833,14 @@ textarea {
 .main-navigation-menu ul {
 	position: absolute;
 	display: none;
-	z-index: 99;
+	z-index: 999;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	list-style-position: outside;
 	background: #404040;
 	text-align: left;
-	border-top: 1px solid rgba(255,255,255,0.2);
+	border-top: 10px solid #ee4444;
 }
 
 .main-navigation-menu ul li {
@@ -851,21 +851,16 @@ textarea {
 .main-navigation-menu ul a {
 	min-width: 250px;
 	min-width: 16rem;
-	padding: 0.75em 1em;
+	padding: 1em 1.25em;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	background: rgba(0,0,0,0.2);
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 	-webkit-transition: none;
 	transition: none;
 }
 
-.main-navigation-menu ul li:last-child a {
+.main-navigation-menu ul li:last-child > a {
 	border-bottom: none;
-}
-
-.main-navigation-menu ul a:hover {
-	background: rgba(0,0,0,0.05);
 }
 
 .main-navigation-menu ul .menu-item-has-children > a:after {
@@ -889,8 +884,7 @@ textarea {
 .main-navigation-menu li ul ul {
 	top: 0;
 	left: 100%;
-	margin-top: -1px;
-	border-left: 1px solid rgba(255,255,255,0.1);
+	margin-top: -10px;
 }
 
 .main-navigation-menu li.menu-item-has-children:hover > ul,
@@ -1099,24 +1093,24 @@ textarea {
 .social-icons-menu li a[href*="feedburner.com"]:before { content: '\f413'; }
 
 /* Header Bar */
-.header-bar .social-icons-navigation {
+.main-navigation-container .social-icons-navigation {
 	float: right;
 }
 
-.header-bar .social-icons-menu li a {
-	padding: 0.9em;
+.main-navigation-container .social-icons-menu li a {
+	padding: 1.1em;
 }
 
-.header-bar .social-icons-menu li a:before {
+.main-navigation-container .social-icons-menu li a:before {
 	font-size: 24px;
 }
 
-.header-bar .social-icons-menu li a:hover:before {
+.main-navigation-container .social-icons-menu li a:hover:before {
 	text-decoration: none;
 }
 
-.header-bar .social-icons-menu li a:hover,
-.header-bar .social-icons-menu li a:active {
+.main-navigation-container .social-icons-menu li a:hover,
+.main-navigation-container .social-icons-menu li a:active {
 	background: rgba(0,0,0,0.25);
 }
 
@@ -2104,25 +2098,9 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
 
-	.content-area {
-		width: 100%;
-		border-left: none;
-		-webkit-box-ordinal-group: 2;
-		-ms-flex-order: 1;
-		order: 1;
-	}
-
-	.main-sidebar {
-		width: 100%;
-		-webkit-box-ordinal-group: 3;
-		-ms-flex-order: 2;
-		order: 2;
-		border-top: 1px solid #e5e5e5;
-	}
-
 	.header-main {
-		padding-top: 2em;
-		padding-bottom: 2em;
+		padding-top: 1em;
+		padding-bottom: 1em;
 	}
 
 	.site-branding {
@@ -2140,11 +2118,11 @@ object {
 
 	/*** Mobile Main Navigation ***/
 
-	.header-bar {
+	.main-navigation-container {
 		padding: 0;
 	}
 
-	.header-bar .social-icons-navigation {
+	.main-navigation-container .social-icons-navigation {
 		margin-right: 1em;
 	}
 
@@ -2186,7 +2164,7 @@ object {
 		font-size: 16px;
 		font-size: 1rem;
 		margin-left: 1em;
-		padding: 0.9em;
+		padding: 1.1em;
 		background: none;
 		text-align: left;
 	}
@@ -2195,7 +2173,7 @@ object {
 	.main-navigation-toggle:focus,
 	.main-navigation-toggle:active {
 		cursor: pointer;
-		background: rgba(0,0,0,0.25);
+		background: rgba(0,0,0,0.2);
 	}
 
 	.main-navigation-toggle:after {
@@ -2231,7 +2209,7 @@ object {
 		border-bottom: 1px solid rgba(255,255,255,0.1);
 	}
 
-	.main-navigation-menu li:last-child a {
+	.main-navigation-menu li:last-child > a {
 		border-bottom: none;
 	}
 
@@ -2259,13 +2237,12 @@ object {
 		padding-left: 7.5em;
 	}
 
-	.main-navigation-menu ul li:last-child a {
+	.main-navigation-menu ul li:last-child > a {
 		border-bottom: 1px solid rgba(255,255,255,0.1);
 	}
 
 	.main-navigation-menu li ul ul {
 		border: none;
-		border-top: 1px solid rgba(255,255,255,0.1);
 	}
 
 	.main-navigation-menu li.current-menu-item > a {
@@ -2278,7 +2255,7 @@ object {
 		float: right;
 		display: block;
 		margin: 0;
-		padding: 0.65em 1.2em 0.6em;
+		padding: 0.85em 1.2em 0.8em;
 	}
 
 	.main-navigation-menu .submenu-dropdown-toggle:hover {
@@ -2303,7 +2280,7 @@ object {
 	}
 
 	.main-navigation-menu ul .submenu-dropdown-toggle {
-		padding: 0.45em 1em;
+		padding: 0.6em 1em;
 	}
 
 	.main-navigation-menu ul .submenu-dropdown-toggle:before {
@@ -2333,7 +2310,21 @@ object {
 --------------------------------------------------------------*/
 @media only screen and (max-width: 55em) {
 
+	.content-area {
+		width: 100%;
+		border-left: none;
+		-webkit-box-ordinal-group: 2;
+		-ms-flex-order: 1;
+		order: 1;
+	}
 
+	.main-sidebar {
+		width: 100%;
+		-webkit-box-ordinal-group: 3;
+		-ms-flex-order: 2;
+		order: 2;
+		border-top: 1px solid #e5e5e5;
+	}
 
 }
 
@@ -2520,17 +2511,25 @@ object {
 		margin: 1em 0;
 	}
 
-	.main-navigation-toggle,
-	.header-bar .social-icons-navigation {
+	.main-navigation-toggle {
+		margin: 0;
+		padding: 1em;
+	}
+
+	.main-navigation-toggle:after {
+		font-size: 20px;
+	}
+
+	.main-navigation-container .social-icons-navigation {
 		margin: 0;
 	}
 
-	.header-bar .social-icons-menu li a {
-		padding: 1.1em 0.9em;
+	.main-navigation-container .social-icons-menu li a {
+		padding: 1em 0.8em;
 	}
 
-	.header-bar .social-icons-menu li a:before {
-		font-size: 18px;
+	.main-navigation-container .social-icons-menu li a:before {
+		font-size: 20px;
 	}
 
 	/* Magazine Homepage: Category Post Widgets */

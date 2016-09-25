@@ -1,15 +1,15 @@
 <?php
 /***
- * Header Bar
+ * Main Navigation
  *
- * Displays the main navigation menu and social icons menu above the main header area
+ * Displays the main navigation menu and social icons menu below the main header area
  *
  * @package Admiral
  */
 
 ?>
 
-	<div id="header-bar" class="header-bar container clearfix">
+	<div id="main-navigation-container" class="main-navigation-container container clearfix">
 
 		<?php
 		// Check if there is a social menu.
