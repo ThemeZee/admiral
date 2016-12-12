@@ -91,7 +91,7 @@ add_action( 'customize_preview_init', 'admiral_customize_preview_js' );
  * Embed CSS styles for the theme options in the Customizer
  */
 function admiral_customize_preview_css() {
-	wp_enqueue_style( 'admiral-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20160915' );
+	wp_enqueue_style( 'admiral-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20161214' );
 }
 add_action( 'customize_controls_print_styles', 'admiral_customize_preview_css' );
 
@@ -114,7 +114,7 @@ function admiral_customize_theme_links() {
 			</p>
 
 			<p>
-				<a href="http://preview.themezee.com/admiral/?utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=demo" target="_blank">
+				<a href="http://preview.themezee.com/?demo=admiral&utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=demo" target="_blank">
 					<?php esc_html_e( 'Theme Demo', 'admiral' ); ?>
 				</a>
 			</p>
