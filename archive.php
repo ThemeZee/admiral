@@ -7,11 +7,7 @@
  * @package Admiral
  */
 
-get_header();
-
-// Get Theme Options from Database.
-$theme_options = admiral_theme_options();
-?>
+get_header(); ?>
 
 	<section id="primary" class="content-archive content-area">
 		<main id="main" class="site-main" role="main">

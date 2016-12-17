@@ -26,6 +26,13 @@ For more information about Admiral please go to https://themezee.com/themes/admi
 
 == Changelog ==
 
+= 1.0.8 =
+* added editor shortcuts and instant live preview for site title and tagline in Customizer
+* added support for our Breadcrumbs plugin on single posts and pages
+* updated post pagination to use newer functions
+* improved implementation of post slider
+* changed demo links in Customizer and Theme Info
+
 = 1.0.7 =
 * changed position of main navigation menu
 * fixed blog title setting
