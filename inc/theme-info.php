@@ -45,7 +45,7 @@ function admiral_theme_info_page() {
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'admiral' ); ?>:</strong>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/admiral/', 'admiral' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'admiral' ); ?></a>
-				<a href="http://preview.themezee.com/?demo=admiral&utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=demo" target="_blank"><?php esc_html_e( 'Theme Demo', 'admiral' ); ?></a>
+				<a href="http://preview.themezee.com/?demo=admiral&utm_source=theme-info&utm_campaign=admiral" target="_blank"><?php esc_html_e( 'Theme Demo', 'admiral' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/admiral-documentation/', 'admiral' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'admiral' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/admiral/reviews/?filter=5', 'admiral' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'admiral' ); ?></a>
 			</p>

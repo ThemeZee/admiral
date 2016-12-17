@@ -62,6 +62,11 @@ function admiral_hide_elements() {
 		$elements[] = '.site-description';
 	}
 
+	// Return early if no elements are hidden.
+	if ( empty( $elements ) ) {
+		return;
+	}
+
 	// Create CSS.
 	$classes = implode( ', ', $elements );
 	$custom_css = $classes . ' {
