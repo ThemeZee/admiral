@@ -1890,19 +1890,19 @@ textarea {
 	background: #404040;
 }
 
-.footer-content {
+.site-footer {
+	color: #fff;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
 
-.footer-content a:link,
-.footer-content a:visited {
-	color: #fff;
-}
-
-.footer-content .site-info {
+.site-footer .site-info {
 	float: left;
 	padding: 1em;
+}
+
+.site-footer a:link,
+.site-footer a:visited {
 	color: #fff;
 }
 
@@ -2049,7 +2049,6 @@ object {
 	.small-sidebar .widget-wrap:nth-child(4n + 1) {
 		clear: left;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -2303,6 +2302,11 @@ object {
 		width: 50%;
 	}
 
+	/* Footer */
+	.site-footer .site-info {
+		float: none;
+		text-align: center;
+	}
 }
 
 /*--------------------------------------------------------------

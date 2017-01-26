@@ -5,8 +5,6 @@
  * @package Admiral
  */
 
-// Get Theme Options from Database.
-$theme_options = admiral_theme_options();
 ?>
 
 	<section id="tertiary" class="small-sidebar widget-area clearfix" role="complementary">
