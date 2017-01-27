@@ -1232,7 +1232,8 @@ textarea {
 --------------------------------------------------------------*/
 .magazine-homepage-widget-area .widget {
 	margin: 0 0 2em;
-	padding: 0;
+	padding: 0 0 2em;
+	border-bottom: 2px solid #eee;
 }
 
 .widget-magazine-posts {
