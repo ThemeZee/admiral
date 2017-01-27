@@ -16,12 +16,6 @@ $theme_options = admiral_theme_options();
 	<section id="primary" class="content-magazine content-single content-area">
 		<main id="main" class="site-main" role="main">
 
-		<header class="page-header clearfix">
-
-			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-
-		</header>
-
 		<?php admiral_breadcrumbs(); ?>
 
 		<?php // Display Slider.

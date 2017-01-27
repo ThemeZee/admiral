@@ -17,6 +17,25 @@ $theme_options = admiral_theme_options();
 		<main id="main" class="site-main" role="main">
 
 		<?php
+		// Display Slider.
+		if ( true === $theme_options['slider_blog'] ) :
+
+			get_template_part( 'template-parts/post-slider' );
+
+		endif;
+
+		// Display Magazine Homepage Widgets.
+		if ( ! is_paged() && is_active_sidebar( 'magazine-homepage' ) ) : ?>
+
+			<div id="magazine-homepage-widgets" class="magazine-homepage-widget-area widget-area clearfix">
+
+				<?php dynamic_sidebar( 'magazine-homepage' ); ?>
+
+			</div><!-- #magazine-homepage-widgets -->
+
+			<?php
+		endif;
+
 		if ( have_posts() ) : ?>
 
 			<?php // Display Homepage Title.
@@ -31,13 +50,6 @@ $theme_options = admiral_theme_options();
 			<?php endif; ?>
 
 			<?php admiral_breadcrumbs(); ?>
-
-			<?php // Display Slider.
-			if ( true === $theme_options['slider_blog'] ) :
-
-				get_template_part( 'template-parts/post-slider' );
-
-			endif; ?>
 
 			<div id="post-wrapper" class="post-wrapper clearfix">
 
