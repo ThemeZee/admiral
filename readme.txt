@@ -26,6 +26,10 @@ For more information about Admiral please go to https://themezee.com/themes/admi
 
 == Changelog ==
 
+= 1.0.9 =
+* added Magazine Homepage widget area to blog index
+* improved styling of footer line and archive titles
+
 = 1.0.8 =
 * added editor shortcuts and instant live preview for site title and tagline in Customizer
 * added support for our Breadcrumbs plugin on single posts and pages
