@@ -26,6 +26,11 @@ For more information about Admiral please go to https://themezee.com/themes/admi
 
 == Changelog ==
 
+= 1.1.0 =
+* added template files for Magazine widgets to improve child theme compatibility
+* improved transient caching of Magazine widgets for increased performance
+* fixed sidebar layout issue in Safari
+
 = 1.0.9 =
 * added Magazine Homepage widget area to blog index
 * improved styling of footer line and archive titles

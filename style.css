@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/admiral/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Admiral is a beautiful and stylish Magazine WordPress theme featuring a unique and responsive two sidebar layout. The theme comes with several awesome features, including a featured posts slideshow, a magazine homepage template, a widgetized header area, two different post layouts and support for infinite scroll.
-Version: 1.0.9
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: admiral
@@ -1315,15 +1315,20 @@ textarea {
 }
 
 /* Magazine Posts Grid Widget */
-.widget-magazine-posts-grid .magazine-posts-grid-row {
+.widget-magazine-posts .magazine-grid {
 	margin-right: -2em;
 }
 
-.widget-magazine-posts-grid .magazine-posts-grid-row .large-post {
+.widget-magazine-posts .magazine-grid .large-post {
 	float: left;
 	width: 50%;
 	padding-right: 2em;
 	box-sizing: border-box;
+}
+
+.widget-magazine-posts .magazine-grid .post-column:nth-child(3n) .large-post,
+.widget-magazine-posts .magazine-grid .post-column:nth-child(4n) .medium-post {
+    clear: left;
 }
 
 /* Magazine Posts Columns Widget */
@@ -2416,12 +2421,11 @@ object {
 	}
 
 	/* Magazine Post Widgets */
-	.widget-magazine-posts-grid .large-post-row,
-	.widget-magazine-posts-grid .medium-post-row {
+	.widget-magazine-posts .magazine-grid {
 		margin-right: 0;
 	}
 
-	.widget-magazine-posts-grid .magazine-posts-grid-row .large-post,
+	.widget-magazine-posts .magazine-grid .large-post,
 	.widget-magazine-posts-columns .magazine-posts-column-left,
 	.widget-magazine-posts .medium-post {
 		float: none;

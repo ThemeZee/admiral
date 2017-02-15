@@ -21,21 +21,14 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 		// Setup Widget.
 		parent::__construct(
 			'admiral-magazine-posts-sidebar', // ID.
-			sprintf( esc_html__( 'Magazine Posts: Sidebar (%s)', 'admiral' ), wp_get_theme()->Name ), // Name.
+			esc_html__( 'Magazine (Sidebar)', 'admiral' ), // Name.
 			array(
-				'classname' => 'admiral_magazine_posts_sidebar',
+				'classname' => 'admiral-magazine-sidebar-widget',
 				'description' => esc_html__( 'Displays your posts from a selected category. You can use this widget in the Main Sidebar widget area.', 'admiral' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
-
-		// Delete Widget Cache on certain actions.
-		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'delete_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'delete_widget_cache' ) );
-
 	}
-
 
 	/**
 	 * Set default settings of the widget
@@ -47,14 +40,10 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 			'category'			=> 0,
 			'number'			=> 4,
 			'excerpt'			=> false,
-			'meta_date'			=> true,
-			'meta_comments'		=> false,
 		);
 
 		return $defaults;
-
 	}
-
 
 	/**
 	 * Main Function to display the widget
@@ -65,22 +54,6 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 	 * @param array $instance / Settings for this widget instance.
 	 */
 	function widget( $args, $instance ) {
-
-		$cache = array();
-
-		// Get Widget Object Cache.
-		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_admiral_magazine_posts_sidebar', 'widget' );
-		}
-		if ( ! is_array( $cache ) ) {
-			$cache = array();
-		}
-
-		// Display Widget from Cache if exists.
-		if ( isset( $cache[ $this->id ] ) ) {
-			echo $cache[ $this->id ];
-			return;
-		}
 
 		// Start Output Buffering.
 		ob_start();
@@ -108,16 +81,9 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 		<?php
 		echo $args['after_widget'];
 
-		// Set Cache.
-		if ( ! $this->is_preview() ) {
-			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_admiral_magazine_posts_sidebar', $cache, 'widget' );
-		} else {
-			ob_end_flush();
-		}
-
-	} // widget()
-
+		// End Output Buffering.
+		ob_end_flush();
+	}
 
 	/**
 	 * Renders the Widget Content
@@ -131,14 +97,15 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 	 */
 	function render( $settings ) {
 
-		// Get latest posts from database.
+		// Get cached post ids.
+		$post_ids = admiral_get_magazine_post_ids( $this->id, $settings['category'], $settings['number'] );
+
+		// Fetch posts from database.
 		$query_arguments = array(
-			'posts_per_page' => (int) $settings['number'],
-			'ignore_sticky_posts' => true,
-			'cat' => (int) $settings['category'],
+			'post__in'            => $post_ids,
+			'no_found_rows'       => true,
 		);
 		$posts_query = new WP_Query( $query_arguments );
-		$i = 0;
 
 		// Check if there are posts.
 		if ( $posts_query->have_posts() ) :
@@ -146,34 +113,14 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 			// Limit the number of words for the excerpt.
 			add_filter( 'excerpt_length', 'admiral_magazine_posts_excerpt_length' );
 
+			// Pass Excerpt Setting to template file.
+			set_query_var( 'admiral_post_excerpt', (bool) $settings['excerpt'] );
+
 			// Display Posts.
-			while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
+			while ( $posts_query->have_posts() ) : $posts_query->the_post();
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?>>
+				get_template_part( 'template-parts/widgets/magazine-content', 'sidebar-post' );
 
-					<header class="entry-header">
-
-						<?php admiral_post_image( 'admiral-thumbnail-large' ); ?>
-
-						<?php $this->entry_meta( $settings ); ?>
-
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-					</header><!-- .entry-header -->
-
-					<?php if ( true === $settings['excerpt'] ) : ?>
-
-					<div class="entry-content clearfix">
-
-						<?php the_excerpt(); ?>
-
-					</div><!-- .entry-content -->
-
-					<?php endif; ?>
-
-				</article>
-
-				<?php
 			endwhile;
 
 			// Remove excerpt filter.
@@ -183,39 +130,7 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 
 		// Reset Postdata.
 		wp_reset_postdata();
-
-	} // render()
-
-
-	/**
-	 * Displays Entry Meta of Posts
-	 *
-	 * @param array $settings / Settings for this widget instance.
-	 */
-	function entry_meta( $settings ) {
-
-		$postmeta = '';
-
-		if ( true === $settings['meta_date'] ) {
-
-			$postmeta .= admiral_meta_date();
-
-		}
-
-		if ( true === $settings['meta_comments'] ) {
-
-			$postmeta .= admiral_meta_comments();
-
-		}
-
-		if ( $postmeta ) {
-
-			echo '<div class="entry-meta">' . $postmeta . '</div>';
-
-		}
-
-	} // entry_meta()
-
+	}
 
 	/**
 	 * Displays Widget Title
@@ -234,12 +149,12 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 			if ( $settings['category'] > 0 ) :
 
 				// Set Link URL and Title for Category.
-				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'admiral' ), get_cat_name( $settings['category'] ) );
+				$link_title = sprintf( esc_attr__( 'View all posts from category %s', 'admiral' ), get_cat_name( $settings['category'] ) );
 				$link_url = esc_url( get_category_link( $settings['category'] ) );
 
 				// Display Widget Title with link to category archive.
 				echo '<div class="widget-header">';
-				echo '<h3 class="widget-title"><a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a></h3>';
+				echo '<h3 class="widget-title"><a class="category-archive-link" href="' . $link_url . '" title="' . $link_title . '">' . $widget_title . '</a></h3>';
 				echo '</div>';
 
 			else :
@@ -251,8 +166,7 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 
 		endif;
 
-	} // widget_title()
-
+	}
 
 	/**
 	 * Update Widget Settings
@@ -268,14 +182,11 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 		$instance['category'] = (int) $new_instance['category'];
 		$instance['number'] = (int) $new_instance['number'];
 		$instance['excerpt'] = ! empty( $new_instance['excerpt'] );
-		$instance['meta_date'] = ! empty( $new_instance['meta_date'] );
-		$instance['meta_comments'] = ! empty( $new_instance['meta_comments'] );
 
-		$this->delete_widget_cache();
+		admiral_flush_magazine_post_ids();
 
 		return $instance;
 	}
-
 
 	/**
 	 * Displays Widget Settings Form in the Backend
@@ -290,7 +201,7 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'admiral' ); ?>
-				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $settings['title']; ?>" />
+				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $settings['title'] ); ?>" />
 			</label>
 		</p>
 
@@ -298,12 +209,12 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Category:', 'admiral' ); ?></label><br/>
 			<?php // Display Category Select.
 				$args = array(
-					'show_option_all'    => esc_html__( 'All Categories', 'admiral' ),
-					'show_count' 		 => true,
-					'hide_empty'		 => false,
-					'selected'           => $settings['category'],
-					'name'               => $this->get_field_name( 'category' ),
-					'id'                 => $this->get_field_id( 'category' ),
+					'show_option_all' => esc_html__( 'All Categories', 'admiral' ),
+					'show_count' 		  => true,
+					'hide_empty'		  => false,
+					'selected'        => $settings['category'],
+					'name'            => $this->get_field_name( 'category' ),
+					'id'              => $this->get_field_id( 'category' ),
 				);
 				wp_dropdown_categories( $args );
 			?>
@@ -311,7 +222,7 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e( 'Number of posts:', 'admiral' ); ?>
-				<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $settings['number']; ?>" size="3" />
+				<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo (int) $settings['number']; ?>" size="3" />
 			</label>
 		</p>
 
@@ -322,30 +233,7 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 			</label>
 		</p>
 
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_date' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_date'] ); ?> id="<?php echo $this->get_field_id( 'meta_date' ); ?>" name="<?php echo $this->get_field_name( 'meta_date' ); ?>" />
-				<?php esc_html_e( 'Display post date', 'admiral' ); ?>
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_comments' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_comments'] ); ?> id="<?php echo $this->get_field_id( 'meta_comments' ); ?>" name="<?php echo $this->get_field_name( 'meta_comments' ); ?>" />
-				<?php esc_html_e( 'Display post comments', 'admiral' ); ?>
-			</label>
-		</p>
-<?php
-	} // form()
-
-
-	/**
-	 * Delete Widget Cache
-	 */
-	public function delete_widget_cache() {
-
-		wp_cache_delete( 'widget_admiral_magazine_posts_sidebar', 'widget' );
-
+		<?php
 	}
 }
 
