@@ -690,6 +690,17 @@ textarea {
 	display: none;
 }
 
+/* Fix Render Bug for Safari */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+	@media {
+		.content-area,
+		.main-sidebar,
+		.small-sidebar {
+			margin-right: -1px;
+		}
+	}
+}
+
 /*--------------------------------------------------------------
 # 9.0 - Header
 --------------------------------------------------------------*/
