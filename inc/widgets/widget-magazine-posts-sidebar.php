@@ -119,7 +119,7 @@ class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 			// Display Posts.
 			while ( $posts_query->have_posts() ) : $posts_query->the_post();
 
-				get_template_part( 'template-parts/widgets/magazine-content', 'sidebar-post' );
+				get_template_part( 'template-parts/widgets/magazine-large-post', 'sidebar' );
 
 			endwhile;
 
