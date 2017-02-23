@@ -80,7 +80,7 @@ function admiral_customize_register_post_settings( $wp_customize ) {
 	$wp_customize->add_setting( 'admiral_theme_options[meta_date]', array(
 		'default'           => true,
 		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
@@ -96,7 +96,7 @@ function admiral_customize_register_post_settings( $wp_customize ) {
 	$wp_customize->add_setting( 'admiral_theme_options[meta_comments]', array(
 		'default'           => true,
 		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
@@ -145,7 +145,7 @@ function admiral_customize_register_post_settings( $wp_customize ) {
 	$wp_customize->add_setting( 'admiral_theme_options[meta_author]', array(
 		'default'           => true,
 		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
@@ -158,10 +158,26 @@ function admiral_customize_register_post_settings( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting( 'admiral_theme_options[meta_category]', array(
+		'default'           => true,
+		'type'           	=> 'option',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'admiral_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control( 'admiral_theme_options[meta_category]', array(
+		'label'    => esc_html__( 'Display post categories on single posts', 'admiral' ),
+		'section'  => 'admiral_section_post',
+		'settings' => 'admiral_theme_options[meta_category]',
+		'type'     => 'checkbox',
+		'priority' => 9,
+		)
+	);
+
 	$wp_customize->add_setting( 'admiral_theme_options[meta_tags]', array(
 		'default'           => true,
 		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
@@ -170,14 +186,14 @@ function admiral_customize_register_post_settings( $wp_customize ) {
 		'section'  => 'admiral_section_post',
 		'settings' => 'admiral_theme_options[meta_tags]',
 		'type'     => 'checkbox',
-		'priority' => 9,
+		'priority' => 10,
 		)
 	);
 
 	$wp_customize->add_setting( 'admiral_theme_options[post_navigation]', array(
 		'default'           => true,
 		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
@@ -186,7 +202,7 @@ function admiral_customize_register_post_settings( $wp_customize ) {
 		'section'  => 'admiral_section_post',
 		'settings' => 'admiral_theme_options[post_navigation]',
 		'type'     => 'checkbox',
-		'priority' => 10,
+		'priority' => 11,
 		)
 	);
 
