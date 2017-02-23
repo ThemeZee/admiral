@@ -108,37 +108,17 @@ if ( ! function_exists( 'admiral_entry_meta' ) ) :
 	 */
 	function admiral_entry_meta() {
 
-		// Get theme options from database.
-		$theme_options = admiral_theme_options();
+		$postmeta = admiral_meta_date();
+		$postmeta .= admiral_meta_comments();
 
-		$postmeta = '';
-
-		// Display date unless user has deactivated it via settings.
-		if ( true === $theme_options['meta_date'] ) {
-
-			$postmeta .= admiral_meta_date();
-
-		}
-
-		// Display comments unless user has deactivated it via settings.
-		if ( true === $theme_options['meta_comments'] ) {
-
-			$postmeta .= admiral_meta_comments();
-
-		}
-
-		// Display categories on single posts unless user has deactivated it via settings.
-		if ( true === $theme_options['meta_comments'] && is_single() ) {
+		// Display categories only on single posts.
+		if ( is_single() ) {
 
 			$postmeta .= admiral_meta_category();
 
 		}
 
-		if ( $postmeta ) {
-
-			echo '<div class="entry-meta">' . $postmeta . '</div>';
-
-		}
+		echo '<div class="entry-meta">' . $postmeta . '</div>';
 	}
 endif;
 
@@ -239,18 +219,17 @@ if ( ! function_exists( 'admiral_posted_by' ) ) :
 		// Get theme options from database.
 		$theme_options = admiral_theme_options();
 
-		// Return early if author is turned off.
-		if ( false === $theme_options['meta_author'] ) {
-			return false;
+		// Only display if activated in settings.
+		if ( true === $theme_options['meta_author'] || is_customize_preview() ) {
+
+			// Get Author Avatar.
+			$avatar = get_avatar( get_the_author_meta( 'ID' ), 32 );
+
+			$byline = sprintf( esc_html_x( 'Posted by %s', 'post author', 'admiral' ), admiral_meta_author() );
+
+			echo '<div class="posted-by"> ' . $avatar . $byline . '</div>';
+
 		}
-
-		// Get Author Avatar.
-		$avatar = get_avatar( get_the_author_meta( 'ID' ), 32 );
-
-		$byline = sprintf( esc_html_x( 'Posted by %s', 'post author', 'admiral' ), admiral_meta_author() );
-
-		echo '<div class="posted-by"> ' . $avatar . $byline . '</div>';
-
 	}
 endif;
 
@@ -261,14 +240,11 @@ if ( ! function_exists( 'admiral_entry_tags' ) ) :
 	 */
 	function admiral_entry_tags() {
 
-		// Get theme options from database.
-		$theme_options = admiral_theme_options();
-
 		// Get tags.
 		$tag_list = get_the_tag_list( '', '' );
 
 		// Display tags.
-		if ( $tag_list && $theme_options['meta_tags'] ) : ?>
+		if ( $tag_list ) : ?>
 
 			<div class="entry-tags clearfix">
 				<span class="meta-tags">
@@ -291,7 +267,7 @@ if ( ! function_exists( 'admiral_post_navigation' ) ) :
 		// Get theme options from database.
 		$theme_options = admiral_theme_options();
 
-		if ( true === $theme_options['post_navigation'] ) {
+		if ( true === $theme_options['post_navigation'] || is_customize_preview() ) {
 
 			the_post_navigation( array(
 				'prev_text' => '<span class="screen-reader-text">' . esc_html_x( 'Previous Post:', 'post navigation', 'admiral' ) . '</span>%title',
