@@ -123,30 +123,6 @@ if ( ! function_exists( 'admiral_entry_meta' ) ) :
 endif;
 
 
-if ( ! function_exists( 'admiral_magazine_entry_meta' ) ) :
-	/**
-	 * Displays the date and author of magazine posts
-	 */
-	function admiral_magazine_entry_meta() {
-
-		$postmeta = admiral_meta_date();
-		$postmeta .= admiral_meta_comments();
-
-		echo '<div class="entry-meta">' . $postmeta . '</div>';
-	}
-endif;
-
-
-if ( ! function_exists( 'admiral_magazine_entry_date' ) ) :
-	/**
-	 * Displays the date of magazine posts
-	 */
-	function admiral_magazine_entry_date() {
-		echo '<div class="entry-meta">' . admiral_meta_date() . '</div>';
-	}
-endif;
-
-
 if ( ! function_exists( 'admiral_meta_date' ) ) :
 	/**
 	 * Displays the post date
