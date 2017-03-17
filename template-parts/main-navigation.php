@@ -13,7 +13,7 @@
 
 		<?php
 		// Check if there is a social menu.
-		if( has_nav_menu( 'social' ) ) : ?>
+		if ( has_nav_menu( 'social' ) ) : ?>
 
 			<div id="header-social-icons" class="header-social-icons social-icons-navigation clearfix">
 
@@ -27,7 +27,7 @@
 					'fallback_cb' => '',
 					'link_before' => '<span class="screen-reader-text">',
 					'link_after' => '</span>',
-					'depth' => 1
+					'depth' => 1,
 					)
 				);
 				?>

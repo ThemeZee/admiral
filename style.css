@@ -1328,7 +1328,7 @@ textarea {
 
 .widget-magazine-posts .magazine-grid .post-column:nth-child(3n) .large-post,
 .widget-magazine-posts .magazine-grid .post-column:nth-child(4n) .medium-post {
-    clear: left;
+	clear: left;
 }
 
 /* Magazine Posts Columns Widget */
