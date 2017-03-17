@@ -12,8 +12,9 @@ if ( ! function_exists( 'admiral_magazine_widget_title' ) ) :
 	/**
 	 * Displays the widget title with link to the category archive
 	 *
-	 * @param int $length Length of excerpt in number of words.
-	 * @return int
+	 * @param String $widget_title Widget Title.
+	 * @param int    $category_id  Category ID.
+	 * @return String Widget Title
 	 */
 	function admiral_magazine_widget_title( $widget_title, $category_id ) {
 
