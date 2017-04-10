@@ -2,9 +2,9 @@
 Author URI: https://themezee.com
 Theme URI: https://themezee.com/themes/admiral/
 Contributors: themezee
-Tags: two-columns, light, purple, custom-background, custom-header, custom-menu, editor-style, blog, entertainment, news, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, red, blue, silver, white, green, gray
+Tags: three-columns, custom-background, custom-menu, editor-style, rtl-language-support, grid-layout, blog, entertainment, news, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, one-column, left-sidebar, right-sidebar, two-columns
 Requires at least: 4.4
-Tested up to: 4.6
+Tested up to: 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,10 @@ For more information about Admiral please go to https://themezee.com/themes/admi
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 1.2.3 =
+* fixed flexbox layout issues appearing with the latest Safari 10.1 version
+* fixed horizontal scrolling issue on mobile devices when elements are hidden in theme options
 
 = 1.2.2 =
 * fixed number of posts setting in Magazine widgets
