@@ -89,13 +89,20 @@ html[xmlns] .zeeflexslider .zeeslides {
 	max-height: 2000px;
 }
 
-.post-slider .zeeslide .slide-image {
-	width: 100%;
-	height: auto;
-	max-width: 820px;
-	max-height: 460px;
-	vertical-align: top;
+.post-slider .zeeslide .slide-image-wrap {
 	margin: 0;
+	padding: 0;
+	background: #e5e5e5;
+}
+
+.post-slider .zeeslide .slide-image {
+	margin: auto;
+	padding: 0;
+	max-width: 100%;
+	max-height: 510px;
+	width: auto;
+	height: auto;
+	vertical-align: top;
 }
 
 .post-slider .zeeslide .slide-content {

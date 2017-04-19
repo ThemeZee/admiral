@@ -47,6 +47,37 @@ function admiral_slider_excerpt_length( $length ) {
 }
 
 
+if ( ! function_exists( 'admiral_slider_image' ) ) :
+	/**
+	 * Displays the featured image of the post as slider image
+	 *
+	 * @param string $size Post thumbnail size.
+	 * @param array  $attr Post thumbnail attributes.
+	 */
+	function admiral_slider_image( $size = 'post-thumbnail', $attr = array() ) {
+
+		// Display Post Thumbnail.
+		if ( has_post_thumbnail() ) : ?>
+
+			<a class="slide-image-link" href="<?php the_permalink(); ?>" rel="bookmark">
+				<figure class="slide-image-wrap">
+					<?php the_post_thumbnail( $size, $attr ); ?>
+				</figure>
+			</a>
+
+		<?php else : ?>
+
+			<a class="slide-image-link" href="<?php the_permalink(); ?>" rel="bookmark">
+				<figure class="slide-image-wrap">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/default-slider-image.png" class="slide-image default-slide-image wp-post-image" />
+				</figure>
+			</a>
+
+		<?php endif;
+	}
+endif;
+
+
 if ( ! function_exists( 'admiral_slider_meta' ) ) :
 	/**
 	 * Displays the date and author on slider posts
