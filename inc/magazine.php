@@ -115,4 +115,5 @@ function admiral_flush_magazine_post_ids() {
 }
 add_action( 'save_post', 'admiral_flush_magazine_post_ids' );
 add_action( 'deleted_post', 'admiral_flush_magazine_post_ids' );
+add_action( 'customize_save_after', 'admiral_flush_magazine_post_ids' );
 add_action( 'switch_theme', 'admiral_flush_magazine_post_ids' );
