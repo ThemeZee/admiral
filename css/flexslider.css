@@ -44,16 +44,16 @@
 	-webkit-backface-visibility: hidden;
 }
 .zeeflexslider .zeeslides img {
-	width: 100%;
 	display: block;
+	width: 100%;
 }
 .zeeflexslider .zeeslides:after {
-	content: "\0020";
 	display: block;
-	clear: both;
 	visibility: hidden;
-	line-height: 0;
+	clear: both;
 	height: 0;
+	content: "\0020";
+	line-height: 0;
 }
 html[xmlns] .zeeflexslider .zeeslides {
 	display: block;
@@ -106,9 +106,9 @@ html[xmlns] .zeeflexslider .zeeslides {
 }
 
 .post-slider .zeeslide .slide-content {
-	background: #fff;
 	padding: 1em 0 2em;
 	border-bottom: 2px solid #eee;
+	background: #fff;
 }
 
 .post-slider-controls {
@@ -117,39 +117,39 @@ html[xmlns] .zeeflexslider .zeeslides {
 
 /* Direction Nav */
 .post-slider-controls .zeeflex-direction-nav {
-	*height: 0;
 	position: absolute;
 	top: 1.5em;
 	right: 1.5em;
+	*height: 0;
 }
 
 .post-slider-controls .zeeflex-direction-nav a {
-	display: block;
 	position: absolute;
+	z-index: 10;
+	display: block;
 	margin: 0 0 0 -80px;
 	width: 40px;
 	height: 40px;
 	background: #fff;
-	text-align: left;
 	color: #303030;
-	font-size: 0;
+	text-align: left;
 	text-decoration: none;
+	font-size: 0;
 	cursor: pointer;
-	z-index: 10;
 }
 
 .post-slider-controls .zeeflex-direction-nav a:hover {
-	text-decoration: none;
 	background: #ee4444;
+	text-decoration: none;
 }
 
 .post-slider-controls .zeeflex-direction-nav a:before {
-	-webkit-font-smoothing: antialiased;
 	display: inline-block;
-	font: normal 28px/1 Genericons;
-	text-decoration: inherit;
-	vertical-align: text-bottom;
 	color: #303030;
+	vertical-align: text-bottom;
+	text-decoration: inherit;
+	font: normal 28px/1 Genericons;
+	-webkit-font-smoothing: antialiased;
 }
 
 .post-slider-controls .zeeflex-direction-nav a:hover:before {
@@ -187,19 +187,19 @@ html[xmlns] .zeeflexslider .zeeslides {
 }
 
 .post-slider-controls .zeeflex-control-nav li {
-	margin: 0 2px;
 	display: inline-block;
-	zoom: 1;
 	*display: inline;
+	margin: 0 2px;
+	zoom: 1;
 }
 
 .post-slider-controls .zeeflex-control-nav li a {
+	display: block;
 	width: 25px;
 	height: 10px;
-	display: block;
 	background: rgba(255,255,255,0.5);
-	cursor: pointer;
 	text-indent: -9999px;
+	cursor: pointer;
 }
 
 .post-slider-controls .zeeflex-control-nav li a:hover {
@@ -217,7 +217,6 @@ html[xmlns] .zeeflexslider .zeeslides {
 --------------------------------------------------------------*/
 
 @media only screen and (max-width: 30em) {
-
 	.post-slider-controls .zeeflex-control-nav {
 		display: none;
 	}
