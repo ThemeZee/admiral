@@ -3,8 +3,8 @@ Author URI: https://themezee.com
 Theme URI: https://themezee.com/themes/admiral/
 Contributors: themezee
 Tags: three-columns, custom-background, custom-menu, editor-style, rtl-language-support, grid-layout, blog, entertainment, news, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, one-column, left-sidebar, right-sidebar, two-columns
-Requires at least: 4.4
-Tested up to: 4.8
+Requires at least: 4.7
+Tested up to: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,11 @@ For more information about Admiral please go to https://themezee.com/themes/admi
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 1.4 =
+* added default theme fonts as local fonts
+* use local fonts instead of Google fonts for GDPR compliance
+* restructured assets into one folder
 
 = 1.3 =
 * added improved Magazine Widget Customizer Control
