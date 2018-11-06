@@ -3,7 +3,7 @@
  *
  * Add styling for the Gutenberg Editor
  *
- * @package Wellington
+ * @package Admiral
  */
 
 /*--------------------------------------------------------------
@@ -47,6 +47,21 @@ body.block-editor-page .edit-post-visual-editor .editor-block-list__block {
     font-size: 17px;
     font-size: 1.0625rem;
 	margin-bottom: 1.5em;
+}
+
+.edit-post-visual-editor .editor-block-list__block a {
+    color: #ee4444;
+}
+
+.edit-post-visual-editor .editor-block-list__block pre {
+	overflow: auto;
+	padding: 1.5em;
+	border: 1px solid #e5e5e5;
+	background: #f5f5f5;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	line-height: 1.6;
 }
 
 .edit-post-visual-editor .editor-block-list__block h1,
@@ -201,7 +216,7 @@ body.block-editor-page .edit-post-visual-editor .editor-block-list__block {
 # 4.0 - Text Colors
 --------------------------------------------------------------*/
 .has-primary-color {
-	color: #ee3333;
+	color: #ee4444;
 }
 
 .has-white-color {
@@ -224,7 +239,7 @@ body.block-editor-page .edit-post-visual-editor .editor-block-list__block {
 # 5.0 - Background Colors
 --------------------------------------------------------------*/
 .has-primary-background-color {
-	background-color: #ee3333;
+	background-color: #ee4444;
 }
 
 .has-white-background-color {
