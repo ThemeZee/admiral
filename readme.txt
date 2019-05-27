@@ -26,6 +26,9 @@ For more information about Admiral please go to https://themezee.com/themes/admi
 
 == Changelog ==
 
+= 1.5.2 =
+* adjusted footer credit link with clearer wording
+
 = 1.5.1 =
 * added support for responsive embed blocks
 
