@@ -1389,6 +1389,7 @@ textarea {
 }
 
 .tz-magazine-block .tz-entry-meta {
+	margin: 0 0 0.2em;
     font-size: 14px;
     font-size: 0.875rem;
 }
@@ -1408,6 +1409,27 @@ textarea {
 
 .tz-magazine-block .tz-read-more {
 	margin-top: -0.5em;
+}
+
+/* Deactivate post meta theme settings for Magazine blocks */
+body.date-hidden.comments-hidden .content-archive .tz-magazine-block .tz-entry-meta,
+body.date-hidden.comments-hidden.categories-hidden .content-single .tz-magazine-block .tz-entry-meta {
+	display: block;
+}
+
+body.comments-hidden.categories-hidden .tz-magazine-block .tz-entry-meta .tz-meta-date:after {
+	display: inline-block;
+}
+
+body.date-hidden .tz-magazine-block .type-post .tz-entry-meta .tz-meta-date,
+body.author-hidden .tz-magazine-block .type-post .tz-entry-meta .tz-meta-author,
+body.categories-hidden .tz-magazine-block .type-post .tz-entry-meta .tz-meta-categories,
+body.comments-hidden .tz-magazine-block .type-post .tz-entry-meta .tz-meta-comments {
+	position: static;
+	overflow: visible;
+	clip: auto;
+	width: auto;
+	height: auto;
 }
 
 /*--------------------------------------------------------------
