@@ -1411,27 +1411,6 @@ textarea {
 	margin-top: -0.5em;
 }
 
-/* Deactivate post meta theme settings for Magazine blocks */
-body.date-hidden.comments-hidden .content-archive .tz-magazine-block .tz-entry-meta,
-body.date-hidden.comments-hidden.categories-hidden .content-single .tz-magazine-block .tz-entry-meta {
-	display: block;
-}
-
-body.comments-hidden.categories-hidden .tz-magazine-block .tz-entry-meta .tz-meta-date:after {
-	display: inline-block;
-}
-
-body.date-hidden .tz-magazine-block .type-post .tz-entry-meta .tz-meta-date,
-body.author-hidden .tz-magazine-block .type-post .tz-entry-meta .tz-meta-author,
-body.categories-hidden .tz-magazine-block .type-post .tz-entry-meta .tz-meta-categories,
-body.comments-hidden .tz-magazine-block .type-post .tz-entry-meta .tz-meta-comments {
-	position: static;
-	overflow: visible;
-	clip: auto;
-	width: auto;
-	height: auto;
-}
-
 /*--------------------------------------------------------------
 # 12.0 - Posts and pages
 --------------------------------------------------------------*/
@@ -1541,24 +1520,24 @@ body.comments-hidden .tz-magazine-block .type-post .tz-entry-meta .tz-meta-comme
 }
 
 /* Hide post meta if they are deactivated in settings */
-body.date-hidden .entry-meta .meta-date,
-body.comments-hidden .entry-meta .meta-comments,
-body.categories-hidden .entry-meta .meta-category,
+body.date-hidden .type-post .entry-meta .meta-date,
+body.comments-hidden .type-post .entry-meta .meta-comments,
+body.categories-hidden .type-post .entry-meta .meta-category,
 body.author-hidden .type-post .posted-by {
 	 position: absolute;
 	 clip: rect(1px, 1px, 1px, 1px);
 }
 
-body.comments-hidden.categories-hidden .entry-meta .meta-date:after,
-body.categories-hidden .entry-meta .meta-comments:after {
+body.comments-hidden.categories-hidden .type-post .entry-meta .meta-date:after,
+body.categories-hidden .type-post .entry-meta .meta-comments:after {
 	display: none;
 }
 
-body.date-hidden.comments-hidden .content-archive .entry-meta {
+body.date-hidden.comments-hidden .content-archive .type-post .entry-meta {
 	display: none;
 }
 
-body.date-hidden.comments-hidden.categories-hidden .content-single .entry-meta {
+body.date-hidden.comments-hidden.categories-hidden .content-single .type-post .entry-meta {
 	display: none;
 }
 
