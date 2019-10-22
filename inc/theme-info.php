@@ -47,7 +47,8 @@ function admiral_theme_info_page() {
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/admiral/', 'admiral' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'admiral' ); ?></a>
 				<a href="http://preview.themezee.com/?demo=admiral&utm_source=theme-info&utm_campaign=admiral" target="_blank"><?php esc_html_e( 'Theme Demo', 'admiral' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/admiral-documentation/', 'admiral' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'admiral' ); ?></a>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/admiral/reviews/?filter=5', 'admiral' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'admiral' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/changelogs/?action=themezee-changelog&type=theme&slug=admiral', 'admiral' ) ); ?>" target="_blank"><?php esc_html_e( 'Theme Changelog', 'admiral' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/admiral/reviews/', 'admiral' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'admiral' ); ?></a>
 			</p>
 		</div>
 		<hr>
@@ -149,7 +150,7 @@ function admiral_theme_info_page() {
 			<p><?php printf( esc_html__( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'admiral' ),
 				$theme->display( 'Name' ),
 				'<a target="_blank" href="' . __( 'https://themezee.com/', 'admiral' ) . '?utm_source=theme-info&utm_medium=footer&utm_campaign=admiral" title="ThemeZee">ThemeZee</a>',
-				'<a target="_blank" href="' . __( 'https://wordpress.org/support/theme/admiral/reviews/?filter=5', 'admiral' ) . '" title="' . esc_attr__( 'Review Admiral', 'admiral' ) . '">' . esc_html__( 'rate it', 'admiral' ) . '</a>'); ?>
+				'<a target="_blank" href="' . __( 'https://wordpress.org/support/theme/admiral/reviews/', 'admiral' ) . '" title="' . esc_attr__( 'Review Admiral', 'admiral' ) . '">' . esc_html__( 'rate it', 'admiral' ) . '</a>'); ?>
 			</p>
 
 		</div>
