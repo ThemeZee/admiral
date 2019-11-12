@@ -26,6 +26,9 @@ For more information about Admiral please go to https://themezee.com/themes/admi
 
 == Changelog ==
 
+= 1.6.3 - 2019-11-12 =
+* added font display swap to default theme fonts
+
 = 1.6.2 - 2019-10-23 =
 * added improved Theme Info section to Customizer
 
