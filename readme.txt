@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/admiral/
 Contributors: themezee
 Tags: three-columns, custom-background, custom-menu, editor-style, rtl-language-support, grid-layout, blog, entertainment, news, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, one-column, left-sidebar, right-sidebar, two-columns
 Requires at least: 5.2
-Tested up to: 5.5
+Tested up to: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,9 @@ For more information about Admiral please go to https://themezee.com/themes/admi
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 1.6.7 - 2021-03-24 =
+* fixed PHP warning in wp_localize_script
 
 = 1.6.6 - 2020-10-09 =
 * fixed lazy loading bug for slider images
