@@ -4,9 +4,9 @@ Theme URI: https://themezee.com/themes/admiral/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Admiral is a beautiful and stylish Magazine WordPress theme featuring a unique and responsive two sidebar layout. The theme comes with several awesome features, including a featured posts slideshow, a magazine homepage template, a widgetized header area, two different post layouts and support for infinite scroll.
-Version: 1.6.8
+Version: 1.6.9
 Requires at least: 5.2
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -2857,29 +2857,4 @@ object {
 			margin-right: -1px;
 		}
 	}
-}
-
-/*--------------------------------------------------------------
-20.0 Customizer Preview
---------------------------------------------------------------*/
-.magazine-widgets-placeholder {
-	position: relative;
-}
-
-.magazine-widgets-placeholder .magazine-widgets-placeholder-title {
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	text-transform: uppercase;
-	margin: 0;
-	padding: 1em 1em 1em 55px;
-	color: #0085ba;
-	border: 2px dashed #0085ba;
-}
-
-/* Add some space around the visual edit shortcut buttons. */
-.magazine-widgets-placeholder .customize-partial-edit-shortcut button {
-	left: 15px;
-	top: 14px;
 }
